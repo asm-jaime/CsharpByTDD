@@ -23,9 +23,13 @@ In the second example, Kostya fits into the tariff plan, so he pays only for it.
 Data examples
 
 Example 1
-in: 100 10 12 15
-out: 160
+in:
+100 10 12 15
+out:
+160
 
 Example 2
-in: 100 10 12 1
-out: 100
+in:
+100 10 12 1
+out:
+100
