@@ -26,7 +26,6 @@ in:
 6
 out:
 3
-
 Example 2
 in:
 5
