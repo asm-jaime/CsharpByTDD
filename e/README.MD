@@ -1,5 +1,5 @@
 <!-- ENGLISH -->
-# Subset sum task
+# Task e
 
 During the development of a certain task, Sasha decided to generate several new tests. Each test by Sasha must be a natural number not less than l and not greater than r. In addition, a natural number in the test must necessarily consist of the same digits.
 
