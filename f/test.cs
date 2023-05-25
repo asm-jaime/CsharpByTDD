@@ -38,23 +38,6 @@ namespace f
             // Assert
             Assert.IsTrue(result.SequenceEqual(expected));
         }
-
-        [Test]
-        public void TestSwap()
-        {
-            // Arrange
-            Solution solution = new Solution();
-            int[] heights = new int[] { 2, 1, 4, 6 };
-            int i = 0;
-            int j = 1;
-            int[] expected = new int[] { 1, 2, 4, 6 };
-
-            // Act
-            solution.Swap(heights, i, j);
-
-            // Assert
-            Assert.AreEqual(expected, heights);
-        }
     }
 
 }

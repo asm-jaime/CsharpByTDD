@@ -4,6 +4,11 @@ namespace f;
 
 public class Solution
 {
+    private void Swap(int[] heights, int from, int to)
+    {
+        (heights[from], heights[to]) = (heights[to], heights[from]);
+    }
+
     private (int, int) GetGoodEvenEvenPair(int[] heights)
     {
         int first = -1;
@@ -77,8 +82,4 @@ public class Solution
         return result;
     }
 
-    public void Swap(int[] heights, int from, int to)
-    {
-        (heights[from], heights[to]) = (heights[to], heights[from]);
-    }
 }
