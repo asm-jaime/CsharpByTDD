@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "subsetsum", "subsetsum\subs
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "e", "e\e.csproj", "{458C5676-0CFD-4268-B1D1-9D326C58652E}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "f", "f\f.csproj", "{0FBAA0AF-7FDA-4668-AA1F-F4FEB5FA43DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{458C5676-0CFD-4268-B1D1-9D326C58652E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{458C5676-0CFD-4268-B1D1-9D326C58652E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{458C5676-0CFD-4268-B1D1-9D326C58652E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FBAA0AF-7FDA-4668-AA1F-F4FEB5FA43DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FBAA0AF-7FDA-4668-AA1F-F4FEB5FA43DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FBAA0AF-7FDA-4668-AA1F-F4FEB5FA43DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FBAA0AF-7FDA-4668-AA1F-F4FEB5FA43DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
