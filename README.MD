@@ -1,2 +1,2 @@
-#Let's solve a hard tasks from Tinkoff by using TDD
+#Let's solve a hard task from Tinkoff by using TDD
 
