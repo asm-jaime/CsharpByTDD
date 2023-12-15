@@ -2,31 +2,32 @@
 
 namespace diffmatrix;
 
-public class Solution {
-    public int[][] OnesMinusZeros(int[][] grid) {
-        var sumRows = new int[grid.Length];
-        var sumCols = new int[grid.First().Length];
+public class Solution
+{
+    public int[][] OnesMinusZeros(int[][] grid)
+    {
+        var rows = grid.Length;
+        var cols = grid[0].Length;
 
-        for(var i = 0; i < grid.Length; ++i)
+        var sumRows = new int[rows];
+        var sumCols = new int[cols];
+
+        for (var i = 0; i < rows; ++i)
         {
-            for(var j = 0; j < grid[i].Length; ++j)
+            for (var j = 0; j < cols; ++j)
             {
-                sumRows[i] += grid[i][j];
-                sumCols[j] += grid[i][j];
+                sumRows[i] += grid[i][j] == 1 ? 1 : -1;
+                sumCols[j] += grid[i][j] == 1 ? 1 : -1;
             }
         }
 
-        var result = new int[grid.Length][];
-        for(var i = 0; i < grid.Length; ++i)
+        var result = new int[rows][];
+        for (var i = 0; i < rows; ++i)
         {
-            result[i] = new int[grid[i].Length];
-            for(var j = 0; j < grid[i].Length; ++j)
+            result[i] = new int[cols];
+            for (var j = 0; j < cols; ++j)
             {
-                var onesInRows = sumRows[i];
-                var zerosInRows = grid.First().Length - sumRows[i];
-                var onesInCols = sumCols[j];
-                var zerosInCols = grid.Length - sumCols[j];
-                result[i][j] = onesInRows + onesInCols - zerosInRows - zerosInCols;
+                result[i][j] = sumRows[i] + sumCols[j];
             }
         }
 
