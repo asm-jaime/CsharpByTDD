@@ -1,22 +1,40 @@
-﻿using NUnit.Framework;
+﻿using FluentAssertions;
+using NUnit.Framework;
 
-namespace template;
+namespace diffmatrix;
 
 
 [TestFixture]
 public class SolutionTests
 {
     [Test]
-    [TestCase(2, 2, 4)]
-    [TestCase(0, 0, 0)]
-    public void TestCalculate(int a, int b, int expected)
+    public void Test1()
     {
         // Arrange
         Solution solution = new Solution();
+        var binaryArray = new int[3][] { new int[] { 0, 1, 1 }, new int[] { 1, 0, 1 }, new int[] { 0, 0, 1 } };
+
         // Act
-        int total = solution.Calculate(a, b);
+        int[][] total = solution.OnesMinusZeros(binaryArray);
         // Assert
-        Assert.AreEqual(expected, total);
+        var expected = new int[3][] { new int[] { 0, 0, 4 }, new int[] { 0, 0, 4 }, new int[] { -2, -2, 2 } };
+        total.Should().BeEquivalentTo(expected);
     }
+
+    [Test]
+    public void Test2()
+    {
+        // Arrange
+        Solution solution = new Solution();
+        var binaryArray = new int[2][] { new int[] { 1, 1, 1 }, new int[] { 1, 1, 1 } };
+
+        // Act
+        int[][] total = solution.OnesMinusZeros(binaryArray);
+
+        // Assert
+        var expected = new int[2][] { new int[] { 5, 5, 5 }, new int[] { 5, 5, 5 } };
+        total.Should().BeEquivalentTo(expected);
+    }
+
 }
 

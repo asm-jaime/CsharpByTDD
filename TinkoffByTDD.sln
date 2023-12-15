@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "f", "f\f.csproj", "{0FBAA0A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "artcritics", "artcritics\artcritics.csproj", "{922D7BDB-EA19-41BD-B394-BDAAB78A281D}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "diff-matrix", "diff-matrix\diff-matrix.csproj", "{9F3B8190-48DA-4D92-B0F7-936A12FF0DEA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{922D7BDB-EA19-41BD-B394-BDAAB78A281D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{922D7BDB-EA19-41BD-B394-BDAAB78A281D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{922D7BDB-EA19-41BD-B394-BDAAB78A281D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F3B8190-48DA-4D92-B0F7-936A12FF0DEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F3B8190-48DA-4D92-B0F7-936A12FF0DEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F3B8190-48DA-4D92-B0F7-936A12FF0DEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F3B8190-48DA-4D92-B0F7-936A12FF0DEA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
