@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "b": {
-      "commandName": "Project",
-      "commandLineArgs": "< ../../../in1.txt"
-    }
-  }
-}
