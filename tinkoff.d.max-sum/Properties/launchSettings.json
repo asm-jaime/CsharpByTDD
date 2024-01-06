@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "d": {
+      "commandName": "Project",
+      "commandLineArgs": "< ../../../in1.txt"
+    }
+  }
+}
