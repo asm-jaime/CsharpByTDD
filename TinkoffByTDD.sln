@@ -23,6 +23,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tinkoff.e.count-digits", "t
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tinkoff.f.even-pair", "tinkoff.f.even-pair\tinkoff.f.even-pair.csproj", "{EB9B1EE7-3AEA-48DA-A539-213F35DB2AAA}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tinkoff.1", "tinkoff.1\tinkoff.1.csproj", "{953270D7-7874-467B-95C0-4FE730C3613A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{EB9B1EE7-3AEA-48DA-A539-213F35DB2AAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB9B1EE7-3AEA-48DA-A539-213F35DB2AAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB9B1EE7-3AEA-48DA-A539-213F35DB2AAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{953270D7-7874-467B-95C0-4FE730C3613A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{953270D7-7874-467B-95C0-4FE730C3613A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{953270D7-7874-467B-95C0-4FE730C3613A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{953270D7-7874-467B-95C0-4FE730C3613A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

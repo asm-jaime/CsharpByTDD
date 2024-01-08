@@ -9,9 +9,15 @@ cp -r template "$ProjectName"
 # Change directory to the new project folder
 cd "$ProjectName"
 
+# Rename template.csproj to $ProjectName.csproj
+mv template.csproj "$ProjectName.csproj"
+
+# Remove dots and dashes from ProjectName for namespace
+NamespaceName=$(echo $ProjectName | sed 's/[.-]//g')
+
 # Update namespaces in the files
-sed -i "s/namespace template;/namespace $ProjectName;/" program.cs
-sed -i "s/namespace template;/namespace $ProjectName;/" solution.cs
-sed -i "s/namespace template;/namespace $ProjectName;/" test.cs
+sed -i "s/namespace template;/namespace $NamespaceName;/" program.cs
+sed -i "s/namespace template;/namespace $NamespaceName;/" solution.cs
+sed -i "s/namespace template;/namespace $NamespaceName;/" test.cs
 
 echo "Project $ProjectName has been set up."
