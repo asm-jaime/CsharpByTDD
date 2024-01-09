@@ -7,9 +7,9 @@ namespace tinkoff1;
 public class DartGameTests
 {
     [Test]
-    //[TestCase(0.0, 0.0, 0.1, 0.0, 0.5, 0.5, 8)]
+    [TestCase(0.0, 0.0, 0.1, 0.0, 0.5, 0.5, 8)]
     [TestCase(0.5, 0.5, 2.0, 1.0, 0.05, 0.05, 5)]
-    //[TestCase(2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 0)] // All outside target
+    [TestCase(2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 0)] // All outside target
     public void TestScoreDarts(double x1, double y1, double x2, double y2, double x3, double y3, int expected)
     {
         // Arrange
