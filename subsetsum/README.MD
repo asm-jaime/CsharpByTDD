@@ -1,34 +1,38 @@
 <!-- ENGLISH -->
 # Subset sum task
 
-During the development of a certain task, Sasha decided to generate several new tests. Each test by Sasha must be a natural number not less than l and not greater than r. In addition, a natural number in the test must necessarily consist of the same digits.
+There is an array of n natural numbers, n>=1. Write a function that determines whether a given number can be represented by the sum of numbers from an array (each number can be used once).
 
-For example, the number 999 fits this requirement, but the number 123 does not. What is the maximum number of different tests Sasha can create?
+### Output format
 
-Input data format
+Print one Boolean value - whether the number can be the sum of the array elements.
 
-The only line contains two natural numbers (1<=l,r<=10^18) — restrictions on Sasha's tests.
+### Comment
 
-Note that these numbers will not fit in a 32-bit data type, use 64-bit if necessary
+NP-hard problem
 
-Output format
+### Data Examples
 
-Print one number — the number of tests that Sasha can do.
-
-Comment
-
-Numbers [4,5,6,7] suit Sasha in the first test.
-
-In the second test, all numbers that are multiples of 11, from 11 to 99, are suitable.
-
-Data examples
 Example 1
+
 in:
-4 7
+```
+3 1 8 5 4
+10
+```
 out:
-4
+```
+true
+```
+
 Example 2
+
 in:
-10 100
+```
+3 1 8 5 4
+2
+```
 out:
-9
+```
+false
+```
