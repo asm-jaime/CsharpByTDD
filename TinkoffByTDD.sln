@@ -33,6 +33,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tinkoff.4", "tinkoff.4\tink
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tinkoff.5", "tinkoff.5\tinkoff.5.csproj", "{FB619376-09F9-4CF6-8551-9AC9A354BFBD}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DDB5FDD8-7332-4C1B-A7AD-FB15252DBF91}"
+	ProjectSection(SolutionItems) = preProject
+		README-ru.MD = README-ru.MD
+		README.MD = README.MD
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
