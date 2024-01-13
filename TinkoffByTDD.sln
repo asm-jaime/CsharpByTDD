@@ -35,9 +35,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tinkoff.5", "tinkoff.5\tink
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DDB5FDD8-7332-4C1B-A7AD-FB15252DBF91}"
 	ProjectSection(SolutionItems) = preProject
+		create-new-project-from-template.sh = create-new-project-from-template.sh
 		README-ru.MD = README-ru.MD
 		README.MD = README.MD
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "infected-bynary-tree", "infected-bynary-tree\infected-bynary-tree.csproj", "{05391748-E90C-4679-BE09-3B6A6BDCE992}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "min-steps-str2str", "min-steps-str2str\min-steps-str2str.csproj", "{A0D9AB62-41BC-4675-84D3-59ACC5991138}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,6 +110,14 @@ Global
 		{FB619376-09F9-4CF6-8551-9AC9A354BFBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB619376-09F9-4CF6-8551-9AC9A354BFBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB619376-09F9-4CF6-8551-9AC9A354BFBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05391748-E90C-4679-BE09-3B6A6BDCE992}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05391748-E90C-4679-BE09-3B6A6BDCE992}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05391748-E90C-4679-BE09-3B6A6BDCE992}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05391748-E90C-4679-BE09-3B6A6BDCE992}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0D9AB62-41BC-4675-84D3-59ACC5991138}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0D9AB62-41BC-4675-84D3-59ACC5991138}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0D9AB62-41BC-4675-84D3-59ACC5991138}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0D9AB62-41BC-4675-84D3-59ACC5991138}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
