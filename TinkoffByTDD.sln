@@ -46,6 +46,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "min-steps-str2str", "min-st
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tinkoff-tariff", "tinkoff-tariff\tinkoff-tariff.csproj", "{1041260D-FE6A-4AED-AF1B-3B2A05388324}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tree-palindromic-path", "tree-palindromic-path\tree-palindromic-path.csproj", "{A79A0B4A-CD40-47FC-BA1F-ACF975D9E41F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -124,6 +126,10 @@ Global
 		{1041260D-FE6A-4AED-AF1B-3B2A05388324}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1041260D-FE6A-4AED-AF1B-3B2A05388324}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1041260D-FE6A-4AED-AF1B-3B2A05388324}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A79A0B4A-CD40-47FC-BA1F-ACF975D9E41F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A79A0B4A-CD40-47FC-BA1F-ACF975D9E41F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A79A0B4A-CD40-47FC-BA1F-ACF975D9E41F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A79A0B4A-CD40-47FC-BA1F-ACF975D9E41F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
