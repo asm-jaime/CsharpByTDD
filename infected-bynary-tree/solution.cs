@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 
 namespace infectedbynarytree;
 
@@ -17,75 +15,58 @@ public class TreeNode
     }
 }
 
-public record class NodeData();
-
-
 public class Solution
 {
     public int AmountOfTime(TreeNode root, int start)
     {
-        var maxPath = 0;
-        TreeNode infected = new TreeNode();
-        var infectedPath = 0;
+        Dictionary<int, List<int>> graph = new Dictionary<int, List<int>>();
+        BuildGraph(root, null, graph);
 
+        Queue<int> queue = new Queue<int>();
+        HashSet<int> visited = new HashSet<int>();
+        queue.Enqueue(start);
+        visited.Add(start);
 
-        var stack = new Stack<(TreeNode, List<TreeNode>)>();
-        stack.Push((root, new List<TreeNode>() { root }));
-
-        while (stack.Count() > 0)
+        int minutes = -1;
+        while (queue.Count > 0)
         {
-            var (node, path) = stack.Pop();
+            int size = queue.Count;
+            minutes++;
 
-            if (node.val == start)
+            for (int i = 0; i < size; i++)
             {
-                infected = node;
-                infectedPath = path.Count() - 1;
-                break;
-            }
+                int current = queue.Dequeue();
 
-            if (node.left is not null)
-            {
-                var leftPath = new List<TreeNode>(path) { node.left };
-                stack.Push((node.left, leftPath));
-            }
-
-            if (node.right is not null)
-            {
-                var rightPath = new List<TreeNode>(path) { node.right };
-                stack.Push((node.right, rightPath));
+                foreach (int neighbor in graph[current])
+                {
+                    if (!visited.Contains(neighbor))
+                    {
+                        queue.Enqueue(neighbor);
+                        visited.Add(neighbor);
+                    }
+                }
             }
         }
 
-        stack = new Stack<(TreeNode, List<TreeNode>)>();
-        stack.Push((root, new List<TreeNode>() { root }));
+        return minutes;
+    }
 
-        while (stack.Count() > 0)
+    private void BuildGraph(TreeNode node, TreeNode parent, Dictionary<int, List<int>> graph)
+    {
+        if (node == null) return;
+
+        if (!graph.ContainsKey(node.val))
         {
-            var (node, path) = stack.Pop();
-
-            if (node.left is null && node.right is null && path.Contains(infected))
-            {
-                maxPath = Math.Max(maxPath, Math.Max(path.Count() - 1 - infectedPath, infectedPath));
-            }
-
-            if (node.left is null && node.right is null && path.Contains(infected) is false)
-            {
-                maxPath = Math.Max(maxPath, path.Count() - 1 + infectedPath);
-            }
-
-            if (node.left is not null)
-            {
-                var leftPath = new List<TreeNode>(path) { node.left };
-                stack.Push((node.left, leftPath));
-            }
-
-            if (node.right is not null)
-            {
-                var rightPath = new List<TreeNode>(path) { node.right };
-                stack.Push((node.right, rightPath));
-            }
+            graph[node.val] = new List<int>();
         }
 
-        return maxPath;
+        if (parent != null)
+        {
+            graph[node.val].Add(parent.val);
+            graph[parent.val].Add(node.val);
+        }
+
+        BuildGraph(node.left, node, graph);
+        BuildGraph(node.right, node, graph);
     }
 }
