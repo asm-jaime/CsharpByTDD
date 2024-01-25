@@ -1,6 +1,4 @@
-﻿using NUnit.Framework.Interfaces;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace treepalindromicpath;
@@ -56,7 +54,7 @@ public class Solution
     private bool IsPathPalindromic(List<TreeNode> path)
     {
         var coincidences = path.GroupBy(e => e.val).Select(g => g.Count());
-        if(path.Count % 2 is 0)
+        if (path.Count % 2 is 0)
         {
             return coincidences.All(c => c % 2 is 0);
         }
