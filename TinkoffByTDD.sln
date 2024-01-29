@@ -48,6 +48,18 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tinkoff-tariff", "tinkoff-t
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tree-palindromic-path", "tree-palindromic-path\tree-palindromic-path.csproj", "{A79A0B4A-CD40-47FC-BA1F-ACF975D9E41F}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tinkoff-ds-1", "tinkoff-ds-1\tinkoff-ds-1.csproj", "{A6DE57AC-CBE2-42E9-AA15-C7DB90C26B3F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tinkoff-ds-2", "tinkoff-ds-2\tinkoff-ds-2.csproj", "{D7968A77-7187-4B7E-95E1-F2B1E9F29CC2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tinkoff-ds-3", "tinkoff-ds-3\tinkoff-ds-3.csproj", "{CC66A49D-407F-43E9-90EE-DBCE2139CC54}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tinkoff-ds-4", "tinkoff-ds-4\tinkoff-ds-4.csproj", "{09E98D12-CB3F-4FF2-AF9B-700E56B85D61}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tinkoff-ds-5", "tinkoff-ds-5\tinkoff-ds-5.csproj", "{E6CB45C0-FCA7-4747-8350-9BC6B68DFC15}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "max-subset-sq", "max-subset-sq\max-subset-sq.csproj", "{BDB2B558-7DD1-42A9-8AF4-1192435A3D91}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -130,6 +142,30 @@ Global
 		{A79A0B4A-CD40-47FC-BA1F-ACF975D9E41F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A79A0B4A-CD40-47FC-BA1F-ACF975D9E41F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A79A0B4A-CD40-47FC-BA1F-ACF975D9E41F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6DE57AC-CBE2-42E9-AA15-C7DB90C26B3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6DE57AC-CBE2-42E9-AA15-C7DB90C26B3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6DE57AC-CBE2-42E9-AA15-C7DB90C26B3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6DE57AC-CBE2-42E9-AA15-C7DB90C26B3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7968A77-7187-4B7E-95E1-F2B1E9F29CC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7968A77-7187-4B7E-95E1-F2B1E9F29CC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7968A77-7187-4B7E-95E1-F2B1E9F29CC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7968A77-7187-4B7E-95E1-F2B1E9F29CC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC66A49D-407F-43E9-90EE-DBCE2139CC54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC66A49D-407F-43E9-90EE-DBCE2139CC54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC66A49D-407F-43E9-90EE-DBCE2139CC54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC66A49D-407F-43E9-90EE-DBCE2139CC54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09E98D12-CB3F-4FF2-AF9B-700E56B85D61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09E98D12-CB3F-4FF2-AF9B-700E56B85D61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09E98D12-CB3F-4FF2-AF9B-700E56B85D61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09E98D12-CB3F-4FF2-AF9B-700E56B85D61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6CB45C0-FCA7-4747-8350-9BC6B68DFC15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6CB45C0-FCA7-4747-8350-9BC6B68DFC15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6CB45C0-FCA7-4747-8350-9BC6B68DFC15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6CB45C0-FCA7-4747-8350-9BC6B68DFC15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDB2B558-7DD1-42A9-8AF4-1192435A3D91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDB2B558-7DD1-42A9-8AF4-1192435A3D91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDB2B558-7DD1-42A9-8AF4-1192435A3D91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDB2B558-7DD1-42A9-8AF4-1192435A3D91}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
