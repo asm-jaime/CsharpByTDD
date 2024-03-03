@@ -1,6 +1,7 @@
 <!-- ENGLISH -->
-# try to avoid finally block in try-catch-finally
+# avoid finally
 
+Write a method that will avoid finally block in try-catch-finally
 
 ### Comment
 

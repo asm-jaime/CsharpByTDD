@@ -66,6 +66,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp.closure", "csharp.cl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp.avoid-finally", "csharp.avoid-finally\csharp.avoid-finally.csproj", "{B2126DA9-64E8-4849-A0BA-D4642F4E23EA}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bignumbersum", "bignumbersum\bignumbersum.csproj", "{4C74E7FC-B4D9-4493-99F9-3A1A575DF958}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -184,6 +186,10 @@ Global
 		{B2126DA9-64E8-4849-A0BA-D4642F4E23EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2126DA9-64E8-4849-A0BA-D4642F4E23EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2126DA9-64E8-4849-A0BA-D4642F4E23EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C74E7FC-B4D9-4493-99F9-3A1A575DF958}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C74E7FC-B4D9-4493-99F9-3A1A575DF958}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C74E7FC-B4D9-4493-99F9-3A1A575DF958}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C74E7FC-B4D9-4493-99F9-3A1A575DF958}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
