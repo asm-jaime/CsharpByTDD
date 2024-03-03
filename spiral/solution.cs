@@ -19,16 +19,17 @@ public class Position
     {
         _array = array;
         _len = array.GetLength(0);
-
-        (_last_x, _last_y) = _len switch
-        {
-            1 => (0, 0),
-            2 => (1, 1),
-            3 => (0, 2),
-            var n when n % 2 == 0 => (n / 2 - 2, n / 2),
-            var n => (n / 2, n / 2),
-        };
+        (_last_x, _last_y) = DetermineLastCoordinate(_len);
     }
+
+    private static (int, int) DetermineLastCoordinate(int len) => len switch
+    {
+        1 => (0, 0),
+        2 => (1, 1),
+        3 => (0, 2),
+        var n when n % 2 == 0 => (n / 2 - 2, n / 2),
+        var n => (n / 2, n / 2),
+    };
 
     private void NextDirection()
     {
@@ -124,7 +125,7 @@ public class Solution
         var array = new int[size, size];
         var pointer = new Position(array);
 
-        while(pointer.Next());
+        while(pointer.Next()) ;
 
         return array;
     }
