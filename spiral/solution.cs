@@ -13,41 +13,22 @@ public class Position
     private int _last_x;
     private int _last_y;
 
+    private Direction _direction = Direction.Right;
+
     public Position(int[,] array)
     {
         _array = array;
         _len = array.GetLength(0);
 
-        if(_len == 1)
+        (_last_x, _last_y) = _len switch
         {
-            _last_x = 0;
-            _last_y = 0;
-        }
-        else if(_len == 2)
-        {
-            _last_x = 1;
-            _last_y = 1;
-        }
-        else if(_len == 3)
-        {
-            _last_x = 0;
-            _last_y = 2;
-        }
-        else if(_len % 2 == 0)
-        {
-            _last_x = _len / 2 - 2;
-            _last_y = _len / 2;
-        }
-        else
-        {
-            _last_x = _len / 2;
-            _last_y = _len / 2;
-        }
+            1 => (0, 0),
+            2 => (1, 1),
+            3 => (0, 2),
+            var n when n % 2 == 0 => (n / 2 - 2, n / 2),
+            var n => (n / 2, n / 2),
+        };
     }
-
-    private Direction _direction = Direction.Right;
-
-    public int Current => _array[_y, _x];
 
     private void NextDirection()
     {
@@ -86,6 +67,8 @@ public class Position
 
     private bool IsOutOfRange(int value, int min, int max) => value < min || value > max;
 
+    private bool IsCurrentXYLastXY() => _x == _last_x && _y == _last_y;
+
     public bool Next()
     {
         if(_array.Length == 1)
@@ -121,7 +104,7 @@ public class Position
 
         MarkCurrentAsVisited();
 
-        if(_x == _last_x && _y == _last_y)
+        if(IsCurrentXYLastXY())
         {
             return false;
         }
@@ -141,12 +124,7 @@ public class Solution
         var array = new int[size, size];
         var pointer = new Position(array);
 
-        var tick = 0;
-        while(pointer.Next())
-        {
-            tick++;
-            if(tick is 100) break;
-        }
+        while(pointer.Next());
 
         return array;
     }
