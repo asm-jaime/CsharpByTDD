@@ -125,7 +125,7 @@ public class Solution
         var array = new int[size, size];
         var pointer = new Position(array);
 
-        while(pointer.Next()) ;
+        while(pointer.Next());
 
         return array;
     }
