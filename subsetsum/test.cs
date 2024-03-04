@@ -13,9 +13,8 @@ namespace subsum
         public void TestCanSumToTarget(int[] arr, int target, bool expected)
         {
             // Arrange
-            Solution solution = new Solution();
             // Act
-            bool result = solution.IsSumPassable(arr, target);
+            bool result = Solution.IsSumPassable(arr, target);
             // Assert
             Assert.AreEqual(expected, result);
         }

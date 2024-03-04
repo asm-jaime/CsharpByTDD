@@ -4,10 +4,10 @@ namespace c
 {
     public class Solution
     {
-        public int GetMinStairClimbed(int numEmployee, int timeTillLeave, int[] floors, int leavingEmployee)
+        public static int GetMinStairClimbed(int _, int timeTillLeave, int[] floors, int leavingEmployee)
         {
             int timeDownToLeaveE = floors[leavingEmployee - 1] - floors[0];
-            int timeUpToLeaveE = floors[floors.Length - 1] - floors[leavingEmployee - 1];
+            int timeUpToLeaveE = floors[^1] - floors[leavingEmployee - 1];
             if (timeTillLeave >= timeDownToLeaveE) return timeUpToLeaveE + timeDownToLeaveE;
             if (timeTillLeave >= timeUpToLeaveE) return timeDownToLeaveE + timeUpToLeaveE;
 

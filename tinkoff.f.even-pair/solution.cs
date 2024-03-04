@@ -4,12 +4,12 @@ namespace f;
 
 public class Solution
 {
-    private void Swap(int[] heights, int from, int to)
+    private static void Swap(int[] heights, int from, int to)
     {
         (heights[from], heights[to]) = (heights[to], heights[from]);
     }
 
-    private (int, int) GetGoodEvenEvenPair(int[] heights)
+    private static (int, int) GetGoodEvenEvenPair(int[] heights)
     {
         int first = -1;
         int second = -1;
@@ -27,7 +27,7 @@ public class Solution
         return (second, first);
     }
 
-    private (int, int) GetBadEvenOddOrOddEvenPair(int[] heights)
+    private static (int, int) GetBadEvenOddOrOddEvenPair(int[] heights)
     {
         int oddId = -1;
         int evenId = -1;
@@ -48,7 +48,7 @@ public class Solution
         return (oddId, evenId);
     }
 
-    private bool IsHereMoreForSwap(int[] heights)
+    private static bool IsHereMoreForSwap(int[] heights)
     {
 
         for (int i = 0; i < heights.Length; i++)
@@ -61,7 +61,7 @@ public class Solution
         return false;
     }
 
-    public int[] SwapPositions(int[] heights)
+    public static int[] SwapPositions(int[] heights)
     {
         var result = new int[] { -1, -1 };
         // Get pair index for swap

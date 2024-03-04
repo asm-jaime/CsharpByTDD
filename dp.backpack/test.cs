@@ -4,19 +4,13 @@ namespace dpbackpack;
 
 
 [TestFixture]
-public class SolutionTests
+public class DPBackpackTaskTest
 {
     [Test]
-    [TestCase(2, 2, 4)]
-    [TestCase(0, 0, 0)]
-    public void TestCalculate(int a, int b, int expected)
+    public static void ExampleTests()
     {
-        // Arrange
-        Solution solution = new Solution();
-        // Act
-        int total = solution.Calculate(a, b);
-        // Assert
-        Assert.AreEqual(expected, total);
+        Assert.That(DPBackpackTask.PackBagpack(new int[] { 15, 10, 9, 5 }, new int[] { 1, 5, 3, 4 }, 8), Is.EqualTo(29));
+        Assert.That(DPBackpackTask.PackBagpack(new int[] { 20, 5, 10, 40, 15, 25 }, new int[] { 1, 2, 3, 8, 7, 4 }, 10), Is.EqualTo(60));
     }
 }
 

@@ -12,10 +12,8 @@ public class TextAnalyzerTests
     public void TestAnalyzeText(string text, int expectedMin, int expectedMax)
     {
         // Arrange
-        TextAnalyzer analyzer = new TextAnalyzer();
-        
         // Act
-        var (minLength, maxLength) = analyzer.AnalyzeText(text);
+        var (minLength, maxLength) = TextAnalyzer.AnalyzeText(text);
         
         // Assert
         Assert.AreEqual(expectedMin, minLength);

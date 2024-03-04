@@ -6,9 +6,9 @@ namespace dpsumofdivisors;
 
 public class ThirdPow
 {
-    private static HashSet<long> _primeNumbers;
+    private static readonly HashSet<long> _primeNumbers;
 
-    private static Dictionary<long, Dictionary<long, long>> _numberDivisors = new Dictionary<long, Dictionary<long, long>>();
+    private static readonly Dictionary<long, Dictionary<long, long>> _numberDivisors = new();
 
     public static HashSet<long> GetPrimesByEratosfen(long maxNumber)
     {
@@ -22,7 +22,7 @@ public class ThirdPow
         {
             if(isPrimeArray[number])
             {
-                for(var step = number * number; step <= maxNumber; step = step + number)
+                for(var step = number * number; step <= maxNumber; step += number)
                 {
                     isPrimeArray[step] = false;
                 }
@@ -45,7 +45,7 @@ public class ThirdPow
         long result = 1;
         foreach(var primeFactor in primeFactors)
         {
-            result = result * (((int)Math.Pow(primeFactor.Key, primeFactor.Value + 1) - 1) / (primeFactor.Key - 1));
+            result *= (((int)Math.Pow(primeFactor.Key, primeFactor.Value + 1) - 1) / (primeFactor.Key - 1));
         }
 
         return result;
@@ -102,7 +102,7 @@ public class ThirdPow
                 if(result.ContainsKey(divisor)) result[divisor]++;
                 else result[divisor] = 1;
 
-                number = number / divisor;
+                number /= divisor;
             }
         }
 

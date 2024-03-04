@@ -10,7 +10,7 @@ public static class ClosestDay
         listOfDaysOfWeek
             .Select(day => new
             {
-                day = day,
+                day,
                 gap = value <= day ? day - value : (int)DayOfWeek.Saturday + (day - value),
             })
             .OrderBy(dayGap => dayGap.gap).First().day;

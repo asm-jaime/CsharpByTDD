@@ -6,7 +6,7 @@ namespace tinkoff3;
 
 public class Solution
 {
-    public double CalculateHighwayHeight(int[] heights)
+    public static double CalculateHighwayHeight(int[] heights)
     {
         var areas = new List<double>();
         for (int i = 1; i < heights.Length; ++i)
@@ -14,6 +14,6 @@ public class Solution
             var area = Math.Max(heights[i - 1], heights[i]) - Math.Abs(heights[i] - heights[i - 1]) / 2.0;
             areas.Add(area);
         }
-        return areas.Sum() / areas.Count();
+        return areas.Sum() / areas.Count;
     }
 }

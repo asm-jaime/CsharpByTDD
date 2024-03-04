@@ -6,7 +6,7 @@ namespace numbereratosfen;
 
 public class NumberEratosfen
 {
-    private List<int> _primes;
+    private readonly List<int> _primes;
 
     public NumberEratosfen(int MaxNumber)
     {
@@ -54,9 +54,9 @@ public class NumberEratosfen
 public static class Divisors
 {
 
-    private static HashSet<int> _primeNumbers = GetPrimesByEratosfen(100000);
+    private static readonly HashSet<int> _primeNumbers = GetPrimesByEratosfen(100000);
 
-    private static Dictionary<int, Dictionary<int, int>> _numberDivisors = new Dictionary<int, Dictionary<int, int>>();
+    // private static readonly Dictionary<int, Dictionary<int, int>> _numberDivisors = new();
 
     private static HashSet<int> GetPrimesByEratosfen(int maxNumber)
     {
@@ -71,7 +71,7 @@ public static class Divisors
         {
             if(isPrimeArray[number])
             {
-                for(var step = number * number; step <= maxNumber; step = step + number)
+                for(var step = number * number; step <= maxNumber; step += number)
                 {
                     isPrimeArray[step] = false;
                 }
@@ -116,7 +116,7 @@ public static class Divisors
                 if(map.ContainsKey(divisor)) map[divisor]++;
                 else map[divisor] = 1;
 
-                number = number / divisor;
+                number /= divisor;
             }
         }
 
@@ -130,8 +130,7 @@ public static class Divisors
 
     public static int[] GetAllDivisors(int n)
     {
-        int t = 0;
-        List<int> result = new List<int>();
+        List<int> result = new();
         for(int i = 1; i <= Math.Sqrt(n); i++)
         {
             if(n % i == 0)
@@ -203,7 +202,9 @@ public class NumberTheory
         return num1;
     }
     */
-    private HashSet<long> GetPrimesByEratosfen(long maxNumber)
+
+    /*
+    private static HashSet<long> GetPrimesByEratosfen(long maxNumber)
     {
         var isPrimeArray = new bool[maxNumber + 1];
         for(var i = 0; i < maxNumber + 1; i++) isPrimeArray[i] = true;
@@ -215,7 +216,7 @@ public class NumberTheory
         {
             if(isPrimeArray[number])
             {
-                for(var step = number * number; step <= maxNumber; step = step + number)
+                for(var step = number * number; step <= maxNumber; step += number)
                 {
                     isPrimeArray[step] = false;
                 }
@@ -227,6 +228,7 @@ public class NumberTheory
             .Where(number => number > 0)
             .ToHashSet();
     }
+    */
 }
 
 public static class ChineseRemainderTheorem

@@ -8,7 +8,7 @@ namespace infectedbynarytree;
 [TestFixture]
 public class SolutionTests
 {
-    private TreeNode CreateTree(int?[] arr)
+    private static TreeNode CreateTree(int?[] arr)
     {
         if (arr == null || arr.Length == 0) return null;
 
@@ -47,7 +47,7 @@ public class SolutionTests
         int?[] treeValues = JsonConvert.DeserializeObject<int?[]>(jsonTreeValues);
 
         // Arrange
-        Solution solution = new Solution();
+        var solution = new Solution();
         TreeNode root = CreateTree(treeValues);
 
         // Act

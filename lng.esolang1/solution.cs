@@ -9,7 +9,7 @@ public class EsolangEasy
     public static string MyFirstInterpreter(string code)
     {
         _cell = 0;
-        StringBuilder result = new StringBuilder();
+        StringBuilder result = new();
         foreach(var letter in code)
         {
             if(letter.Equals('+')) _cell++;

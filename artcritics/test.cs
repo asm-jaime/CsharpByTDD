@@ -12,9 +12,8 @@ public class SolutionTests
     public void TestCalculateBonus(int n, int[] scores, int expected)
     {
         // Arrange
-        var solution = new Solution();
         // Act
-        int total = solution.CalculateBonus(n, scores);
+        int total = Solution.CalculateBonus(n, scores);
         // Assert
         Assert.AreEqual(expected, total);
     }

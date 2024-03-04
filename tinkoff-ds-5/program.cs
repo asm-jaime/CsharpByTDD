@@ -4,7 +4,7 @@ namespace tinkoffds5;
 
 public class Solution
 {
-    public int Calculate(int width, int height)
+    public static int Calculate(int width, int height)
     {
         int lcm = Math.Abs(width / GreatestCommonDivisor(width, height) * height);
 
@@ -19,7 +19,7 @@ public class Solution
         return 0;
     }
 
-    private int GreatestCommonDivisor(int a, int b)
+    private static int GreatestCommonDivisor(int a, int b)
     {
         a = Math.Abs(a);
         b = Math.Abs(b);
@@ -35,15 +35,14 @@ public class Solution
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main(string[] _)
     {
         int width, height;
         string[] input = Console.ReadLine().Split();
         width = int.Parse(input[0]);
         height = int.Parse(input[1]);
 
-        Solution solution = new Solution();
-        int result = solution.Calculate(width, height);
+        int result = Solution.Calculate(width, height);
 
         Console.WriteLine(result);
     }

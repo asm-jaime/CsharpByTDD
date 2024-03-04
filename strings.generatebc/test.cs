@@ -7,9 +7,9 @@ namespace stringsgeneratebc;
 [TestFixture]
 public class GenerateBCTest
 {
-    private string[] seps = new string[] { " : ", " / ", " * ", " > ", " + ", " * ", " * ", " # ", " >>> ", " % " };
+    private readonly string[] seps = new string[] { " : ", " / ", " * ", " > ", " + ", " * ", " * ", " # ", " >>> ", " % " };
 
-    private string[] urls = new string[] {
+    private readonly string[] urls = new string[] {
             "mysite.com/pictures/holidays.html",
             "www.codewars.com/users/GiacomoSorbi?ref=CodeWars",
             "www.microsoft.com/docs/index.htm#top",
@@ -22,7 +22,7 @@ public class GenerateBCTest
             "http://www.agcpartners.co.uk"
         };
 
-    private string[] anss = new string[] {
+    private readonly string[] anss = new string[] {
             "<a href=\"/\">HOME</a> : <a href=\"/pictures/\">PICTURES</a> : <span class=\"active\">HOLIDAYS</span>",
             "<a href=\"/\">HOME</a> / <a href=\"/users/\">USERS</a> / <span class=\"active\">GIACOMOSORBI</span>",
             "<a href=\"/\">HOME</a> * <span class=\"active\">DOCS</span>",

@@ -8,39 +8,39 @@ namespace numbergcd;
 [TestFixture]
 public static class CycleTests
 {
-    private static void dotest(int n, int expected)
+    private static void Dotest(int n, int expected)
     {
         Console.WriteLine("n: {0}, expected: {1}", n, expected);
         Assert.AreEqual(expected, Cycle.Running(n));
     }
 
     [Test]
-    public static void fixedtest()
+    public static void Fixedtest()
     {
         Console.WriteLine("Fixed Tests");
-        dotest(3, 1);
-        dotest(33, 2);
-        dotest(18118, -1);
-        dotest(65, -1);
-        dotest(197, 98);
+        Dotest(3, 1);
+        Dotest(33, 2);
+        Dotest(18118, -1);
+        Dotest(65, -1);
+        Dotest(197, 98);
     }
 
     [Test]
     public static void Test69()
     {
-        dotest(69, 22);
+        Dotest(69, 22);
     }
 
     [Test]
     public static void Test133771()
     {
-        dotest(133771, 6080);
+        Dotest(133771, 6080);
     }
 
     [Test]
-    public static void bigTest()
+    public static void BigTest()
     {
-        dotest(124981, 124980);
+        Dotest(124981, 124980);
     }
 
     [Test]

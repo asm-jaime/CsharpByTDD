@@ -5,7 +5,7 @@ namespace tinkoffds4;
 
 public class Solution
 {
-    public int CalculateScans(int L, int[] particleCoords)
+    public static int CalculateScans(int L, int[] particleCoords)
     {
         int scans = 0;
         int currentEnd = particleCoords[0] + L;
@@ -25,7 +25,7 @@ public class Solution
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main(string[] _)
     {
         string[] firstLine = Console.ReadLine().Split();
         int n = int.Parse(firstLine[0]);
@@ -38,8 +38,7 @@ class Program
             particleCoords[i] = int.Parse(particlesLine[i]);
         }
 
-        Solution solution = new Solution();
-        int totalScans = solution.CalculateScans(L, particleCoords);
+        int totalScans = Solution.CalculateScans(L, particleCoords);
 
         Console.WriteLine(totalScans);
     }

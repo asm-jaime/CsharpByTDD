@@ -18,7 +18,7 @@ public class TreeNode
 
 public class Solution
 {
-    public int PseudoPalindromicPaths(TreeNode root)
+    public static int PseudoPalindromicPaths(TreeNode root)
     {
         var stack = new Stack<(TreeNode, List<TreeNode>)>();
         stack.Push((root, new List<TreeNode>() { root }));
@@ -51,7 +51,7 @@ public class Solution
         return result;
     }
 
-    private bool IsPathPalindromic(List<TreeNode> path)
+    private static bool IsPathPalindromic(List<TreeNode> path)
     {
         var coincidences = path.GroupBy(e => e.val).Select(g => g.Count());
         if (path.Count % 2 is 0)
@@ -61,7 +61,7 @@ public class Solution
         else
         {
             var isOddOnce = coincidences.Where(c => c % 2 is not 0).Count() is 1;
-            //var isEvenAllExceptOneOdd = coincidences.Where(c => c % 2 is 0).Count() + 1 == coincidences.Count();
+            //var isEvenAllExceptOneOdd = coincidences.Where(c => c % 2 is 0).Count + 1 == coincidences.Count;
             return isOddOnce;
         }
     }

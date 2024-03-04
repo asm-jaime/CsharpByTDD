@@ -16,7 +16,7 @@ public class Program
 
         var solution = new Solution();
         // Calculating bonus score
-        int totalBonus = solution.CalculateBonus(n, scores);
+        int totalBonus = Solution.CalculateBonus(n, scores);
 
         // Printing result
         Console.WriteLine(totalBonus);

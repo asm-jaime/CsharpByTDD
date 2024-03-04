@@ -10,7 +10,7 @@ public static class ThirdPowTests
 {
 
     //[Test]
-    public static void test1()
+    public static void Test1()
     {
         Assert.AreEqual(6, ThirdPow.IntCubeSumDiv(1));
         Assert.AreEqual(28, ThirdPow.IntCubeSumDiv(2));
@@ -21,7 +21,7 @@ public static class ThirdPowTests
     }
 
     [Test]
-    public static void test3()
+    public static void Test3()
     {
 
         Assert.AreEqual(6, ThirdPow.IntCubeSumDiv(1));
@@ -32,24 +32,26 @@ public static class ThirdPowTests
         //Assert.AreEqual(81840, ThirdPow.IntCubeSumDiv(150));
     }
 
-    //[Test]
-    public static void test2()
+    [Test]
+    public static void Test2()
     {
+        /*
         var original = new List<long>() { 1, 2, 3, 6 };
         var divisors = ThirdPow.GetAllDivisors(6);
+        */
         //divisors.Sort();
         //original.SequenceEqual(divisors).Should().Be(true);
     }
     //[Test]
-    public static void testEratosfen()
+    public static void TestEratosfen()
     {
-        ThirdPow.GetPrimesByEratosfen(100000).Count().Should().Be(4);
+        ThirdPow.GetPrimesByEratosfen(100000).Count.Should().Be(4);
     }
     //[Test]
-    public static void testPrimeDivisors()
+    public static void TestPrimeDivisors()
     {
         //ThirdPow.GetAllPrimeDivisors(8)[2].Should().Be(3);
-        //ThirdPow.GetAllPrimeDivisors(0).Count().Should().Be(0);
+        //ThirdPow.GetAllPrimeDivisors(0).Count.Should().Be(0);
         (ThirdPow.GetSumOfPrimeFactors(ThirdPow.GetAllPrimeFactors(6))).Should().Be(12);
     }
 }

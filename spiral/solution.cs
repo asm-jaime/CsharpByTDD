@@ -7,11 +7,11 @@ public class Position
     private int _x;
     private int _y;
 
-    private int[,] _array;
+    private readonly int[,] _array;
 
-    private int _len;
-    private int _last_x;
-    private int _last_y;
+    private readonly int _len;
+    private readonly int _last_x;
+    private readonly int _last_y;
 
     private Direction _direction = Direction.Right;
 
@@ -66,7 +66,7 @@ public class Position
         _array[_y, _x] = 1;
     }
 
-    private bool IsOutOfRange(int value, int min, int max) => value < min || value > max;
+    private static bool IsOutOfRange(int value, int min, int max) => value < min || value > max;
 
     private bool IsCurrentXYLastXY() => _x == _last_x && _y == _last_y;
 

@@ -11,9 +11,8 @@ namespace b
         public void TestGetMinimalCrosses(int pieces, int expectedCrosses)
         {
             // Arrange
-            Solution solution = new Solution();
             // Act
-            int actualCrosses = solution.GetMinimalCrosses(pieces);
+            int actualCrosses = Solution.GetMinimalCrosses(pieces);
             // Assert
             Assert.AreEqual(expectedCrosses, actualCrosses);
         }

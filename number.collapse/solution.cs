@@ -4,7 +4,7 @@ namespace numbercollapse;
 
 public class RangeCollapse
 {
-    public int Descriptions(int[] arr)
+    public static int Descriptions(int[] arr)
     {
         int result = 1;
         int currentGroup = 0;
@@ -16,12 +16,12 @@ public class RangeCollapse
             }
             else
             {
-                result = result * (int)Math.Pow(2, currentGroup);
+                result *= (int)Math.Pow(2, currentGroup);
                 currentGroup = 0;
             }
 
         }
-        result = result * (int)Math.Pow(2, currentGroup);
+        result *= (int)Math.Pow(2, currentGroup);
 
         return result;
     }

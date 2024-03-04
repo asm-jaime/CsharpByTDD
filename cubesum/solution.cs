@@ -4,16 +4,17 @@ namespace cubesum;
 
 public class CubeSum
 {
-    private static bool isDecimalPartExist(double number) =>
-      number - Math.Truncate(number) > 0 ? true : false;
+    // private static bool isDecimalPartExist(double number) => number - Math.Truncate(number) > 0;
 
+    /*
     private static bool isSquareable(long number)
     {
         long sqrt = (long)Math.Sqrt(number);
         return sqrt * sqrt == number;
     }
+    */
 
-    public static long findNb(long m)
+    public static long FindNb(long m)
     {
         // m = n^2*(n+1)^2/4
         // sqrt(m) = n*(n+1)/2

@@ -2,7 +2,7 @@
 {
     public class Solution
     {
-        public bool IsSumPassable(int[] nums, int target)
+        public static bool IsSumPassable(int[] nums, int target)
         {
             bool[,] dp = new bool[nums.Length, target + 1];
 

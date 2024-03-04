@@ -5,7 +5,7 @@ namespace numbergcd;
 
 class Cycle
 {
-    private static int gcd(int num1, int num2)
+    private static int Gcd(int num1, int num2)
     {
         int Remainder;
 
@@ -19,16 +19,16 @@ class Cycle
         return num1;
     }
 
-    static int phi(int n)
+    static int Phi(int n)
     {
         int result = 1;
         for(int i = 2; i < n; i++)
-            if(gcd(i, n) == 1)
+            if(Gcd(i, n) == 1)
                 result++;
         return result;
     }
 
-    static int fastPhi(int n)
+    static int FastPhi(int n)
     {
         int result = n;
         for(int p = 2; p * p <= n; ++p)
@@ -48,7 +48,7 @@ class Cycle
     //(number^degree) mod divider
     private static int GetModDivInNumberPowDegree(int number, int degree, int divider)
     {
-        number = number % divider;
+        number %= divider;
         int result = 1;
 
         for(int i = 0; i < degree; ++i)
@@ -62,8 +62,8 @@ class Cycle
 
     public static int GetModDivInNumberPowDegreeByEiler(int number, int degree, int divider)
     {
-        int eilerPhi = phi(divider);
-        degree = degree % eilerPhi;
+        int eilerPhi = Phi(divider);
+        degree %= eilerPhi;
         int result = (int)Math.Pow(number, degree) % divider;
 
         return result;
@@ -71,7 +71,7 @@ class Cycle
 
     public static int GetModDivInNumberPowDegreeByPredefinedPhi(int number, int degree, int divider, int phi)
     {
-        degree = degree % phi;
+        degree %= phi;
         int result = (int)Math.Pow(number, degree) % divider;
 
         return result;
@@ -81,9 +81,9 @@ class Cycle
     {
         if(n == 3) return 1;
 
-        if(gcd(10, n) != 1) return -1;
+        if(Gcd(10, n) != 1) return -1;
 
-        int phi_n = fastPhi(n);
+        int phi_n = FastPhi(n);
 
         if(n - phi_n == 1) return phi_n;
 
@@ -116,7 +116,7 @@ class Cycle
             var floor = (int)Math.Floor(remain / (double)number);
             if(floor == 0)
             {
-                remain = remain * 10;
+                remain *= 10;
             }
             else
             {

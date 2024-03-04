@@ -11,10 +11,10 @@ public class DynamicMethodUsingMSILSampleTests
     [Test]
     public void MulBy2AndAdd1_CastedToFuncOfIntntAndInt_DoesNotThrow()
     {
-        TestDelegate action = () =>
+        static void action()
         {
             var x = (Func<int, int>)DynamicMethodUsingMSIL.MulBy2AndAdd1().CreateDelegate(typeof(Func<int, int>));
-        };
+        }
 
         Assert.DoesNotThrow(action);
     }
@@ -30,5 +30,5 @@ public class DynamicMethodUsingMSILSampleTests
         Assert.That(result, Is.EqualTo(MulBy2AndAdd1CSharp(2)));
     }
 
-    private int MulBy2AndAdd1CSharp(int n) => 2 * n + 1;
+    private static int MulBy2AndAdd1CSharp(int n) => 2 * n + 1;
 }

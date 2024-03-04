@@ -12,7 +12,6 @@ public class BigNumberSumTest
     [TestCase("999999999", "1", "1000000000")]
     public void TestSum(string number1, string number2, string expectedSum)
     {
-        var solution = new Solution();
-        solution.Add(number1, number2).Should().Be(expectedSum);
+        Solution.Add(number1, number2).Should().Be(expectedSum);
     }
 }

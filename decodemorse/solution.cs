@@ -7,7 +7,7 @@ namespace decodemorse;
 
 public class MorseCodeDecoder
 {
-    private static Dictionary<string, string> MorseCode = new Dictionary<string, string>()
+    private static readonly Dictionary<string, string> MorseCode = new ()
         {
             {"", " " },
             {"-----", "0"}, {".----", "1"}, {"..---", "2"}, {"...--", "3"}, {"....-", "4"},
@@ -59,10 +59,11 @@ public class MorseCodeDecoder
             {"...---...", "SOS"}
         };
 
-    private static readonly Dictionary<string, string> BitsMorse = new Dictionary<string, string> {
-            { "1", "." },
-            { "111", "-" }
-        };
+    private static readonly Dictionary<string, string> BitsMorse = new()
+    {
+        { "1", "." },
+        { "111", "-" }
+    };
 
     private static string BitsTrim(string bits)
     {
@@ -80,9 +81,9 @@ public class MorseCodeDecoder
 
     private static (string[], string[]) GetUnitsNulls(string bitStream)
     {
-        List<string> nulls = new List<string>();
-        List<string> units = new List<string>();
-        StringBuilder buff = new StringBuilder();
+        List<string> nulls = new();
+        List<string> units = new();
+        StringBuilder buff = new();
         buff.Append(bitStream[0]);
 
         for(int i = 1; i < bitStream.Length; ++i)
@@ -111,11 +112,11 @@ public class MorseCodeDecoder
         return (nulls.ToArray(), units.ToArray());
     }
 
-    public static IEnumerable<string> decodeBitsAdvanced(string bitStream)
+    public static IEnumerable<string> DecodeBitsAdvanced(string bitStream)
     {
-        StringBuilder morseCode = new StringBuilder();
+        StringBuilder morseCode = new();
 
-        if(string.IsNullOrEmpty(bitStream) || bitStream.Contains("1").Equals(false))
+        if(string.IsNullOrEmpty(bitStream) || bitStream.Contains('1').Equals(false))
             yield return morseCode.ToString();
 
         bitStream = BitsTrim(bitStream);
@@ -189,7 +190,7 @@ public class MorseCodeDecoder
         }
     }
 
-    public static string decodeMorse(IEnumerable<string> morseCodes)
+    public static string DecodeMorse(IEnumerable<string> morseCodes)
     {
 
         foreach(var morseCode in morseCodes)

@@ -5,10 +5,10 @@ namespace lngassemblerinterpreter;
 
 public class Executor
 {
-    private Dictionary<string, int> _state = new Dictionary<string, int>();
-    private Dictionary<string, int> _labels = new Dictionary<string, int>();
-    private Stack<int> _callstack = new Stack<int>();
-    private string[] _program = new string[] { };
+    private readonly Dictionary<string, int> _state = new();
+    private readonly Dictionary<string, int> _labels = new();
+    private readonly Stack<int> _callstack = new();
+    private readonly string[] _program = System.Array.Empty<string>();
 
     private bool _processing = true;
     private bool _isCmpEquals = false;
@@ -17,7 +17,7 @@ public class Executor
 
     private bool _executionError = false;
 
-    private StringBuilder _result = new StringBuilder();
+    private readonly StringBuilder _result = new();
 
     private int GetValue(string operand)
     {
@@ -28,7 +28,7 @@ public class Executor
         return value;
     }
 
-    private (string[], Dictionary<string, int>) ParseText(string programText)
+    private static (string[], Dictionary<string, int>) ParseText(string programText)
     {
         var program = new List<string>();
         var labels = new Dictionary<string, int>();
@@ -58,13 +58,13 @@ public class Executor
         (_program, _labels) = ParseText(programText);
     }
 
-    private string[] GetArguments(string line)
+    private static string[] GetArguments(string line)
     {
         var result = new List<string>();
 
         if(string.IsNullOrEmpty(line)) return result.ToArray();
 
-        StringBuilder buff = new StringBuilder();
+        var buff = new StringBuilder();
         bool stringFlag = false;
         foreach(var letter in line)
         {
@@ -93,7 +93,7 @@ public class Executor
         return result.ToArray();
     }
 
-    private (string, string[]) ParseInstruction(string programLine)
+    private static (string, string[]) ParseInstruction(string programLine)
     {
         var firstWordIndex = programLine.IndexOf(' ');
         if(firstWordIndex < 0)
@@ -101,8 +101,8 @@ public class Executor
             return (programLine, null);
         }
         var wordLength = firstWordIndex;
-        var instruction = programLine.Substring(0, wordLength);
-        var arguments = GetArguments(programLine.Substring(wordLength, programLine.Length - wordLength));
+        var instruction = programLine[..wordLength];
+        var arguments = GetArguments(programLine[wordLength..]);
 
         return (instruction, arguments);
     }
@@ -236,7 +236,7 @@ public class Executor
         }
     }
 
-    public string Interprete(string programText)
+    public string Interprete()
     {
         while(_processing)
         {
@@ -257,6 +257,6 @@ public static class AssemblerInterpreter
     public static string Interpret(string programText)
     {
         var executor = new Executor(programText);
-        return executor.Interprete(programText);
+        return executor.Interprete();
     }
 }

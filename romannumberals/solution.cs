@@ -13,27 +13,24 @@ public class RomanTransformer
     private string Current { get => RomanDigits[_currentIndex]; }
     private string Previous { get => RomanDigits[_currentIndex - 1]; }
     private string Next { get => RomanDigits[_currentIndex + 1]; }
-    private void Proceed() => _currentIndex = _currentIndex + 2;
+    private void Proceed() => _currentIndex += 2;
 
     public string GetRoman(char digit)
     {
-        string result = "";
-
-        switch(digit)
+        string result = digit switch
         {
-            case '0': result = ""; break;
-            case '1': result = $"{Previous}"; break;
-            case '2': result = $"{Previous}{Previous}"; break;
-            case '3': result = $"{Previous}{Previous}{Previous}"; break;
-            case '4': result = $"{Previous}{Current}"; break;
-            case '5': result = $"{Current}"; break;
-            case '6': result = $"{Current}{Previous}"; break;
-            case '7': result = $"{Current}{Previous}{Previous}"; break;
-            case '8': result = $"{Current}{Previous}{Previous}{Previous}"; break;
-            case '9': result = $"{Previous}{Next}"; break;
-            default: result = ""; break;
-        }
-
+            '0' => "",
+            '1' => $"{Previous}",
+            '2' => $"{Previous}{Previous}",
+            '3' => $"{Previous}{Previous}{Previous}",
+            '4' => $"{Previous}{Current}",
+            '5' => $"{Current}",
+            '6' => $"{Current}{Previous}",
+            '7' => $"{Current}{Previous}{Previous}",
+            '8' => $"{Current}{Previous}{Previous}{Previous}",
+            '9' => $"{Previous}{Next}",
+            _ => "",
+        };
         Proceed();
 
         return result;
@@ -42,7 +39,7 @@ public class RomanTransformer
 
 public static class NumberTransformer
 {
-    public static readonly Dictionary<string, int> RomanToNumber = new Dictionary<string, int>()
+    public static readonly Dictionary<string, int> RomanToNumber = new()
         {
             { "I", 1}, { "O", 4}, { "V", 5},
             { "P", 9}, { "X", 10}, { "Q", 40},
@@ -50,7 +47,7 @@ public static class NumberTransformer
             { "S", 400}, { "D", 500}, { "T", 900},
             { "M", 1000}
         };
-    private static readonly Dictionary<string, string> DualRomanToSingleRoman = new Dictionary<string, string>()
+    private static readonly Dictionary<string, string> DualRomanToSingleRoman = new()
         {
             { "IV",  "O"}, { "IX",  "P"}, { "XL",  "Q"},
             { "XC",  "R"}, { "CD",  "S"}, { "CM" , "T"},

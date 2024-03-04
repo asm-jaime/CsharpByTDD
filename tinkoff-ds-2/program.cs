@@ -4,7 +4,7 @@ namespace tinkoffds2;
 
 public class Solution
 {
-    public string Calculate(int a, int b, int c, int d)
+    public static string Calculate(int a, int b, int c, int d)
     {
         if (c == 0 && d != 0) return "NO";
 
@@ -28,15 +28,14 @@ public class Solution
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main(string[] _)
     {
         int a = int.Parse(Console.ReadLine());
         int b = int.Parse(Console.ReadLine());
         int c = int.Parse(Console.ReadLine());
         int d = int.Parse(Console.ReadLine());
 
-        Solution solution = new Solution();
-        string result = solution.Calculate(a, b, c, d);
+        string result = Solution.Calculate(a, b, c, d);
 
         Console.WriteLine(result);
     }

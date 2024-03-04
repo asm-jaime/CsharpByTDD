@@ -184,8 +184,8 @@ public class Car : ICar
     private const double DefaultFuelLevel = 20;
 
     private const int DefaultSpeed = 0;
-    private const int SpeedMin = 0;
-    private const int SpeedMax = 250;
+    //private const int SpeedMin = 0;
+    //private const int SpeedMax = 250;
 
     private const int DefaultFreeWheel = 1;
 
@@ -199,15 +199,15 @@ public class Car : ICar
     private const double IdleFuelConsumption = 0.0003;
 
     public IFuelTankDisplay fuelTankDisplay;
-    private IEngine engine;
-    private IFuelTank fuelTank;
+    private readonly IEngine engine;
+    private readonly IFuelTank fuelTank;
     public IDrivingInformationDisplay drivingInformationDisplay; // car #2
-    private IDrivingProcessor drivingProcessor; // car #2
+    private readonly IDrivingProcessor drivingProcessor; // car #2
 
     public ISensor sensor;
 
     public IOnBoardComputerDisplay onBoardComputerDisplay; // car #3
-    private IOnBoardComputer onBoardComputer; // car #3
+    private readonly IOnBoardComputer onBoardComputer; // car #3
 
     public Car()
     {
@@ -411,9 +411,9 @@ public class Car : ICar
 
 public class OnBoardComputer : IOnBoardComputer // car #3
 {
-    private IDrivingProcessor _processor;
+    private readonly IDrivingProcessor _processor;
     //private IFuelTank _fuelTank;
-    private ISensor _sensor;
+    private readonly ISensor _sensor;
 
 
     public OnBoardComputer(IDrivingProcessor drivingProcessor, ISensor sensor)
@@ -456,27 +456,27 @@ public class OnBoardComputer : IOnBoardComputer // car #3
         get
         {
             // consumption by time if less 100, and by distance if more
-            if(_sensor.ConsumptionHistory.Count() < 100)
+            if(_sensor.ConsumptionHistory.Count < 100)
             {
                 /*
-                var size = _sensor.ConsumptionHistory.Count();
+                var size = _sensor.ConsumptionHistory.Count;
                 var consumes = _sensor.ConsumptionByDistanceHistory.Take(100).ToList();
                 var cunsumesTotal = (4.8*(100 - size)/100 + 3600*consumes.Sum());
                 var result = (int)(Math.Round(100*_sensor.FuelLevel/cunsumesTotal));
-                var size = _sensor.ConsumptionHistory.Count();
+                var size = _sensor.ConsumptionHistory.Count;
                 */
                 var consumesBuiltIn100kmH = 4.8;
                 var consumesBuiltInKmH = consumesBuiltIn100kmH / 100.0;
 
-                var size = _sensor.ConsumptionHistory.Count();
+                var size = _sensor.ConsumptionHistory.Count;
                 var consumes = _sensor.ConsumptionByDistanceHistory.Take(100).ToList();
                 var consumesKmH = 10 * 3.6 * consumes.Sum();
 
                 var cunsumesTotalKmH = (consumesBuiltInKmH * (100 - size) / 100 + consumesKmH);
 
                 var result = (int)(Math.Round(_sensor.FuelLevel / cunsumesTotalKmH));
-                //distances.AddRange(Enumerable.Range(0, 100 - distances.Count()).Select(element => 250.0).ToList());
-                //consumes.AddRange(Enumerable.Range(0, 100 - consumes.Count()).Select(element => 0.0030).ToList());
+                //distances.AddRange(Enumerable.Range(0, 100 - distances.Count).Select(element => 250.0).ToList());
+                //consumes.AddRange(Enumerable.Range(0, 100 - consumes.Count).Select(element => 0.0030).ToList());
                 return result;
             }
             else
@@ -487,7 +487,7 @@ public class OnBoardComputer : IOnBoardComputer // car #3
                 var consumes = _sensor.ConsumptionHistory.ToList();
                 double last100FuelConsumes = consumes.TakeLast(100).Sum();
 
-                //Console.WriteLine($"[{consumes.Count()}], {last100FuelConsumes :0.0000}");
+                //Console.WriteLine($"[{consumes.Count}], {last100FuelConsumes :0.0000}");
 
                 var howMany100FromFuelLevel = _sensor.FuelLevel / last100FuelConsumes;
                 var result = (int)(Math.Round((last100Distances * howMany100FromFuelLevel) / 3600));
@@ -636,10 +636,11 @@ public class OnBoardComputer : IOnBoardComputer // car #3
 
 public class OnBoardComputerDisplay : IOnBoardComputerDisplay // car #3
 {
-    private IOnBoardComputer _computer;
+    private readonly IOnBoardComputer _computer;
 
-    private double MSecToKmH(int speed) => speed / 3.6;
-    private double MetersToKilometers(int meters) => meters / 3600.0;
+    //private static double MSecToKmH(int speed) => speed / 3.6;
+
+    private static double MetersToKilometers(int meters) => meters / 3600.0;
 
     public OnBoardComputerDisplay(IOnBoardComputer computer)
     {
@@ -751,7 +752,7 @@ public class FuelTank : IFuelTank, ISensoreable
         }
     }
 
-    private ISensor _sensor;
+    private readonly ISensor _sensor;
 
     public bool IsOnReserve => _fillLevel < ReserveLevel;
 
@@ -766,13 +767,13 @@ public class FuelTank : IFuelTank, ISensoreable
 
     public void Consume(double liters)
     {
-        FillLevel = FillLevel - liters;
+        FillLevel -= liters;
         _sensor.RecordActualVariation(liters);
     }
 
     public void Refuel(double liters)
     {
-        FillLevel = FillLevel + liters;
+        FillLevel += liters;
     }
 
     public double GetToSensor()
@@ -783,7 +784,7 @@ public class FuelTank : IFuelTank, ISensoreable
 
 public class FuelTankDisplay : IFuelTankDisplay
 {
-    private IFuelTank _fuelTank;
+    private readonly IFuelTank _fuelTank;
 
     public FuelTankDisplay(IFuelTank fuelTank)
     {
@@ -799,7 +800,7 @@ public class FuelTankDisplay : IFuelTankDisplay
 
 public class DrivingInformationDisplay : IDrivingInformationDisplay // car #2
 {
-    IDrivingProcessor _processor;
+    readonly IDrivingProcessor _processor;
     public int ActualSpeed { get => _processor.ActualSpeed; }
 
     public DrivingInformationDisplay(IDrivingProcessor processor)
@@ -811,7 +812,7 @@ public class DrivingInformationDisplay : IDrivingInformationDisplay // car #2
 public class DrivingProcessor : IDrivingProcessor // car #2
 {
     private int _actualSpeed;
-    private ISensor _sensor;
+    private readonly ISensor _sensor;
 
     public int ActualSpeed
     {
@@ -857,20 +858,20 @@ public class Sensor : ISensor
 {
     private bool _isVariableOnRecord = false;
 
-    private List<double> _consumptionHistory = new List<double>();
-    private List<double> _consumptionByDistanceHistory = new List<double>();
+    private readonly List<double> _consumptionHistory = new();
+    private readonly List<double> _consumptionByDistanceHistory = new();
     /*
     (Enumerable.Range(0, 100).Select(element => 0.048).ToList());
     */
 
-    private List<double> _distanceHistory = new List<double>();
+    private readonly List<double> _distanceHistory = new();
 
     public double FuelLevel { get; private set; }
     public double ActualConsumption
     {
         get
         {
-            if(_consumptionHistory.Count() > 0) return _consumptionHistory.LastOrDefault();
+            if(_consumptionHistory.Count > 0) return _consumptionHistory.LastOrDefault();
             return 0;
         }
     }

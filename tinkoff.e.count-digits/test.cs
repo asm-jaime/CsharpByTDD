@@ -19,12 +19,9 @@ namespace e
         public void TestCalculate(long a, long b)
         {
             // Arrange
-            var solutionFast = new Solution();
-            var solutionSlow = new SolutionSlow();
-
             // Act
-            long resultFast = solutionFast.CountSameDigitsNumbers(a, b);
-            long resultSlow = solutionSlow.CountSameDigitsNumbers(a, b);
+            long resultFast = Solution.CountSameDigitsNumbers(a, b);
+            long resultSlow = SolutionSlow.CountSameDigitsNumbers(a, b);
 
             // Assert
             Assert.AreEqual(resultFast, resultSlow);

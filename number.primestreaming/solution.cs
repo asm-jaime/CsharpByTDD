@@ -17,7 +17,7 @@ public class Primes
         {
             if(isPrimeArray[number])
             {
-                for(var step = number * number; step <= maxNumber; step = step + number)
+                for(var step = number * number; step <= maxNumber; step += number)
                 {
                     isPrimeArray[step] = false;
                 }

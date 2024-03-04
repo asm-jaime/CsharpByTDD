@@ -5,7 +5,7 @@ namespace tinkoffds1;
 
 public class Solution
 {
-    public (string, int) Calculate(string[] words)
+    public static (string, int) Calculate(string[] words)
     {
         var max = words.Max(word => word.Length);
         var word = words.Where(word => word.Length == max).First();
@@ -15,12 +15,11 @@ public class Solution
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main(string[] _)
     {
         string[] words = Console.ReadLine().Split();
 
-        Solution solution = new Solution();
-        var (word, len) = solution.Calculate(words);
+        var (word, len) = Solution.Calculate(words);
 
         Console.WriteLine(word);
         Console.WriteLine(len);

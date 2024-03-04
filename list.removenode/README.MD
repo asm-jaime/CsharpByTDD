@@ -1,7 +1,6 @@
 <!-- ENGLISH -->
-# differential
+# Task template
 
-Write a calculator of differencial.
 
 ### Comment
 

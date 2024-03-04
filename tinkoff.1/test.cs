@@ -13,9 +13,8 @@ public class DartGameTests
     public void TestScoreDarts(double x1, double y1, double x2, double y2, double x3, double y3, int expected)
     {
         // Arrange
-        Solution solution = new Solution();
         // Act
-        int totalScore = solution.ScoreDarts(x1, y1, x2, y2, x3, y3);
+        int totalScore = Solution.ScoreDarts(x1, y1, x2, y2, x3, y3);
         // Assert
         Assert.AreEqual(expected, totalScore);
     }

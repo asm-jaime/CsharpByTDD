@@ -4,11 +4,11 @@ using System.Linq;
 
 namespace numbercombinations;
 
-internal class Combinator<T>
+public class Combinator<T>
 {
     private readonly T[] _elements;
-    private List<T[]> _combinations;
-    private int _sizeOfCombo;
+    private readonly List<T[]> _combinations;
+    private readonly int _sizeOfCombo;
 
     public Combinator(T[] elements, int sizeOfCombo)
     {

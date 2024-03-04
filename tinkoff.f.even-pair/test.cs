@@ -32,9 +32,8 @@ namespace f
         public void TestSwapPositions(int[] heights, int[] expected)
         {
             // Arrange
-            Solution solution = new Solution();
             // Act
-            int[] result = solution.SwapPositions(heights);
+            int[] result = Solution.SwapPositions(heights);
             // Assert
             Assert.IsTrue(result.SequenceEqual(expected));
         }

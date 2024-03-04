@@ -18,7 +18,7 @@ public class Fibonacci
         return (q, p + q);
     }
 
-    public static BigInteger fib(int n)
+    public static BigInteger Fib(int n)
     {
         int sign = n < 0 && n % 2 == 0 ? -1 : 1;
         n = n < 0 ? -n : n;

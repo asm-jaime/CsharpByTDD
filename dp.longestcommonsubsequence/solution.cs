@@ -46,9 +46,9 @@ class LcsClass
         var dpTable = Enumerable.Range(0, y.Length + 1).Select(row => new int[x.Length + 1]).ToArray();
 
         //var trackDpChange = 0;
-        for(var row = 1; row < dpTable.Count(); ++row)
+        for(var row = 1; row < dpTable.Length; ++row)
         {
-            for(var col = 1; col < dpTable[row].Count(); ++col)
+            for(var col = 1; col < dpTable[row].Length; ++col)
             {
                 if(x[col - 1].Equals(y[row - 1]))
                 {

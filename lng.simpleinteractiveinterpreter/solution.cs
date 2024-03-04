@@ -7,7 +7,7 @@ namespace lngsimpleinteractiveinterpreter;
 
 public class Interpreter
 {
-    private static Dictionary<
+    private static readonly Dictionary<
         string,
         Func<
             string, string,
@@ -17,16 +17,7 @@ public class Interpreter
             double?
         >
         > Operations =
-        new Dictionary<
-            string,
-            Func<
-                string, string,
-                Dictionary<string, double>,
-                Dictionary<string, double>,
-                Dictionary<string, (List<string>, List<string>)>,
-                double?
-            >
-            >()
+        new()
         {
                 {"%",(a, b, scope, vars, functions) => GetValue(a, scope, vars) % GetValue(b, scope, vars) },
                 {"/",(a, b, scope, vars, functions) => GetValue(a, scope, vars) / GetValue(b, scope, vars) },
@@ -59,8 +50,8 @@ public class Interpreter
                 }},
         };
 
-    Dictionary<string, (List<string>, List<string>)> _functions = new Dictionary<string, (List<string>, List<string>)>();
-    Dictionary<string, double> _vars = new Dictionary<string, double>();
+    readonly Dictionary<string, (List<string>, List<string>)> _functions = new();
+    readonly Dictionary<string, double> _vars = new();
 
     private static double? GetValue(string value, Dictionary<string, double> scope, Dictionary<string, double> vars)
     {
@@ -81,12 +72,12 @@ public class Interpreter
 
     private double? Parse(List<string> terms, Dictionary<string, double> scope)
     {
-        List<string> termList = new List<string>();
+        List<string> termList = new();
 
         for(int i = 0; i < terms.Count; i++)
         {
             var term = terms[i];
-            if(double.TryParse(term, out double number))
+            if(double.TryParse(term, out _))
             {
                 termList.Add(term);
             }
@@ -150,7 +141,7 @@ public class Interpreter
                 termList.RemoveAt(i);
 
                 var args = new double[funcArgs.Count];
-                if(args.Length > termList.Count() - i) throw new Exception("wrong argument lenght");
+                if(args.Length > termList.Count - i) throw new Exception("wrong argument lenght");
                 for(int argId = 0; argId < args.Length; argId++)
                 {
                     double? value = GetValue(termList[i], scope, _vars);
@@ -174,7 +165,7 @@ public class Interpreter
     {
         var prioritizedOperations = operations.Keys.ToArray();
         var prioritizedIndex = 0;
-        while(list.Count() > 1 && prioritizedIndex < prioritizedOperations.Length)
+        while(list.Count > 1 && prioritizedIndex < prioritizedOperations.Length)
         {
             var op = list.FindLastIndex(e => e.Equals(prioritizedOperations[prioritizedIndex]));
             if(op < 0)
@@ -191,9 +182,9 @@ public class Interpreter
     }
 
 
-    public double? input(string input)
+    public double? Input(string input)
     {
-        List<string> tokens = tokenize(input);
+        List<string> tokens = Tokenize(input);
         tokens.RemoveAt(tokens.Count - 1);
 
         var globalScope = new Dictionary<string, double>();
@@ -210,13 +201,17 @@ public class Interpreter
         return result;
     }
 
-    private List<string> tokenize(string input)
+    private static List<string> Tokenize(string input)
     {
-        input = input + ")";
-        List<string> tokens = new List<string>();
-        Regex rgxMain = new Regex("=>|[-+*/%=\\(\\)]|[A-Za-z_][A-Za-z0-9_]*|[0-9]*(\\.?[0-9]+)");
+        input += ")";
+        List<string> tokens = new();
+        Regex rgxMain = new("=>|[-+*/%=\\(\\)]|[A-Za-z_][A-Za-z0-9_]*|[0-9]*(\\.?[0-9]+)");
         MatchCollection matches = rgxMain.Matches(input);
-        foreach(Match m in matches) tokens.Add(m.Groups[0].Value);
+        foreach(Match m in matches.Cast<Match>())
+        {
+            tokens.Add(m.Groups[0].Value);
+        }
+
         return tokens;
     }
 }

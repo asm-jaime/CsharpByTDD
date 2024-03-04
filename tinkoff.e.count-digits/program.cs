@@ -1,23 +1,19 @@
 using System;
 
-namespace e
+namespace e;
+
+class Program
 {
-
-
-    class Program
+    static void Main(string[] _)
     {
-        static void Main(string[] args)
-        {
-            long a, b;
-            string[] input = Console.ReadLine().Split();
-            a = long.Parse(input[0]);
-            b = long.Parse(input[1]);
+        long a, b;
+        string[] input = Console.ReadLine().Split();
+        a = long.Parse(input[0]);
+        b = long.Parse(input[1]);
 
-            //var solution = new SolutionSlow();
-            var solution = new Solution();
-            long result = solution.CountSameDigitsNumbers(a, b);
+        //var solution = new SolutionSlow();
+        long result = Solution.CountSameDigitsNumbers(a, b);
 
-            Console.WriteLine(result);
-        }
+        Console.WriteLine(result);
     }
 }

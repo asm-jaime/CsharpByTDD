@@ -16,10 +16,8 @@ namespace c
         public void GetMinStairClimbed_WithValidInputs_ReturnsExpectedResult(int n, int timeTillLeave, int[] floors, int leavingEmployee, int expected)
         {
             // Arrange
-            var solution = new Solution();
-
             // Act
-            int result = solution.GetMinStairClimbed(n, timeTillLeave, floors, leavingEmployee);
+            int result = Solution.GetMinStairClimbed(n, timeTillLeave, floors, leavingEmployee);
 
             // Assert
             Assert.AreEqual(expected, result);

@@ -11,9 +11,8 @@ public class SolutionTests
     public void TestCalculate(int L, int[] particleCoords, int expected)
     {
         // Arrange
-        Solution solution = new Solution();
         // Act
-        int result = solution.CalculateScans(L, particleCoords);
+        int result = Solution.CalculateScans(L, particleCoords);
         // Assert
         Assert.AreEqual(result, expected);
     }

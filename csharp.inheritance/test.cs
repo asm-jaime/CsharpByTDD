@@ -10,7 +10,7 @@ public class InheritanceTest
     [Test]
     public void TestBaseToInherited()
     {
-        Person tom = new Person { Name = "Tom" };
+        Person tom = new() { Name = "Tom" };
         Employee empl = tom as Employee;
         //Employee empl = (Employee)tom;
         tom.Name = "Bob";

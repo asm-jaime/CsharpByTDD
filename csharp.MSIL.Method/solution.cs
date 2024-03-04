@@ -7,7 +7,7 @@ public class DynamicMethodUsingMSIL
 {
     public static DynamicMethod MulBy2AndAdd1()
     {
-        DynamicMethod mulAndPlusIt = new DynamicMethod(
+        DynamicMethod mulAndPlusIt = new(
           "mulAndPlusIt",
           typeof(int),
           new Type[] { typeof(int) },

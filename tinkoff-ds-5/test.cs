@@ -11,9 +11,8 @@ public class SolutionTests
     public void TestCalculate(int width, int height, int expected)
     {
         // Arrange
-        Solution solution = new Solution();
         // Act
-        int result = solution.Calculate(width, height);
+        int result = Solution.Calculate(width, height);
         // Assert
         Assert.AreEqual(expected, result);
     }

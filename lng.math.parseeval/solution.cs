@@ -43,8 +43,8 @@ public static class BracketChecker
 
 public class Evaluate
 {
-    private static Dictionary<string, Func<double, double, double>> OperationsA =
-        new Dictionary<string, Func<double, double, double>>()
+    private static readonly Dictionary<string, Func<double, double, double>> OperationsA =
+        new()
         {
                 {"sqrt", (a, b) => Math.Sqrt(a)  },
                 {"log" , (a, b) => Math.Log10(a) },
@@ -61,18 +61,18 @@ public class Evaluate
                 {"sin" , (a, b) => Math.Sin(a)   },
                 {"cos" , (a, b) => Math.Cos(a)   },
         };
-    private static Dictionary<string, Func<double, double, double>> OperationsB =
-        new Dictionary<string, Func<double, double, double>>()
+    private static readonly Dictionary<string, Func<double, double, double>> OperationsB =
+        new()
         {
                 {"&"   , (a, b) => Math.Pow(a, b)},
         };
-    private static Dictionary<string, Func<double, double, double>> OperationsC =
-        new Dictionary<string, Func<double, double, double>>()
+    private static readonly Dictionary<string, Func<double, double, double>> OperationsC =
+        new()
         {
                 {"-"   , (a, b) => -a },
         };
-    private static Dictionary<string, Func<double, double, double>> OperationsD =
-        new Dictionary<string, Func<double, double, double>>()
+    private static readonly Dictionary<string, Func<double, double, double>> OperationsD =
+        new()
         {
                 {"*"   , (a, b) => a * b },
                 {"/"   , (a, b) => a / b },
@@ -82,12 +82,12 @@ public class Evaluate
     private double Parse(List<string> terms)
     {
 
-        List<string> termList = new List<string>();
+        List<string> termList = new();
 
         for(int i = 0; i < terms.Count; i++)
         {
             var term = terms[i];
-            if(double.TryParse(term.Replace(".", ","), out double number))
+            if(double.TryParse(term.Replace(".", ","), out _))
             {
                 termList.Add(term);
             }
@@ -135,9 +135,9 @@ public class Evaluate
         return double.Parse(termList.LastOrDefault());
     }
 
-    private void ExecuteUnary(List<string> list, Dictionary<string, Func<double, double, double>> operations)
+    private static void ExecuteUnary(List<string> list, Dictionary<string, Func<double, double, double>> operations)
     {
-        for(int i = 0; i < list.Count(); ++i)
+        for(int i = 0; i < list.Count; ++i)
         {
             if(operations.TryGetValue(list[i], out var func))
             {
@@ -147,11 +147,11 @@ public class Evaluate
         }
     }
 
-    private void ExecuteBinary(List<string> list, Dictionary<string, Func<double, double, double>> operations)
+    private static void ExecuteBinary(List<string> list, Dictionary<string, Func<double, double, double>> operations)
     {
         var prioritizedOperations = operations.Keys.ToArray();
         var prioritizedIndex = 0;
-        while(list.Count() > 1 && prioritizedIndex < prioritizedOperations.Length)
+        while(list.Count > 1 && prioritizedIndex < prioritizedOperations.Length)
         {
             var op = list.FindLastIndex(e => e.Equals(prioritizedOperations[prioritizedIndex]));
             if(op < 0)
@@ -168,15 +168,17 @@ public class Evaluate
         }
     }
 
-    private static Regex UnnecessaryWhitespaces = new Regex(@" ");
-    private static Regex UnnecessaryPlus = new Regex(@"\+-(\d)");
-    private static Regex RestrictedMinusPlus = new Regex(@"-\+\d");
-    private static Regex NamesSplit = new Regex(@"[a-z] +[a-z]");
-    private static Regex Terms = new Regex(@"[\d]+\.?[\d]*[Ee](?:[-+]?[\d]+)?|[a-z]+|\(|\)|\+|\*|\/|\d+\,\d+|\d+\.\d+|\d+|&|-+");
+    private static readonly Regex UnnecessaryWhitespaces;
+    private static readonly Regex UnnecessaryPlus;
+    private static readonly Regex RestrictedMinusPlus;
+    private static readonly Regex NamesSplit;
+    private static readonly Regex Terms;
+
+    public static Dictionary<string, Func<double, double, double>> OperationsD1 => OperationsD;
 
     private static List<string> RemoveMinusFromBynaryExpression(List<string> terms)
     {
-        for(var i = 2; i < terms.Count(); ++i)
+        for(var i = 2; i < terms.Count; ++i)
         {
             if(
                 double.TryParse(terms[i], out double currentP) &&
@@ -198,7 +200,7 @@ public class Evaluate
             if(
                 double.TryParse(terms[i], out double current) &&
                 terms[i - 1][0].Equals('-') &&
-                (double.TryParse(terms[i - 2], out double prev) || terms[i - 2].Equals(")"))
+                (double.TryParse(terms[i - 2], out _) || terms[i - 2].Equals(")"))
                )
             {
                 if(terms[i - 1].Length % 2 == 0)
@@ -216,7 +218,7 @@ public class Evaluate
         return terms;
     }
 
-    public string eval(string expression)
+    public string Eval(string expression)
     {
         var stageString = expression.ToLower();
         if(NamesSplit.IsMatch(stageString)) return "error";

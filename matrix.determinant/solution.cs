@@ -36,7 +36,7 @@ interface IDeterminant
 
 public class QueueDeterminant : IDeterminant
 {
-    private int[][] _matrix;
+    private readonly int[][] _matrix;
 
     public QueueDeterminant(int[][] mainMatrix)
     {
@@ -47,7 +47,7 @@ public class QueueDeterminant : IDeterminant
     {
         int result = 0;
 
-        Queue<Minor> minors = new Queue<Minor>();
+        Queue<Minor> minors = new();
         minors.Enqueue(new Minor { Element = 1, Matrix = _matrix });
 
         while(minors.Count > 0)
@@ -57,12 +57,12 @@ public class QueueDeterminant : IDeterminant
 
             if(matrix.Length == 1)
             {
-                result = result + matrix[0][0];
+                result += matrix[0][0];
                 continue;
             }
             if(matrix.Length == 2)
             {
-                result = result + minor.Element * (matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0]);
+                result += minor.Element * (matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0]);
                 continue;
             }
 
@@ -84,7 +84,7 @@ public class QueueDeterminant : IDeterminant
 public class RecursiveDeterminant : IDeterminant
 {
     private int _det = 0;
-    private int[][] _matrix;
+    private readonly int[][] _matrix;
 
     public RecursiveDeterminant(int[][] mainMatrix)
     {
@@ -97,12 +97,12 @@ public class RecursiveDeterminant : IDeterminant
 
         if(matrix.Length == 1)
         {
-            _det = _det + matrix[0][0]; return;
+            _det += matrix[0][0]; return;
         }
 
         if(matrix.Length == 2)
         {
-            _det = _det + element * (matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0]);
+            _det += element * (matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0]);
             return;
         }
 
@@ -125,7 +125,6 @@ public class RecursiveDeterminant : IDeterminant
 
 public class Matrix
 {
-
     public static int Determinant(int[][] matrix)
     {
         IDeterminant determinant = new RecursiveDeterminant(matrix);

@@ -12,9 +12,9 @@ public class SolutionTests
     public void TestCalculate(int a, int b, int expected)
     {
         // Arrange
-        Solution solution = new Solution();
+        // var solution = new Solution();
         // Act
-        int total = solution.Calculate(a, b);
+        int total = Solution.Calculate(a, b);
         // Assert
         Assert.AreEqual(expected, total);
     }

@@ -8,7 +8,7 @@ namespace dpminnumberofndivisors;
     {
 
         [Test]
-        public static void test1()
+        public static void Test1()
         {
             Assert.AreEqual(1, MinNbDiv.FindMinNum(1));
             Assert.AreEqual(64, MinNbDiv.FindMinNum(7));

@@ -11,9 +11,8 @@ public class SolutionTests
     public void TestCalculate(int a, int b, int c, int d, string expected)
     {
         // Arrange
-        Solution solution = new Solution();
         // Act
-        string result = solution.Calculate(a, b, c, d);
+        string result = Solution.Calculate(a, b, c, d);
         // Assert
         Assert.AreEqual(result, expected);
     }

@@ -11,10 +11,8 @@ public class SolutionTests
     public void TestCalculateClosure()
     {
         // Arrange
-        Solution solution = new Solution();
-
         // Act
-        string result = solution.Calculate();
+        string result = Solution.Calculate();
 
         // Assert
         result.Should().Be("55555");

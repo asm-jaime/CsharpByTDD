@@ -7,8 +7,7 @@ public class MinNbDiv
 {
     public static int[] GetAllDivisors(int n)
     {
-        int t = 0;
-        List<int> result = new List<int>();
+        List<int> result = new();
         for(int i = 1; i <= Math.Sqrt(n); i++)
         {
             if(n % i == 0)

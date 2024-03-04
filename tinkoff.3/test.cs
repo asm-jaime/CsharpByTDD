@@ -12,10 +12,8 @@ public class SolutionTests
     public void TestCalculateHighwayHeight(int[] heights, double expected, double delta = 0.0001)
     {
         // Arrange
-        Solution solution = new Solution();
-
         // Act
-        double result = solution.CalculateHighwayHeight(heights);
+        double result = Solution.CalculateHighwayHeight(heights);
 
         // Assert
         Assert.AreEqual(expected, result, delta);

@@ -4,10 +4,8 @@ namespace parentheses;
 
 public class Parentheses
 {
-    private static readonly HashSet<char> OnPush =
-      new HashSet<char> { '(' };
-    private static readonly HashSet<char> OnPop =
-      new HashSet<char> { ')' };
+    private static readonly HashSet<char> OnPush = new() { '(' };
+    private static readonly HashSet<char> OnPop = new() { ')' };
 
     public static bool ValidParentheses(string input)
     {

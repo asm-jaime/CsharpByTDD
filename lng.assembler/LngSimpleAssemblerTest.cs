@@ -8,7 +8,7 @@ namespace SolutionsByTDD
     [TestFixture, Description("Fixed tests")]
     public class SimpleAssemblerTest
     {
-        private void Test(Dictionary<string, int> expected, Dictionary<string, int> actual)
+        private static void Test(Dictionary<string, int> expected, Dictionary<string, int> actual)
         {
             var expectedStr = "{ " +
                               string.Join(", ", expected.Select(kv => $"{kv.Key}: {kv.Value}"))

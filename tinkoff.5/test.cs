@@ -12,9 +12,8 @@ public class SolutionTests
     public void TestPackageDelivery(string[] inputData, int expected)
     {
         // Arrange
-        Solution solution = new Solution();
         // Act
-        int result = solution.DeliverPackage(inputData);
+        int result = Solution.DeliverPackage(inputData);
         // Assert
         Assert.AreEqual(expected, result);
     }

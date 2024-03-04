@@ -19,11 +19,11 @@ public class Solution
 {
     public int AmountOfTime(TreeNode root, int start)
     {
-        Dictionary<int, List<int>> graph = new Dictionary<int, List<int>>();
+        var graph = new Dictionary<int, List<int>>();
         BuildGraph(root, null, graph);
 
-        Queue<int> queue = new Queue<int>();
-        HashSet<int> visited = new HashSet<int>();
+        var queue = new Queue<int>();
+        var visited = new HashSet<int>();
         queue.Enqueue(start);
         visited.Add(start);
 

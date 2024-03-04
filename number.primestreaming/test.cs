@@ -32,7 +32,7 @@ public class PrimesTest
         Test(1000, 10, 7927, 7933, 7937, 7949, 7951, 7963, 7993, 8009, 8011, 8017);
     }
 
-    private void Test(int skip, int limit, params int[] expect)
+    private static void Test(int skip, int limit, params int[] expect)
     {
         int[] found = Primes.Stream().Skip(skip).Take(limit).ToArray();
         Assert.AreEqual(expect, found);

@@ -4,7 +4,7 @@ namespace diffmatrix;
 
 public class Solution
 {
-    public int[][] OnesMinusZeros(int[][] grid)
+    public static int[][] OnesMinusZeros(int[][] grid)
     {
         var rows = grid.Length;
         var cols = grid[0].Length;

@@ -25,10 +25,8 @@ namespace d
         public void GetMaxSumDifference_ShouldReturnExpectedResult(int n, int k, int[] a, long expected)
         {
             // Arrange
-            var solution = new Solution();
-
             // Act
-            var actual = solution.MaximizeSum(n, k, a);
+            var actual = Solution.MaximizeSum(n, k, a);
 
             // Assert
             Assert.AreEqual(expected, actual);

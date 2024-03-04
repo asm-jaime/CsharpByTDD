@@ -14,15 +14,14 @@ public class MorseCodeDecoder
 
         if(fromIndex + lastIndex > 0)
         {
-            return bits.Substring(fromIndex, lastIndex - fromIndex);
+            return bits[fromIndex..lastIndex];
         }
 
         return bits;
     }
 
-    public static int decodeBitsLength(string bits)
+    public static int DecodeBitsLength(string bits)
     {
-        var _result = 1;
         var _bits = BitsTrim(bits);
         var arrOf1 = Regex.Split(_bits, "0{1,99}");
         Array.Sort(arrOf1);
@@ -30,7 +29,7 @@ public class MorseCodeDecoder
         {
             return 1;
         }
-        _result = arrOf1[0].Length;
+        int _result = arrOf1[0].Length;
 
         var arrOf0 = Regex.Split(_bits, "1{1,99}");
 
@@ -43,11 +42,11 @@ public class MorseCodeDecoder
         }
         return _result;
     }
-    public static string decodeBitsAdvanced(string bits)
+    public static string DecodeBitsAdvanced(string bits)
     {
         // ToDo: Accept 0's and 1's, return dots, dashes and spaces
 
-        int length = decodeBitsLength(bits);
+        int length = DecodeBitsLength(bits);
 
         int lengthOfDash = 3 * length;
         int lengthOfDot = 1 * length;
@@ -64,7 +63,7 @@ public class MorseCodeDecoder
         return output;
     }
 
-    public static string decodeMorse(string morseCode)
+    public static string DecodeMorse(string morseCode)
     {
         string[] morseCodeWords = morseCode.Split("   ");
         string output = "";
@@ -86,7 +85,7 @@ public class MorseCodeDecoder
         return output;
     }
 
-    static Dictionary<char, string> morse = new Dictionary<char, string>()
+    static readonly Dictionary<char, string> morse = new()
         {
           {'0' , "-----"}, {'1' , ".----"}, {'2' , "..---"}, {'3' , "...--"}, {'4' , "....-"},
           {'5' , "....."}, {'6' , "-...."}, {'7' , "--..."}, {'8' , "---.."}, {'9' , "----."},

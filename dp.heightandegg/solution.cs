@@ -42,7 +42,7 @@ public static class Faberge
         BigInteger[,] heightsTable = new BigInteger[2, tries];
 
         int rowCurr = 0;
-        int rowPrev = 1;
+        int rowPrev;
 
 
         for(int egg = 0; egg < eggs; ++egg)
@@ -102,7 +102,7 @@ public static class Faberge
         {
             multiplicator = multiplicator * (tries - egg) / (egg + 1);
 
-            current = current + multiplicator;
+            current += multiplicator;
         }
 
         return current;
@@ -113,7 +113,7 @@ public static class Faberge
     {
         if(eggs == 0 || tries == 0) return 0;
 
-        tries = tries % Mod;
+        tries %= Mod;
 
         BigInteger multiplicator = tries;
         BigInteger current = tries;
@@ -123,7 +123,7 @@ public static class Faberge
             multiplicator = multiplicator * (tries - egg) / (egg + 1);
             //multiplicator = BigInteger.Multiply(multiplicator, (tries - egg) / (egg + 1));
 
-            current = current + multiplicator;
+            current += multiplicator;
         }
 
         return current % Mod;
@@ -133,7 +133,7 @@ public static class Faberge
     private const int Mod = 998244353;
     private const int MaximalEggs = 80001;
 
-    private static int[] Multicators = new int[MaximalEggs];
+    private static readonly int[] Multicators = new int[MaximalEggs];
 
     private static void FillMiltiplicator()
     {
@@ -155,7 +155,7 @@ public static class Faberge
         BigInteger height = 0;
         BigInteger trial = 1;
 
-        tries = tries % Mod;
+        tries %= Mod;
 
         for(int egg = 1; egg <= eggs; ++egg)
         {

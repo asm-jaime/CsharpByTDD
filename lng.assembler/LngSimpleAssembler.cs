@@ -5,7 +5,7 @@ namespace SolutionsByTDD
 {
     public static class SimpleAssembler
     {
-        private static Dictionary<string, int> _state = new Dictionary<string, int>();
+        private static Dictionary<string, int> _state = new();
         private static int _executionIndex = 0;
 
         private static void Execute(string command, string operandA)
@@ -45,7 +45,7 @@ namespace SolutionsByTDD
             {
                 if (valueA == 0) valueB = 1;
 
-                _executionIndex = _executionIndex + valueB;
+                _executionIndex += valueB;
             }
         }
 

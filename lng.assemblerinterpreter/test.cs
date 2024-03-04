@@ -7,7 +7,7 @@ namespace lngassemblerinterpreter;
 [TestFixture]
 public class AssemblerInterpreterTest
 {
-    private static string[] expected = {"(5+1)/2 = 3",
+    private static readonly string[] expected = {"(5+1)/2 = 3",
                                         "5! = 120",
                                         "Term 8 of Fibonacci series is: 21",
                                         "mod(11, 3) = 2",
@@ -20,11 +20,11 @@ public class AssemblerInterpreterTest
     {
         for(int i = 0; i < expected.Length; i++)
         {
-            Assert.That(AssemblerInterpreter.Interpret(displayProg(progs[i])), Is.EqualTo(expected[i]));
+            Assert.That(AssemblerInterpreter.Interpret(DisplayProg(progs[i])), Is.EqualTo(expected[i]));
         }
     }
 
-    private static string[] progs = {
+    private static readonly string[] progs = {
             "\n; My first program\nmov  a, 5\ninc  a\ncall function\nmsg  '(5+1)/2 = ', a    ; output message\nend\n\nfunction:\n    div  a, 2\n    ret\n",
             "\nmov   a, 5\nmov   b, a\nmov   c, a\ncall  proc_fact\ncall  print\nend\n\nproc_fact:\n    dec   b\n    mul   c, b\n    cmp   b, 1\n    jne   proc_fact\n    ret\n\nprint:\n    msg   a, '! = ', c ; output text\n    ret\n",
             "\nmov   a, 8            ; value\nmov   b, 0            ; next\nmov   c, 0            ; counter\nmov   d, 0            ; first\nmov   e, 1            ; second\ncall  proc_fib\ncall  print\nend\n\nproc_fib:\n    cmp   c, 2\n    jl    func_0\n    mov   b, d\n    add   b, e\n    mov   d, e\n    mov   e, b\n    inc   c\n    cmp   c, a\n    jle   proc_fib\n    ret\n\nfunc_0:\n    mov   b, c\n    inc   c\n    jmp   proc_fib\n\nprint:\n    msg   'Term ', a, ' of Fibonacci series is: ', b        ; output text\n    ret\n",
@@ -35,14 +35,14 @@ public class AssemblerInterpreterTest
 
 
 
-    private string displayProg(string p)
+    private static string DisplayProg(string p)
     {
         Console.WriteLine("\n----------------------\n");
         Console.WriteLine(p);
         return p;
     }
 
-    //[Test]
+    [Test]
     public void TestLarge()
     {
         var program = "\n; My first program\nmov  a, 5\ninc  a\nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \nmsg  '(5+1)/2 = ', a    \ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ninc  a\ncall function\nmsg  '(5+1)/2 = ', a    ; output message\nend\n\nfunction:\n    div  a, 2\n    ret\n";
@@ -50,7 +50,7 @@ public class AssemblerInterpreterTest
         Assert.That(AssemblerInterpreter.Interpret(program), Is.EqualTo("(5+1)/2 = 71"));
     }
 
-    //[Test]
+    [Test]
     public void TestFibo()
     {
         var program = "mov   a, 2            ; value1\nmov   b, 10           ; value2\nmov   c, a            ; temp1\nmov   d, b            ; temp2\ncall  proc_func\ncall  print\nend\n\nproc_func:\ncmp   d, 1\nje    continue\nmul   c, a\ndec   d\ncall  proc_func\n\ncontinue:\nret\n\nprint:\nmsg a, '^', b, ' = ', c\nret\n";

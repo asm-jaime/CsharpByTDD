@@ -26,10 +26,10 @@ public class OpenCloseDoorTest
         return OpenCloseDoor.GetSizeOfValidSeriesByFullCombo(states);
     }
 
-    //[TestCase(1, ExpectedResult = 3)]
-    //[TestCase(2, ExpectedResult = 8)]
-    //[TestCase(3, ExpectedResult = 21)]
-    //[TestCase(15, ExpectedResult = 2178309)]
+    [TestCase(1, ExpectedResult = 3)]
+    [TestCase(2, ExpectedResult = 8)]
+    [TestCase(3, ExpectedResult = 21)]
+    [TestCase(15, ExpectedResult = 2178309)]
     public int ShouldReturnSizeOfValideSeries(int states)
     {
         return OpenCloseDoor.GetSizeOfValidSeriesByCombinatoricFormula(states);

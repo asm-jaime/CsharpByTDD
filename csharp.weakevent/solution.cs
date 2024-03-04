@@ -16,7 +16,7 @@ public class EventSource
 public class EventListener
 {
     public int Counter { get; set; }
-    EventSource eventSourceObject;
+    readonly EventSource eventSourceObject;
 
     public EventListener(EventSource source)
     {
@@ -40,8 +40,8 @@ static class Executor
 {
     public static void ExecuteEventSequence()
     {
-        EventSource source = new EventSource();
-        EventListener listener = new EventListener(source);
+        EventSource source = new ();
+        _ = new EventListener(source);
 
         Console.WriteLine("Raise event first time");
         Console.Read();
@@ -55,7 +55,7 @@ static class Executor
         //developer forget to unregister the event               
 
         //listener.UnRegisterEvent();  
-        listener = null;
+        //listener = null;
         GC.Collect();
         Console.WriteLine("\nRaise event 2nd time");
         Console.Read();

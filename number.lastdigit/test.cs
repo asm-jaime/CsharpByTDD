@@ -1,7 +1,21 @@
 ﻿using NUnit.Framework;
 using System;
+using System.Security.Cryptography;
 
 namespace numberlastdigit;
+
+
+public class SecureRandom
+{
+    public static int GetRandomNumber(int minValue, int maxValue)
+    {
+        using RandomNumberGenerator rng = RandomNumberGenerator.Create();
+        byte[] randomNumber = new byte[4]; // 4 bytes to hold a 32-bit integer value
+        rng.GetBytes(randomNumber);
+        int value = BitConverter.ToInt32(randomNumber, 0);
+        return Math.Abs(value % (maxValue - minValue)) + minValue;
+    }
+}
 
 public struct LDCase
 {
@@ -20,12 +34,12 @@ public class SolutionTest
     [Test]
     public void SampleTest()
     {
-        Random rnd = new Random();
-        int rand1 = rnd.Next(0, 100);
-        int rand2 = rnd.Next(0, 10);
+        //Random rnd = new Random();
+        int rand1 = SecureRandom.GetRandomNumber(0, 100);
+        int rand2 = SecureRandom.GetRandomNumber(0, 10);
 
         LDCase[] allCases = new LDCase[] {
-                new LDCase(new int[0],           1),
+                new LDCase(Array.Empty<int>(),   1),
                 new LDCase(new int[] {0,0},      1),
                 new LDCase(new int[] {0,0,0},    0),
                 new LDCase(new int[] {1,2},      1),
@@ -63,7 +77,7 @@ public class SolutionTest
     [Test]
     public void SampleTest0()
     {
-        Assert.That(Calculator.LastDigit(new int[0]), Is.EqualTo(1));
+        Assert.That(Calculator.LastDigit(Array.Empty<int>()), Is.EqualTo(1));
     }
 
     [Test]

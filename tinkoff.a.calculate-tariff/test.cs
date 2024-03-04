@@ -12,9 +12,8 @@ namespace a
         public void TestCalculateTotalCost(int a, int b, int c, int d, int expectedTotalCost)
         {
             // Arrange
-            Solution solution = new Solution();
             // Act
-            int totalCost = solution.CalculateTotalCost(a, b, c, d);
+            int totalCost = Solution.CalculateTotalCost(a, b, c, d);
             // Assert
             Assert.AreEqual(expectedTotalCost, totalCost);
         }

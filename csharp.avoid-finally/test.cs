@@ -11,9 +11,8 @@ public class SolutionTests
     public void TestCalculate()
     {
         // Arrange
-        Solution solution = new Solution();
         // Act
-        var result = solution.Calculate();
+        var result = Solution.Calculate();
         // Assert
         result.Should().Be(false);
     }

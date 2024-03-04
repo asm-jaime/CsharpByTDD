@@ -1,48 +1,47 @@
 ﻿using System;
 using System.Linq;
 
-namespace d
+namespace d;
+
+public class Solution
 {
-    public class Solution
+    public static long MaximizeSum(int _, int k, int[] numbers)
     {
-        public long MaximizeSum(int n, int k, int[] numbers)
+        var orderedNumbers = numbers
+            .Select(number => number.ToString()).OrderByDescending(e => e.Length).ThenBy(e => e).ToArray();
+
+        int operationIndex = 0;
+        int index = -1;
+        int prevNumLen = orderedNumbers.First().Length;
+        int numLen = orderedNumbers.First().Length;
+        long result = 0;
+
+        while (operationIndex < k)
         {
-            var orderedNumbers = numbers
-                .Select(number => number.ToString()).OrderByDescending(e => e.Length).ThenBy(e => e).ToArray();
+            if (string.Join("", orderedNumbers).Equals("")) break;
+            index = (index + 1) % orderedNumbers.Length;
 
-            int operationIndex = 0;
-            int index = -1;
-            int prevNumLen = orderedNumbers.First().Length;
-            int numLen = orderedNumbers.First().Length;
-            long result = 0;
-
-            while (operationIndex < k)
+            string strNum = orderedNumbers[index];
+            numLen = strNum.Length;
+            if (numLen < prevNumLen)
             {
-                if (string.Join("", orderedNumbers).Equals("")) break;
-                index = (index + 1) % orderedNumbers.Length;
-
-                string strNum = orderedNumbers[index];
-                numLen = strNum.Length;
-                if (numLen < prevNumLen)
-                {
-                    index = -1;
-                    prevNumLen = numLen;
-                    orderedNumbers = orderedNumbers.OrderByDescending((e) => e.Length).ThenBy(e => e).ToArray();
-                    continue;
-                }
-
-                int leftmostDigit = strNum[0] - '0';
-                long numberToAdd = (9 - leftmostDigit) * (long)Math.Pow(10, numLen - 1);
-                if (numberToAdd > 0)
-                {
-                    operationIndex++;
-                    result = result + numberToAdd;
-                }
-                orderedNumbers[index] = orderedNumbers[index].Substring(1);
-
+                index = -1;
+                prevNumLen = numLen;
+                orderedNumbers = orderedNumbers.OrderByDescending((e) => e.Length).ThenBy(e => e).ToArray();
+                continue;
             }
 
-            return result;
+            int leftmostDigit = strNum[0] - '0';
+            long numberToAdd = (9 - leftmostDigit) * (long)Math.Pow(10, numLen - 1);
+            if (numberToAdd > 0)
+            {
+                operationIndex++;
+                result += numberToAdd;
+            }
+            orderedNumbers[index] = orderedNumbers[index][1..];
+
         }
+
+        return result;
     }
 }

@@ -4,7 +4,7 @@ namespace matrixdeterminant;
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main(string[] _)
     {
     }
 }

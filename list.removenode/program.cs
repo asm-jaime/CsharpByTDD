@@ -1,6 +1,6 @@
 using System;
 
-namespace csharpbinarythree;
+namespace listremovenode;
 
 class Program
 {

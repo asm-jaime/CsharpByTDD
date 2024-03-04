@@ -4,7 +4,7 @@ namespace a
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] _)
         {
             int a, b, c, d;
             string[] input = Console.ReadLine().Split();
@@ -13,8 +13,7 @@ namespace a
             c = int.Parse(input[2]);
             d = int.Parse(input[3]);
 
-            Solution solution = new Solution();
-            int totalCost = solution.CalculateTotalCost(a, b, c, d);
+            int totalCost = Solution.CalculateTotalCost(a, b, c, d);
 
             Console.WriteLine(totalCost);
         }

@@ -5,7 +5,7 @@ namespace c
 
     class Program
     {
-        public static void Main(string[] args)
+        public static void Main(string[] _)
         {
             string[] firstLine = Console.ReadLine().Split();
             int n = int.Parse(firstLine[0]);
@@ -15,7 +15,7 @@ namespace c
             int leavingEmployee = int.Parse(Console.ReadLine());
 
             var solution = new Solution();
-            int minStairs = solution.GetMinStairClimbed(n, t, floors, leavingEmployee);
+            int minStairs = Solution.GetMinStairClimbed(n, t, floors, leavingEmployee);
             Console.WriteLine(minStairs);
         }
     }

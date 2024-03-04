@@ -12,9 +12,8 @@ public class SolutionTests
     public void TestMaximumLength(int[] nums, int expected)
     {
         // Arrange
-        Solution solution = new Solution();
         // Act
-        int maxLength = solution.MaximumLength(nums);
+        int maxLength = Solution.MaximumLength(nums);
         // Assert
         Assert.AreEqual(expected, maxLength);
     }
@@ -24,9 +23,8 @@ public class SolutionTests
     public void TestMaximumLengthBadCase(int[] nums, int expected)
     {
         // Arrange
-        Solution solution = new Solution();
         // Act
-        int maxLength = solution.MaximumLength(nums);
+        int maxLength = Solution.MaximumLength(nums);
         // Assert
         Assert.AreEqual(expected, maxLength);
     }

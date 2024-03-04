@@ -18,8 +18,8 @@ public class TSPTest
           new int[]{463,125,0}
         };
         List<Int32> actual = TSP.Approximate(matrix);
-        Assert.IsTrue(validCycle(actual, matrix), "Invalid route!");
-        int dist = calculateDistance(actual, matrix);
+        Assert.IsTrue(ValidCycle(actual, matrix), "Invalid route!");
+        int dist = CalculateDistance(actual, matrix);
         Assert.IsTrue(dist <= 764, "Your route is " + dist + " long, but should be better or at least 764");
     }
 
@@ -38,8 +38,8 @@ public class TSPTest
             new int[]{68,15,79,310,303,63,421,0},
         };
         List<Int32> actual = TSP.Approximate(matrix);
-        Assert.IsTrue(validCycle(actual, matrix), "Invalid route!");
-        int dist = calculateDistance(actual, matrix);
+        Assert.IsTrue(ValidCycle(actual, matrix), "Invalid route!");
+        int dist = CalculateDistance(actual, matrix);
         Assert.IsTrue(dist <= 602, "Your route is " + dist + " long, but should be better or at least 602");
     }
 
@@ -63,16 +63,16 @@ public class TSPTest
             new int[]{328,214,175,277,187,402,299,109,39,243,382,240,0},
         };
         List<Int32> actual = TSP.Approximate(matrix);
-        Assert.IsTrue(validCycle(actual, matrix), "Invalid route!");
-        int dist = calculateDistance(actual, matrix);
+        Assert.IsTrue(ValidCycle(actual, matrix), "Invalid route!");
+        int dist = CalculateDistance(actual, matrix);
         Assert.IsTrue(dist <= 1441, "Your route is " + dist + " long, but should be better or at least 1441");
     }
 
-    private bool validCycle(List<Int32> actual, int[][] matrix)
+    private static bool ValidCycle(List<Int32> actual, int[][] matrix)
     {
         if(actual.Count - 1 != matrix.Length)
             return false;
-        List<Int32> l = new List<Int32>(actual);
+        List<Int32> l = new(actual);
         l.Sort((a, b) => a - b);
         if(l[0] != 0)
             return false;
@@ -84,7 +84,7 @@ public class TSPTest
         return true;
     }
 
-    private int calculateDistance(List<Int32> l, int[][] matrix)
+    private static int CalculateDistance(List<Int32> l, int[][] matrix)
     {
         int distance = 0;
         for(int i = 0; i < l.Count - 1; i++)

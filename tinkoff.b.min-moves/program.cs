@@ -5,12 +5,11 @@ namespace b
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] _)
         {
             int n = int.Parse(Console.ReadLine());
 
-            Solution solution = new Solution();
-            int result = solution.GetMinimalCrosses(n);
+            int result = Solution.GetMinimalCrosses(n);
             Console.WriteLine(result);
         }
     }

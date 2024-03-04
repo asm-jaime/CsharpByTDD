@@ -136,8 +136,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lng.esolang3", "lng.esolang
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lng.esolang4", "lng.esolang4\lng.esolang4.csproj", "{C22E8EA3-D807-460E-8A09-5975C8B278D7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lng.math.differentiation", "lng.math.differentiation\lng.math.differentiation.csproj", "{6CB9F16E-85AB-48E3-92BB-B57B66360F44}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lng.math.parseeval", "lng.math.parseeval\lng.math.parseeval.csproj", "{415AA5DA-194F-4FF1-9685-433EE0B300EE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lng.simpleinteractiveinterpreter", "lng.simpleinteractiveinterpreter\lng.simpleinteractiveinterpreter.csproj", "{6DE59685-05FF-4BBD-BA14-5AC6F591D097}"
@@ -173,6 +171,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "strings.generatebc", "strings.generatebc\strings.generatebc.csproj", "{94B6E54D-6768-4FC2-B1B0-5E494A59B44E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sudoku", "sudoku\sudoku.csproj", "{17011D5F-38B3-481F-A4EB-7377D108106F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "list.removenode", "list.removenode\list.removenode.csproj", "{96022030-8643-49EE-A844-99FF0C2FC006}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -432,10 +432,6 @@ Global
 		{C22E8EA3-D807-460E-8A09-5975C8B278D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C22E8EA3-D807-460E-8A09-5975C8B278D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C22E8EA3-D807-460E-8A09-5975C8B278D7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6CB9F16E-85AB-48E3-92BB-B57B66360F44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6CB9F16E-85AB-48E3-92BB-B57B66360F44}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6CB9F16E-85AB-48E3-92BB-B57B66360F44}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6CB9F16E-85AB-48E3-92BB-B57B66360F44}.Release|Any CPU.Build.0 = Release|Any CPU
 		{415AA5DA-194F-4FF1-9685-433EE0B300EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{415AA5DA-194F-4FF1-9685-433EE0B300EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{415AA5DA-194F-4FF1-9685-433EE0B300EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -508,6 +504,10 @@ Global
 		{17011D5F-38B3-481F-A4EB-7377D108106F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17011D5F-38B3-481F-A4EB-7377D108106F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17011D5F-38B3-481F-A4EB-7377D108106F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96022030-8643-49EE-A844-99FF0C2FC006}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96022030-8643-49EE-A844-99FF0C2FC006}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96022030-8643-49EE-A844-99FF0C2FC006}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96022030-8643-49EE-A844-99FF0C2FC006}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

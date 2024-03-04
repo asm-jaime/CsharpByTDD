@@ -11,9 +11,8 @@ public class SolutionTests
     public void TestCalculate(string a, string b, int expected)
     {
         // Arrange
-        Solution solution = new Solution();
         // Act
-        int total = solution.MinSteps(a, b);
+        int total = Solution.MinSteps(a, b);
         // Assert
         Assert.AreEqual(expected, total);
     }

@@ -7,8 +7,8 @@ public class Encryption
 {
     private static string Mix(string text)
     {
-        StringBuilder left = new StringBuilder();
-        StringBuilder right = new StringBuilder();
+        StringBuilder left = new();
+        StringBuilder right = new();
         for(int i = 0; i < text.Length; ++i)
         {
             if(i % 2 == 0)
@@ -27,9 +27,9 @@ public class Encryption
     {
         int length = cryptedText.Length / 2;
 
-        string left = cryptedText.Substring(0, length);
-        string right = cryptedText.Substring(length);
-        StringBuilder result = new StringBuilder();
+        string left = cryptedText[..length];
+        string right = cryptedText[length..];
+        StringBuilder result = new();
         for(int i = 0; i < right.Length; ++i)
         {
             result.Append(right[i]);

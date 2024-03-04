@@ -12,10 +12,8 @@ public class SolutionTests
     public void TestGetMinimizedBookList(int[] inputList, string expected)
     {
         // Arrange
-        Solution solution = new Solution();
-
         // Act
-        string minimizedList = solution.GetMinimizedBookList(inputList);
+        string minimizedList = Solution.GetMinimizedBookList(inputList);
 
         // Assert
         Assert.AreEqual(expected, minimizedList);

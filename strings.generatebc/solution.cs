@@ -8,9 +8,10 @@ namespace stringsgeneratebc;
 public class BCGenerator
 {
     private const int AcronymizeLimit = 30;
-    private static readonly HashSet<string> IgnoreWords = new HashSet<string> {
+    private static readonly HashSet<string> IgnoreWords = new()
+    {
             "the", "of", "in", "from", "by", "with", "and", "or", "for", "to", "at", "a"
-        };
+    };
 
     public static string GenerateBC(string url, string separator)
     {
@@ -77,7 +78,7 @@ public class BCGenerator
     public static string RemoveSuffix(string url) =>
         Regex.Replace(url, @"\.(html|asp|htm|php)", "");
 
-    public static string Acronymize(string str) => new string(
+    public static string Acronymize(string str) => new(
         str
             .Split(new char[] { '-' })
             .Where(word => !IgnoreWords.Contains(Regex.Replace(word, @"/", "")))

@@ -65,12 +65,12 @@ public class Boolfuck
 
     private static string OutputBitStreamToString(List<bool> outputStream)
     {
-        if(outputStream.Count().Equals(0)) return "";
+        if(outputStream.Count.Equals(0)) return "";
 
-        var paddedZeros = Enumerable.Range(0, (outputStream.Count() % 8)).Select(zero => false).ToList();
+        var paddedZeros = Enumerable.Range(0, (outputStream.Count % 8)).Select(zero => false).ToList();
         outputStream.AddRange(paddedZeros);
-        var bitArray = new BitArray(outputStream.Count());
-        for(int indexBit = 0; indexBit < outputStream.Count(); ++indexBit)
+        var bitArray = new BitArray(outputStream.Count);
+        for(int indexBit = 0; indexBit < outputStream.Count; ++indexBit)
         {
             bitArray[indexBit] = outputStream[indexBit];
         }
@@ -80,7 +80,7 @@ public class Boolfuck
             .Aggregate((acc, ch) => $"{acc}{ch}");
     }
 
-    public static string interpret(string code, string input)
+    public static string Interpret(string code, string input)
     {
         var programIndex = 0;
         var instructionIndex = 0;
@@ -102,7 +102,7 @@ public class Boolfuck
         {
             var instruction = code[instructionIndex];
 
-            if(programIndex >= memory.Count()) memory.Add(false);
+            if(programIndex >= memory.Count) memory.Add(false);
             if(programIndex < 0)
             {
                 memory.Insert(0, false);
@@ -113,7 +113,7 @@ public class Boolfuck
 
             if(instruction.Equals('+'))
             {
-                memory[programIndex] = memory[programIndex] ? false : true;
+                memory[programIndex] = !memory[programIndex];
             }
             else if(instruction.Equals(','))
             {

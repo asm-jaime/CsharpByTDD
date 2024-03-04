@@ -6,7 +6,7 @@ namespace maxsubsetsq;
 
 public class Solution
 {
-    public int MaximumLength(int[] nums)
+    public static int MaximumLength(int[] nums)
     {
         var numTimesByNum = new Dictionary<int, int>();
         foreach (var num in nums)
@@ -39,12 +39,12 @@ public class Solution
             )
             {
                 set.Value.Add(setMultiple);
-                setMultiple = setMultiple*setMultiple;
+                setMultiple *= setMultiple;
                 set.Value.Add(setMultiple);
             }
         }
 
-        return numSets.Max(set => set.Value.Count());
+        return numSets.Max(set => set.Value.Count);
     }
 }
 

@@ -6,30 +6,32 @@ namespace dpcoinscombinations;
 [TestFixture]
 public class SolutionTests
 {
-    static Solution _solution;
+    /*
+    private static Solution _solution;
 
     [SetUp]
-    public static void Initialize(TestContext testContext)
+    public static void Initialize()
     {
         _solution = new Solution();
     }
+    */
 
     [Test]
     public static void SimpleCase()
     {
-        Assert.That(_solution.CountCombinations(4, new[] { 1, 2 }), Is.EqualTo(3));
+        Assert.That(Solution.CountCombinations(4, new[] { 1, 2 }), Is.EqualTo(3));
     }
 
     [Test]
     public static void AnotherSimpleCase()
     {
-        Assert.That(_solution.CountCombinations(10, new[] { 2, 3, 5 }), Is.EqualTo(4));
+        Assert.That(Solution.CountCombinations(10, new[] { 2, 3, 5 }), Is.EqualTo(4));
     }
 
     [Test]
     public static void NoChange()
     {
-        Assert.That(_solution.CountCombinations(11, new[] { 5, 7 }), Is.EqualTo(0));
+        Assert.That(Solution.CountCombinations(11, new[] { 5, 7 }), Is.EqualTo(0));
     }
 }
 

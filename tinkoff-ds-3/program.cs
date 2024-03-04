@@ -6,7 +6,7 @@ namespace tinkoffds3;
 
 public class Solution
 {
-    public string AreArraysSimilar(int[] array1, int[] array2)
+    public static string AreArraysSimilar(int[] array1, int[] array2)
     {
         int[] unique1 = RemoveDuplicates(array1);
         int[] unique2 = RemoveDuplicates(array2);
@@ -27,7 +27,7 @@ public class Solution
         return "YES";
     }
 
-    private int[] RemoveDuplicates(int[] array)
+    private static int[] RemoveDuplicates(int[] array)
     {
         int[] result = new int[array.Length];
         int resultIndex = 0;
@@ -44,13 +44,13 @@ public class Solution
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main(string[] _)
     {
         int[] array1 = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
         int[] array2 = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
 
-        Solution solution = new Solution();
-        string result = solution.AreArraysSimilar(array1, array2);
+        var solution = new Solution();
+        string result = Solution.AreArraysSimilar(array1, array2);
 
         Console.WriteLine(result);
     }

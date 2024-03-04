@@ -7,12 +7,9 @@ namespace tinkoffds3;
 public class SolutionTests
 {
     [Test]
-    [TestCase(2, 2, 4)]
-    [TestCase(0, 0, 0)]
-    public void TestCalculate(int a, int b, int expected)
+    public void TestCalculate()
     {
         // Arrange
-        Solution solution = new Solution();
         // Act
         // Assert
     }

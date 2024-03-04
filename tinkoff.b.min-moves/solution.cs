@@ -4,7 +4,7 @@ namespace b
 {
     public class Solution
     {
-        public int GetMinimalCrosses(int pieces)
+        public static int GetMinimalCrosses(int pieces)
         {
             double log2 = Math.Log2(pieces);
             bool hasFraction = log2 % 1 != 0;

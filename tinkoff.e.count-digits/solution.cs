@@ -4,7 +4,7 @@ namespace e
 {
     public class SolutionSlow
     {
-        public long CountSameDigitsNumbers(long start, long end)
+        public static long CountSameDigitsNumbers(long start, long end)
         {
             long maxTests = 0;
             for (long i = start; i <= end; i++)
@@ -14,7 +14,7 @@ namespace e
             return maxTests;
         }
 
-        private bool HasSameDigits(long n)
+        private static bool HasSameDigits(long n)
         {
             long digit = n % 10;
             while (n > 0)
@@ -28,7 +28,7 @@ namespace e
 
     public class Solution
     {
-        private long CountSameDigitsNumber(long number)
+        private static long CountSameDigitsNumber(long number)
         {
             var strNum = number.ToString();
             var digit = strNum.First() - '0';
@@ -40,7 +40,7 @@ namespace e
             return result;
 
         }
-        public long CountSameDigitsNumbers(long a, long b)
+        public static long CountSameDigitsNumbers(long a, long b)
         {
             var (strA, strB) = (a.ToString(), b.ToString());
 

@@ -26,7 +26,7 @@ public class TSP
         }
 
         var vertex = firstVertex;
-        while(reversedPath.TryGetValue(vertex, out var nextVertex))
+        while(reversedPath.TryGetValue(vertex, out _))
         {
             vertex = reversedPath[vertex];
             result.Add(vertex.Id);
@@ -41,7 +41,7 @@ public class TSP
     {
         var vertexes = Enumerable.Range(0, matrix.Length).Select(id => new Vertex(id)).ToArray();
 
-        Dictionary<Vertex, bool> visitedVertexes = new Dictionary<Vertex, bool>();
+        Dictionary<Vertex, bool> visitedVertexes = new();
         foreach(var vertex in vertexes) visitedVertexes[vertex] = false;
 
         var minLengthToVertex = new Dictionary<Vertex, int>();

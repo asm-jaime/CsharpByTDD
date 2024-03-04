@@ -13,13 +13,13 @@ namespace gametictactoeai;
         private const int StalemateScore = 0;
         private const int DefaultBoardState = 0;
 
-        private static Dictionary<int, Func<int, int, int>> _optimization =
-            new Dictionary<int, Func<int, int, int>>() {
+        private static readonly Dictionary<int, Func<int, int, int>> _optimization =
+            new() {
                 {Player, Math.Max},
                 {Opponent, Math.Min}
             };
 
-        private static Dictionary<string, int[]> _chache = new Dictionary<string, int[]>() {
+        private static readonly Dictionary<string, int[]> _chache = new() {
             {"0 0 0\n0 0 0\n0 0 01", new int[]{1, 1}}
         };
 

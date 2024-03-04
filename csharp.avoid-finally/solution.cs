@@ -4,7 +4,7 @@ namespace csharpavoidfinally;
 
 public class Solution
 {
-    public bool Calculate()
+    public static bool Calculate()
     {
         bool isFinallyHappened = false;
 
@@ -15,7 +15,7 @@ public class Solution
         }
         catch(Exception ex)
         {
-
+            Console.WriteLine(ex.ToString(), isFinallyHappened);
         }
         finally
         {

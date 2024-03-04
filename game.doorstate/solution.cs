@@ -1,4 +1,7 @@
-﻿namespace gamedoorstate;
+﻿using numbercombinations;
+using System.Linq;
+
+namespace gamedoorstate;
 
 enum DoorState { Stay, Open, Close }
 
@@ -21,7 +24,7 @@ public class OpenCloseDoor
     {
         //((states) => Math.pow(3, states) - 2*Math.pow(3, states - 2))(2)
         //
-        return 0;
+        return states;
     }
 
     public static int GetSizeOfValidSeriesByFullCombo(int states)

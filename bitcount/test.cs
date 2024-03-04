@@ -12,7 +12,6 @@ public class BitCountingTest
     [TestCase(10, 2)]
     public void CountBits(int input, int expectedCount)
     {
-        var solution = new Solution();
-        Assert.AreEqual(expectedCount, solution.CountBits(input));
+        Assert.AreEqual(expectedCount, Solution.CountBits(input));
     }
 }

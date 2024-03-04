@@ -9,7 +9,7 @@ public class Position
     private int _x;
     private int _y;
 
-    private int[][] _array;
+    private readonly int[][] _array;
 
     public Position(int[][] array)
     {
@@ -70,7 +70,7 @@ public class SnailSolution
 {
     public static int[] Snail(int[][] array)
     {
-        if(array.Length == 0) return new int[] { };
+        if(array.Length == 0) return System.Array.Empty<int>();
         if(array.Length == 1) return new int[] { array[0][0] };
 
         var result = new List<int>();

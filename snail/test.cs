@@ -34,12 +34,12 @@ public class SnailTest
         Test(array, r);
     }
 
-    public string Int2dToString(int[][] a)
+    public static string Int2dToString(int[][] a)
     {
         return $"[{string.Join("\n", a.Select(row => $"[{string.Join(",", row)}]"))}]";
     }
 
-    public void Test(int[][] array, int[] result)
+    public static void Test(int[][] array, int[] result)
     {
         var text = $"{Int2dToString(array)}\nshould be sorted to\n[{string.Join(",", result)}]\n";
         Console.WriteLine(text);

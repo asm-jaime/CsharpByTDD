@@ -4,13 +4,12 @@ namespace tinkoff2;
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main(string[] _)
     {
-        string number = Console.ReadLine();
+        Console.ReadLine();
         string text = Console.ReadLine();
 
-        TextAnalyzer analyzer = new TextAnalyzer();
-        var (minLength, maxLength) = analyzer.AnalyzeText(text);
+        var (minLength, maxLength) = TextAnalyzer.AnalyzeText(text);
 
         Console.WriteLine($"{minLength} {maxLength}");
     }

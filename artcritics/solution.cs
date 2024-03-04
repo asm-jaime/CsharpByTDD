@@ -2,7 +2,7 @@
 
 public class Solution
 {
-    public int CalculateBonus(int n, int[] scores)
+    public static int CalculateBonus(int _, int[] scores)
     {
         int totalBonus = 0;
         for (int i = 0; i < scores.Length; i++)
@@ -18,7 +18,7 @@ public class Solution
                     nonNullBonuses--;
                 }
 
-                totalBonus = totalBonus + scores[j];
+                totalBonus += scores[j];
 
                 j++;
             }

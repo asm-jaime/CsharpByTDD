@@ -5,7 +5,7 @@ namespace csharpclosure;
 
 public class Solution
 {
-    public string Calculate()
+    public static string Calculate()
     {
         var result = string.Empty;
         var actions = new List<Action>();
