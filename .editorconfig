@@ -1,0 +1,11 @@
+# Remove the line below if you want to inherit .editorconfig settings from higher directories
+root = true
+
+# Matches multiple files with brace expansion notation
+# Set default charset
+[*.{cs,sql}]
+charset = utf-8
+
+# C# files
+[*.cs]
+dotnet_diagnostic.CA1822.severity = none
