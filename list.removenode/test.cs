@@ -7,17 +7,58 @@ namespace listremovenode;
 [TestFixture]
 public class SolutionTests
 {
+
+    [Test]
+    public void Test1Node()
+    {
+        // Arrange
+        var solution = new Solution();
+        var head = new ListNode(1);
+        // Act
+        var list = solution.RemoveNthFromEnd(head, 1);
+        // Assert
+        solution.ListLength(list).Should().Be(0);
+
+    }
+
+    [Test]
+    public void Test2Node()
+    {
+        // Arrange
+        var solution = new Solution();
+        var head = new ListNode(1, new ListNode(2));
+        //var removeNode = 2;
+        // Act
+        var list = solution.RemoveNthFromEnd(head, 1);
+        // Assert
+        solution.ListLength(list).Should().Be(1);
+
+    }
+
+    [Test]
+    public void Test2NodeRemove2()
+    {
+        // Arrange
+        var solution = new Solution();
+        var head = new ListNode(1, new ListNode(2));
+        // Act
+        var list = solution.RemoveNthFromEnd(head, 2);
+        // Assert
+        solution.ListLength(list).Should().Be(1);
+        list.val.Should().Be(2);
+
+    }
+
     [Test]
     public void TestCalculate()
     {
         // Arrange
+        var solution = new Solution();
         var head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
-        //var removeNode = 2;
         // Act
-        int currentLength = Solution.ListLength(head);
-        //int result = solution.RemoveNthFromEnd(head, removeNode);
+        var list = solution.RemoveNthFromEnd(head, 2);
         // Assert
-        currentLength.Should().Be(4);
+        solution.ListLength(list).Should().Be(4);
 
     }
 }

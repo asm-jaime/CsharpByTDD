@@ -13,9 +13,11 @@ public class ListNode
 
 public class Solution
 {
-    public static int ListLength(ListNode head)
+    public int ListLength(ListNode head)
     {
-        var len = 0;
+        if(head is null) return 0;
+
+        var len = 1;
         var current = head;
         while(current.next is not null)
         {
@@ -25,8 +27,41 @@ public class Solution
         return len;
     }
 
-    public static ListNode RemoveNthFromEnd(ListNode head, int _)
+    private (ListNode, ListNode) GetNodeAndPrevNodeByNumber(ListNode head, int n)
     {
+        var position = 0;
+        var current = head;
+        var previous = head;
+        while(position < n)
+        {
+            position++;
+            previous = current;
+            current = current.next;
+        }
+
+        return (current, previous);
+    }
+
+    public ListNode RemoveNthFromEnd(ListNode head, int n)
+    {
+        if(head is null || head.next is null)
+        {
+            return null;
+        }
+
+        var len = ListLength(head);
+
+        if(len == n)
+        {
+            head = head.next;
+            return head;
+        }
+
+        var (current, previous) = GetNodeAndPrevNodeByNumber(head, len - n);
+
+        previous.next = current.next;
+        current.next = null;
+
         return head;
     }
 }
