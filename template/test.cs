@@ -1,4 +1,4 @@
-﻿using NUnit.Framework;
+using NUnit.Framework;
 
 namespace template;
 
@@ -12,8 +12,9 @@ public class SolutionTests
     public void TestCalculate(int a, int b, int expected)
     {
         // Arrange
+        var solution = new Solution();
         // Act
-        int total = Solution.Calculate(a, b);
+        int total = solution.Calculate(a, b);
         // Assert
         Assert.AreEqual(expected, total);
     }
