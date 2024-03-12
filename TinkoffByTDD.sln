@@ -176,6 +176,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "list.removenode", "list.rem
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "removeduplicate", "removeduplicate\removeduplicate.csproj", "{B2C109D1-E4DA-43F9-A4FB-DD0056A0E2A8}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "patterns.behavioral.observer", "patterns.behavioral.observer\patterns.behavioral.observer.csproj", "{1B5BA6DF-7586-4E3E-946E-17433FFD2EA5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -514,6 +516,10 @@ Global
 		{B2C109D1-E4DA-43F9-A4FB-DD0056A0E2A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2C109D1-E4DA-43F9-A4FB-DD0056A0E2A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2C109D1-E4DA-43F9-A4FB-DD0056A0E2A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B5BA6DF-7586-4E3E-946E-17433FFD2EA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B5BA6DF-7586-4E3E-946E-17433FFD2EA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B5BA6DF-7586-4E3E-946E-17433FFD2EA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B5BA6DF-7586-4E3E-946E-17433FFD2EA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
