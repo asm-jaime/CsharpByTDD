@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace patternsbehavioralobserver;
+namespace templatesbehavioralobserver;
 
 public interface IObserver
 {

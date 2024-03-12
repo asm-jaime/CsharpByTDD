@@ -1,7 +1,7 @@
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace patternsbehavioralobserver;
+namespace templatesbehavioralobserver;
 
 
 [TestFixture]
