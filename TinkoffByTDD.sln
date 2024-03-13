@@ -178,6 +178,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "removeduplicate", "removedu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "templates.behavioral.observer", "templates.behavioral.observer\templates.behavioral.observer.csproj", "{4C8361C5-05C3-4DEE-A82B-BCF45A59C4DA}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "intervals.overlaps", "intervals.overlaps\intervals.overlaps.csproj", "{1B8EBFA3-C3F2-4595-9C97-77AFA659A619}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -520,6 +522,10 @@ Global
 		{4C8361C5-05C3-4DEE-A82B-BCF45A59C4DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C8361C5-05C3-4DEE-A82B-BCF45A59C4DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C8361C5-05C3-4DEE-A82B-BCF45A59C4DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B8EBFA3-C3F2-4595-9C97-77AFA659A619}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B8EBFA3-C3F2-4595-9C97-77AFA659A619}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B8EBFA3-C3F2-4595-9C97-77AFA659A619}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B8EBFA3-C3F2-4595-9C97-77AFA659A619}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
