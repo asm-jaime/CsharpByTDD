@@ -180,6 +180,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "templates.behavioral.observ
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "intervals.overlaps", "intervals.overlaps\intervals.overlaps.csproj", "{1B8EBFA3-C3F2-4595-9C97-77AFA659A619}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "convolution-phone-number", "convolution-phone-number\convolution-phone-number.csproj", "{C3C946D7-6F57-4B8E-BA1F-D979B8FF4A94}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp.records", "csharp.records\csharp.records.csproj", "{F796B501-11AC-4BAC-891B-07C901C86683}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -526,6 +530,14 @@ Global
 		{1B8EBFA3-C3F2-4595-9C97-77AFA659A619}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B8EBFA3-C3F2-4595-9C97-77AFA659A619}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B8EBFA3-C3F2-4595-9C97-77AFA659A619}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3C946D7-6F57-4B8E-BA1F-D979B8FF4A94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3C946D7-6F57-4B8E-BA1F-D979B8FF4A94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3C946D7-6F57-4B8E-BA1F-D979B8FF4A94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3C946D7-6F57-4B8E-BA1F-D979B8FF4A94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F796B501-11AC-4BAC-891B-07C901C86683}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F796B501-11AC-4BAC-891B-07C901C86683}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F796B501-11AC-4BAC-891B-07C901C86683}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F796B501-11AC-4BAC-891B-07C901C86683}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
