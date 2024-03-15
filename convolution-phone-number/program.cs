@@ -9,12 +9,12 @@ class Program
     {
         long from, to;
         string[] input = Console.ReadLine().Split();
-        from = int.Parse(input[0]);
-        to = int.Parse(input[1]);
+        from = long.Parse(input[0]);
+        to = long.Parse(input[1]);
 
         var solution = new Solution();
         var result = solution.GetMinimalPrefixes(from, to);
 
-        Console.WriteLine(result);
+        foreach(var prefix in result) Console.WriteLine(prefix);
     }
 }

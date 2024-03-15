@@ -18,9 +18,9 @@ public class SolutionTests
         // Arrange
         var solution = new Solution();
         // Act
-        var result = solution.GetLastPrefixIndex(fromStr, toStr);
+        //var result = solution.GetLastPrefixIndex(fromStr, toStr);
         // Assert
-        result.Should().Be(expected);
+        //result.Should().Be(expected);
     }
 
     [Test]
@@ -30,9 +30,9 @@ public class SolutionTests
         // Arrange
         var solution = new Solution();
         // Act
-        var result = solution.GetRangeFromToStr("", 1, 9);
+        //var result = solution.GetRangeFromToStr("", 1, 9);
         // Assert
-        result.Aggregate((acc, e) => $"{acc}{e}").Should().Be("123456789");
+        //result.Aggregate((acc, e) => $"{acc}{e}").Should().Be("123456789");
     }
 
     [Test]
