@@ -93,21 +93,21 @@ public class SolutionTests
         // Arrange
         var solution = new Solution();
         var expected = new List<string>
-    {
-        "113",
-        "114",
-        "115",
-        "116",
-        "117",
-        "118",
-        "119",
-        "12",
-        "13",
-        "14",
-        "150",
-        "151",
-        "152"
-    };
+        {
+            "113",
+            "114",
+            "115",
+            "116",
+            "117",
+            "118",
+            "119",
+            "12",
+            "13",
+            "14",
+            "150",
+            "151",
+            "152"
+        };
 
         // Act
         var result = solution.GetMinimalPrefixes(113, 152);
