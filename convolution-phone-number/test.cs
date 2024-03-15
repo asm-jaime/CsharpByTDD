@@ -9,7 +9,6 @@ namespace convolutionphonenumber;
 [TestFixture]
 public class SolutionTests
 {
-    /*
     [Test]
     [TestCase("12", "13", 1)]
     [TestCase("1234", "1235", 3)]
@@ -35,7 +34,6 @@ public class SolutionTests
         // Assert
         result.Aggregate((acc, e) => $"{acc}{e}").Should().Be("123456789");
     }
-    */
 
     [Test]
     public void TestCalculate()
@@ -118,4 +116,3 @@ public class SolutionTests
         result.Should().Equal(expected);
     }
 }
-

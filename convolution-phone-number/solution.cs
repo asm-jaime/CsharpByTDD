@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace convolutionphonenumber;
 
@@ -26,7 +24,7 @@ public class Solution
         string fromStr = from.ToString();
         string toStr = to.ToString();
 
-        if (fromStr.Length != toStr.Length)
+        if(fromStr.Length != toStr.Length)
         {
             return result;
         }
