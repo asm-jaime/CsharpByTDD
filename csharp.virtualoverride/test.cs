@@ -1,4 +1,4 @@
-﻿using FluentAssertions;
+using FluentAssertions;
 using NUnit.Framework;
 
 namespace csharpvirtualoverride;
@@ -11,9 +11,26 @@ public class VirtualOverrideTests
     public void ShouldEmployeReturnOverridedPerson()
     {
         Person person = new Employee { Name = "Sam", Company = "Microsoft" };
-        string display = person.Display();
 
-        display.Should().Be("Employee Sam");
+        person.Display().Should().Be("Employee Sam");
+    }
+
+    [Test]
+    public void ShouldMetodBeOverrided()
+    {
+        Base @base = new Employee { Name = "Base", Company = "Base" };
+
+        @base.OverridedMethod().Should().Be("Overrided 2");
+    }
+
+    [Test]
+    public void ShouldHideMethod()
+    {
+        Base @base = new Employee { Name = "Base", Company = "Base" };
+        Employee employee = (Employee) @base;
+
+        @base.HideMethod().Should().Be("Hide 1");
+        employee.HideMethod().Should().Be("Hide 2");
     }
 }
 
