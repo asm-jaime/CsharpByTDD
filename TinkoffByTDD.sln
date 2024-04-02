@@ -194,6 +194,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp.overloading", "cshar
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp.LINQ", "csharp.LINQ\csharp.LINQ.csproj", "{CCD4467A-0376-40D9-A5E9-1C51532BFE9E}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp.FizzBuzz", "csharp.FizzBuzz\csharp.FizzBuzz.csproj", "{CC55E4AD-3529-4E8C-8E69-C68B6BA88D45}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -568,6 +570,10 @@ Global
 		{CCD4467A-0376-40D9-A5E9-1C51532BFE9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCD4467A-0376-40D9-A5E9-1C51532BFE9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCD4467A-0376-40D9-A5E9-1C51532BFE9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC55E4AD-3529-4E8C-8E69-C68B6BA88D45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC55E4AD-3529-4E8C-8E69-C68B6BA88D45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC55E4AD-3529-4E8C-8E69-C68B6BA88D45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC55E4AD-3529-4E8C-8E69-C68B6BA88D45}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
