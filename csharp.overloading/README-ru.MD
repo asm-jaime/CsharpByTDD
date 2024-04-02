@@ -28,5 +28,5 @@ Console.WriteLine(model); // ?
 ```
 var lastNames = new List<string>() {"Иванов", "Петров", "Сидоров"};
 RefreshValue(lastNames);
-Console.WriteLine(string.Join(“,”, lastNames)); // ?
+Console.WriteLine(string.Join(",", lastNames)); // ?
 ```

@@ -1,17 +1,32 @@
 <!-- ENGLISH -->
-# Task template
+# Answer questions for the code in the solution file
 
-
-### Comment
-
-
-Example 1
-
-in:
+1.
+```cs
+int i = 8;
+RefreshValue(i);
+Console.WriteLine(i); // ?
 ```
 
-```
-out:
+2.
+```cs
+var car = new Car();
+car.Wheels = 4;
+RefreshValue(car.Wheels);
+Console.WriteLine(car.Wheels); // ?
 ```
 
+3.
+```
+string model = "Lada Granta";
+RefreshValue(model);
+Console.WriteLine(model); // ?
+```
+
+4.
+
+```
+var lastNames = new List<string>() {"Ivanov", "Petrov", "Sidorov"};
+RefreshValue(lastNames);
+Console.WriteLine(string.Join(",", lastNames)); // ?
 ```
