@@ -192,6 +192,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp.ILASM", "csharp.ILAS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp.overloading", "csharp.overloading\csharp.overloading.csproj", "{8C76244C-2CA4-4744-9328-9222E9C06D88}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp.LINQ", "csharp.LINQ\csharp.LINQ.csproj", "{CCD4467A-0376-40D9-A5E9-1C51532BFE9E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -562,6 +564,10 @@ Global
 		{8C76244C-2CA4-4744-9328-9222E9C06D88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C76244C-2CA4-4744-9328-9222E9C06D88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C76244C-2CA4-4744-9328-9222E9C06D88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCD4467A-0376-40D9-A5E9-1C51532BFE9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCD4467A-0376-40D9-A5E9-1C51532BFE9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCD4467A-0376-40D9-A5E9-1C51532BFE9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCD4467A-0376-40D9-A5E9-1C51532BFE9E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
