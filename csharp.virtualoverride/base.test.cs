@@ -27,10 +27,11 @@ public class VirtualOverrideTests
     public void ShouldHideMethod()
     {
         Base @base = new Employee { Name = "Base", Company = "Base" };
-        Employee employee = (Employee) @base;
+        Employee employee = (Employee)@base;
 
         @base.HideMethod().Should().Be("Hide 1");
         employee.HideMethod().Should().Be("Hide 2");
     }
+
 }
 

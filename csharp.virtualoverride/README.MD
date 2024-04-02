@@ -1,17 +1,4 @@
 <!-- ENGLISH -->
-# Task template
+# Read the code that uses overriding and hiding
 
-
-### Comment
-
-
-Example 1
-
-in:
-```
-
-```
-out:
-```
-
-```
+Read the code that uses overriding/hiding and tell me what it outputs.
