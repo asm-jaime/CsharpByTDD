@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace treepalindromicpath;
 
-public class TreeNode
+class TreeNode
 {
     public int val;
     public TreeNode left;
@@ -16,7 +16,7 @@ public class TreeNode
     }
 }
 
-public class Solution
+class Solution
 {
     public static int PseudoPalindromicPaths(TreeNode root)
     {

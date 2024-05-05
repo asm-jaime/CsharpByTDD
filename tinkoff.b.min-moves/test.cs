@@ -3,7 +3,7 @@
 namespace b
 {
     [TestFixture]
-    public class SolutionTests
+    class SolutionTests
     {
         [Test]
         [TestCase(6, 3)]

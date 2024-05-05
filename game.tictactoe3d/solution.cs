@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace gametictactoe3d;
 
-public class Dinglemouse
+class Dinglemouse
 {
     private const int PlayerO = 1;
     private const int PlayerX = 2;

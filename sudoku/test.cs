@@ -2,7 +2,7 @@
 
 namespace sudoku;
 
-public class SudokuTestCaseBuilder
+class SudokuTestCaseBuilder
 {
     private bool _expectedResult;
     private int[][] _board;
@@ -26,7 +26,7 @@ public class SudokuTestCaseBuilder
 }
 
 [TestFixture]
-public class Sample_Tests
+class Sample_Tests
 {
     [Test]
     public void TestCase1()

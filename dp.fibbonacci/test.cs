@@ -4,7 +4,7 @@ namespace dpfibbonacci;
 
 
 [TestFixture]
-public class Tests
+class Tests
 {
     [Test]
     public void Test1()

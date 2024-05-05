@@ -4,7 +4,7 @@ namespace lngesolang4;
 
 
 [TestFixture]
-public class BoolfuckTest
+class BoolfuckTest
 {
     [Test]
     public void TestEmpty()

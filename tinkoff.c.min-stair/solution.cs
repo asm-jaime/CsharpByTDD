@@ -2,7 +2,7 @@
 
 namespace c
 {
-    public class Solution
+    class Solution
     {
         public static int GetMinStairClimbed(int _, int timeTillLeave, int[] floors, int leavingEmployee)
         {

@@ -3,7 +3,7 @@
 namespace c
 {
     [TestFixture]
-    public class SolutionTests
+    class SolutionTests
     {
         [TestCase(2, 0, new[] { 99, 100 }, 2, 1)]
         [TestCase(2, 100, new[] { 99, 100 }, 2, 1)]

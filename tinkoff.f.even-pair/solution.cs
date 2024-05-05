@@ -2,7 +2,7 @@
 
 namespace f;
 
-public class Solution
+class Solution
 {
     private static void Swap(int[] heights, int from, int to)
     {

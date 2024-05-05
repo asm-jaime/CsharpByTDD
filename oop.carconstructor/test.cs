@@ -4,7 +4,7 @@ using System.Linq;
 namespace oopcarconstructor;
 
 [TestFixture]
-public class Car1ExampleTests
+class Car1ExampleTests
 {
     [Test]
     public void TestMotorStartAndStop()
@@ -63,7 +63,7 @@ public class Car1ExampleTests
 }
 
 [TestFixture]
-public class Car2ExampleTests
+class Car2ExampleTests
 {
     [Test]
     public void TestStartSpeed()
@@ -196,7 +196,7 @@ public class Car2ExampleTests
 }
 
 [TestFixture]
-public class Car3ExampleTests
+class Car3ExampleTests
 {
     [Test]
     public void TestRealAndDrivingTimeBeforeStarting()

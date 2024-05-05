@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace stringsgeneratebc;
 
-public class BCGenerator
+class BCGenerator
 {
     private const int AcronymizeLimit = 30;
     private static readonly HashSet<string> IgnoreWords = new()

@@ -4,7 +4,7 @@ namespace spiral;
 
 
 [TestFixture]
-public class SolutionTest
+class SolutionTest
 {
     [Test]
     public void Test01()

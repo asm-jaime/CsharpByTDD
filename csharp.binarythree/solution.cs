@@ -2,7 +2,7 @@
 
 namespace csharpbinarythree;
 
-public class Node
+class Node
 {
     public Node Left;
     public Node Right;
@@ -16,7 +16,7 @@ public class Node
     }
 }
 
-public class TreeWalker
+class TreeWalker
 {
     public static List<int> TreeByLevelsDeep(Node mainNode)
     {

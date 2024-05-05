@@ -3,7 +3,7 @@
 namespace tinkoff3;
 
 [TestFixture]
-public class SolutionTests
+class SolutionTests
 {
     [Test]
     [TestCase(new int[] { 1, 2, 3 }, 2.0)]

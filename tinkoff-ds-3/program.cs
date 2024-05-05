@@ -4,7 +4,7 @@ using System.Linq;
 namespace tinkoffds3;
 
 
-public class Solution
+class Solution
 {
     public static string AreArraysSimilar(int[] array1, int[] array2)
     {

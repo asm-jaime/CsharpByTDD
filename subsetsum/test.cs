@@ -3,7 +3,7 @@
 namespace subsum
 {
     [TestFixture]
-    public class SolutionTests
+    class SolutionTests
     {
         [Test]
         [TestCase(new int[] { 3, 1, 8, 5, 4 }, 10, true)]

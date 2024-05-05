@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace bignumbersum;
 
 [TestFixture]
-public class BigNumberSumTest
+class BigNumberSumTest
 {
     [TestCase("10", "10", "20")]
     [TestCase("91", "19", "110")]

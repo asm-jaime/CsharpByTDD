@@ -8,7 +8,7 @@ public abstract class Building
     }
 }
 
-public class House : Building
+class House : Building
 {
     public override int GetFloors()
     {
@@ -16,7 +16,7 @@ public class House : Building
     }
 }
 
-public class SkyScraper : House
+class SkyScraper : House
 {
     public override int GetFloors()
     {
@@ -24,7 +24,7 @@ public class SkyScraper : House
     }
 }
 
-public class OrdinaryHouse : House
+class OrdinaryHouse : House
 {
     public new int GetFloors()
     {

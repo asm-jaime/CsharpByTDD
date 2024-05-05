@@ -4,7 +4,7 @@ namespace lngesolang1;
 
 
 [TestFixture]
-public class EsolangEasyTest
+class EsolangEasyTest
 {
     [Test]
     public void SampleTests()

@@ -1,8 +1,8 @@
-﻿using System.Linq;
+using System.Linq;
 
 namespace bignumbersum;
 
-public class Solution
+class Solution
 {
     public static string Add(string a, string b)
     {

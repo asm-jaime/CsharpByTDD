@@ -41,7 +41,7 @@ public static class BracketChecker
     }
 }
 
-public class Evaluate
+class Evaluate
 {
     private static readonly Dictionary<string, Func<double, double, double>> OperationsA =
         new()

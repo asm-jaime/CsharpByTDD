@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace d;
 
-public class Solution
+class Solution
 {
     public static long MaximizeSum(int _, int k, int[] numbers)
     {

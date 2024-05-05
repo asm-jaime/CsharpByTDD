@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace dptravellingsalesman;
 
-public class Vertex
+class Vertex
 {
     public int Id { private set; get; }
     public Vertex(int id)
@@ -13,7 +13,7 @@ public class Vertex
     }
 }
 
-public class TSP
+class TSP
 {
     private static List<Int32> RecoverResult(Dictionary<Vertex, Vertex> minPathVertex, Vertex firstVertex)
     {

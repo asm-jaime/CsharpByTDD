@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 namespace numberlastdigit;
 
 
-public class SecureRandom
+class SecureRandom
 {
     public static int GetRandomNumber(int minValue, int maxValue)
     {
@@ -29,7 +29,7 @@ public struct LDCase
 }
 
 [TestFixture]
-public class SolutionTest
+class SolutionTest
 {
     [Test]
     public void SampleTest()

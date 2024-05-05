@@ -2,7 +2,7 @@ using System;
 
 namespace fizzbuzz;
 
-public class Solution
+class Solution
 {
     public void PrintFizzBuzz(int num)
     {

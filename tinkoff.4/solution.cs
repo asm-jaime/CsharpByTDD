@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace tinkoff4;
 
-public class Solution
+class Solution
 {
     public static string GetMinimizedBookList(int[] bookList)
     {

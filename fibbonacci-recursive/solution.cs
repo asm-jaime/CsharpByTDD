@@ -2,7 +2,7 @@
 
 namespace fibbonaccirecursive;
 
-public class Fibonacci
+class Fibonacci
 {
     public static (BigInteger, BigInteger) GetFibRecursive(int num)
     {

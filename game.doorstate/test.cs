@@ -4,7 +4,7 @@ namespace gamedoorstate;
 
 
 [TestFixture]
-public class OpenCloseDoorTest
+class OpenCloseDoorTest
 {
     [TestCase(new int[] { 1, 1, 2, 2 }, ExpectedResult = false)]
     [TestCase(new int[] { 1, 0, 2, 1 }, ExpectedResult = true)]

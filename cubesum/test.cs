@@ -4,7 +4,7 @@ namespace cubesum;
 
 
 [TestFixture]
-public class CubeSumTests
+class CubeSumTests
 {
 
     [Test]

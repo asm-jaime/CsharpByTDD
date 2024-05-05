@@ -1,6 +1,6 @@
 ﻿namespace listremovenode;
 
-public class ListNode
+class ListNode
 {
     public int val;
     public ListNode next;
@@ -11,7 +11,7 @@ public class ListNode
     }
 }
 
-public class Solution
+class Solution
 {
     public int ListLength(ListNode head)
     {

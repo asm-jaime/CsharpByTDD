@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace csharpLINQ;
 
-public class WhereWhere
+class WhereWhere
 {
 
     public (int, int) ExecuteExpression()

@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace lngesolang2;
 
-public class Smallfuck
+class Smallfuck
 {
     private const int BracketHasNoPair = -1;
     private static Dictionary<int, int> GetBracketAdressMap(string code)

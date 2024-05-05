@@ -4,7 +4,7 @@ namespace e
 {
 
     [TestFixture]
-    public class SolutionTests
+    class SolutionTests
     {
         [Test]
         [TestCase(0, 0)]

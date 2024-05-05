@@ -2,7 +2,7 @@ namespace csharprecords;
 
 public record struct Point(int X, int Y);
 
-public class Solution
+class Solution
 {
     public Point Calculate()
     {

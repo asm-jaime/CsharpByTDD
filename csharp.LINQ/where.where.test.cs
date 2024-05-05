@@ -3,7 +3,7 @@ using NUnit.Framework;
 
 namespace csharpLINQ;
 
-public class WhereWhereTests
+class WhereWhereTests
 {
     [Test]
     public void ShouldTestExecuteExpressionReturnRightValue()

@@ -30,7 +30,7 @@ public static class ByteHelper
     }
 }
 
-public class Boolfuck
+class Boolfuck
 {
 
     private const int BracketHasNoPair = -1;

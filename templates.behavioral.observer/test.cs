@@ -5,7 +5,7 @@ namespace templatesbehavioralobserver;
 
 
 [TestFixture]
-public class SolutionTests
+class SolutionTests
 {
     [Test]
     public void TestCalculate()

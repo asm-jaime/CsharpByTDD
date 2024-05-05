@@ -1,6 +1,6 @@
 namespace csharplocalfunction;
 
-public class Solution
+class Solution
 {
     static int _parameter = 1;
 

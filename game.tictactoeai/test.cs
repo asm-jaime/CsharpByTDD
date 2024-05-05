@@ -4,7 +4,7 @@ namespace gametictactoeai;
 
 
 [TestFixture]
-public class GameTicTacToeSolverTests
+class GameTicTacToeSolverTests
 {
     [Test]
     public void TestOneField()

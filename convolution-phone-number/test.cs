@@ -7,7 +7,7 @@ namespace convolutionphonenumber;
 
 
 [TestFixture]
-public class SolutionTests
+class SolutionTests
 {
     [Test]
     [TestCase("12", "13", 1)]

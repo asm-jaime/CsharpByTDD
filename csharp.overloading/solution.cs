@@ -2,13 +2,13 @@ using System.Collections.Generic;
 
 namespace csharpoverloading;
 
-public class Car
+class Car
 {
     public string Model { get; set; }
     public int Wheels { get; set; }
 }
 
-public class Solution
+class Solution
 {
 
     public static void RefreshValue(int value)

@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace csharpvirtualoverride;
 
 
-public class BuildingTests
+class BuildingTests
 {
     [Test]
     public void ShouldOverrideBuilding1()

@@ -3,7 +3,7 @@
 namespace bitcount;
 
 [TestFixture]
-public class BitCountingTest
+class BitCountingTest
 {
     [TestCase(0, 0)]
     [TestCase(4, 1)]

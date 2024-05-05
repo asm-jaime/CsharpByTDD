@@ -6,7 +6,7 @@ namespace snail;
 
 
 [TestFixture]
-public class SnailTest
+class SnailTest
 {
     [Test]
     public void SnailTest1()

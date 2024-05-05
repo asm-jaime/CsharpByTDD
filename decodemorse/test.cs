@@ -4,7 +4,7 @@ namespace decodemorse;
 
 
 [TestFixture]
-public class MorseRealTest
+class MorseRealTest
 {
     [Test]
     public void TestSomething()

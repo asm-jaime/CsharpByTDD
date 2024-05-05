@@ -1,6 +1,6 @@
 ﻿namespace lngassembler;
 
-public class Solution
+class Solution
 {
     public static int Calculate(int a, int b)
     {

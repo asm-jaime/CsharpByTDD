@@ -2,7 +2,7 @@
 
 namespace bitcount;
 
-public class Solution
+class Solution
 {
     public static int CountBits(int number)
     {

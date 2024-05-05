@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace dpminnumberofndivisors;
 
-public class MinNbDiv
+class MinNbDiv
 {
     public static int[] GetAllDivisors(int n)
     {

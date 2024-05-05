@@ -3,7 +3,7 @@
 namespace lngmathparseeval;
 
 [TestFixture]
-public class AccountTest
+class AccountTest
 {
     private readonly Evaluate ev = new();
     [Test]

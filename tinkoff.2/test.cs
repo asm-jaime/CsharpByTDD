@@ -3,7 +3,7 @@
 namespace tinkoff2;
 
 [TestFixture]
-public class TextAnalyzerTests
+class TextAnalyzerTests
 {
     [Test]
     [TestCase("a#aba", 1, 3)]

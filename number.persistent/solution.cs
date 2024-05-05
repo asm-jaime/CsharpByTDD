@@ -2,7 +2,7 @@
 
 namespace numberpersistent;
 
-public class Persist
+class Persist
 {
     private static long MultipleDigits(long number) =>
       number

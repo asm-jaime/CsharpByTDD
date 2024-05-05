@@ -3,7 +3,7 @@ using System.Text;
 
 namespace encryption;
 
-public class Encryption
+class Encryption
 {
     private static string Mix(string text)
     {

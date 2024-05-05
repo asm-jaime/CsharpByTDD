@@ -5,7 +5,7 @@ namespace listremovenode;
 
 
 [TestFixture]
-public class SolutionTests
+class SolutionTests
 {
 
     [Test]

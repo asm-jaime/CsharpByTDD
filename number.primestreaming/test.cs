@@ -5,7 +5,7 @@ namespace numberprimestreaming;
 
 
 [TestFixture]
-public class PrimesTest
+class PrimesTest
 {
 
     [Test]

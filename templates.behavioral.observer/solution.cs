@@ -17,7 +17,7 @@ public interface IObservable
     void NotifyAll();
 }
 
-public class Observable : IObservable
+class Observable : IObservable
 {
     private readonly List<IObserver> _observers;
 
@@ -45,7 +45,7 @@ public class Observable : IObservable
     }
 }
 
-public class Counter : IObserver
+class Counter : IObserver
 {
     private static int _count = 0;
 
@@ -60,7 +60,7 @@ public class Counter : IObserver
     }
 }
 
-public class Solution
+class Solution
 {
     public string Calculate()
     {

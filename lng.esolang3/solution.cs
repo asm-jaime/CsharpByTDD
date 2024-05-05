@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace lngesolang3;
 
-public class PaintFuck
+class PaintFuck
 {
     private const int BracketHasNoPair = -1;
 

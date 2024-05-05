@@ -2,7 +2,7 @@
 
 namespace numbercollapse;
 
-public class RangeCollapse
+class RangeCollapse
 {
     public static int Descriptions(int[] arr)
     {

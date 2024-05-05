@@ -6,7 +6,7 @@ namespace dayofweek;
 
 
 [TestFixture]
-public class DayOfWeekExtensionMethodsTests
+class DayOfWeekExtensionMethodsTests
 {
     [Test]
     public void Test1()

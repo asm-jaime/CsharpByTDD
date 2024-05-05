@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace csharpLINQ;
 
-public class SolutionTests
+class SolutionTests
 {
     [Test]
     public void TestCalculate()

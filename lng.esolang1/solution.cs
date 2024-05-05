@@ -2,7 +2,7 @@
 
 namespace lngesolang1;
 
-public class EsolangEasy
+class EsolangEasy
 {
     private static byte _cell = 0;
 

@@ -5,7 +5,7 @@ namespace csharpvirtualoverride;
 
 
 [TestFixture]
-public class VirtualOverrideTests
+class VirtualOverrideTests
 {
     [Test]
     public void ShouldEmployeReturnOverridedPerson()

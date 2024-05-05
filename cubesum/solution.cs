@@ -2,7 +2,7 @@
 
 namespace cubesum;
 
-public class CubeSum
+class CubeSum
 {
     // private static bool isDecimalPartExist(double number) => number - Math.Truncate(number) > 0;
 

@@ -1,6 +1,6 @@
 ﻿namespace csharpsequenceofexecution;
 
-public class SequenceOfExecution
+class SequenceOfExecution
 {
     private string _log = "";
     public string Log

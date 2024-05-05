@@ -2,7 +2,7 @@
 
 namespace dpbackpack;
 
-public class DPBackpackTask
+class DPBackpackTask
 {
     public static int PackBagpack(int[] scores, int[] weights, int capacity)
     {

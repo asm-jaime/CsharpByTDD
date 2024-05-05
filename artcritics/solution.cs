@@ -1,6 +1,6 @@
 ﻿namespace artcritics;
 
-public class Solution
+class Solution
 {
     public static int CalculateBonus(int _, int[] scores)
     {

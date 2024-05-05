@@ -4,7 +4,7 @@ namespace tinkoffds3;
 
 
 [TestFixture]
-public class SolutionTests
+class SolutionTests
 {
     [Test]
     public void TestCalculate()

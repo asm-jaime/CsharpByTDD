@@ -4,7 +4,7 @@ namespace tinkoff5;
 
 
 [TestFixture]
-public class SolutionTests
+class SolutionTests
 {
     [Test]
     [TestCase(new[] { "2 3 5", "1 3 2", "2 3 1", "1 4 2", "3 3 3 3 4" }, 2)]

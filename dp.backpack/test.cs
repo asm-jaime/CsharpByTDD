@@ -4,7 +4,7 @@ namespace dpbackpack;
 
 
 [TestFixture]
-public class DPBackpackTaskTest
+class DPBackpackTaskTest
 {
     [Test]
     public static void ExampleTests()

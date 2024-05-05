@@ -6,7 +6,7 @@ namespace numbercombinations;
 
 
 [TestFixture]
-public class ProofOfThreeAndFiveTest
+class ProofOfThreeAndFiveTest
 {
     [Test]
     public void ShouldCreateCombinations()

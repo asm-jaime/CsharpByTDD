@@ -4,7 +4,7 @@ namespace template;
 
 
 [TestFixture]
-public class SolutionTests
+class SolutionTests
 {
     [Test]
     [TestCase(2, 2, 4)]

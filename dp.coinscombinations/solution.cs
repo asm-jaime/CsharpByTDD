@@ -2,7 +2,7 @@
 
 namespace dpcoinscombinations;
 
-public class Solution
+class Solution
 {
     public static int CountCombinationsSlow(int moneys, int[] coins)
     {

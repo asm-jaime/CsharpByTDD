@@ -4,7 +4,7 @@ using System.Linq;
 namespace removeduplicate;
 
 
-public class DistinctByHashSet
+class DistinctByHashSet
 {
     public int[] Calculate(int[] array)
     {
@@ -12,7 +12,7 @@ public class DistinctByHashSet
     }
 }
 
-public class DistinctBySort
+class DistinctBySort
 {
     public int[] Calculate(int[] array)
     {

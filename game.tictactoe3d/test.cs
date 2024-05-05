@@ -5,7 +5,7 @@ namespace gametictactoe3d;
 
 
 [TestFixture]
-public class ExampleTests
+class ExampleTests
 {
     [Test]
     public void NoMoves()

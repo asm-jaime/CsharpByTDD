@@ -4,7 +4,7 @@ namespace finddigits;
 
 
 [TestFixture]
-public class InfiniteDigitalStringTests
+class InfiniteDigitalStringTests
 {
     [Test]
     public void FixedTests()

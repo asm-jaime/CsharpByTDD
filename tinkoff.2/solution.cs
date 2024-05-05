@@ -2,7 +2,7 @@
 
 namespace tinkoff2;
 
-public class TextAnalyzer
+class TextAnalyzer
 {
     public static (int MinLength, int MaxLength) AnalyzeText(string text)
     {

@@ -5,7 +5,7 @@ namespace csharpinheritance;
 
 
 [TestFixture]
-public class InheritanceTest
+class InheritanceTest
 {
     [Test]
     public void TestBaseToInherited()

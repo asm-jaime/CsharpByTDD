@@ -2,7 +2,7 @@
 
 namespace sudoku;
 
-public class Sudoku
+class Sudoku
 {
     public static bool ValidateSudoku(int[][] board)
     {

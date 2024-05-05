@@ -2,7 +2,7 @@
 
 namespace chesssquare;
 
-public class Solution
+class Solution
 {
     public static int SUMA002378(int n) => (n - 1) * (n) * (n + 1) / 3;
 

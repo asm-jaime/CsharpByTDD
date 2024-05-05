@@ -5,7 +5,7 @@ namespace matrixdeterminant;
 
 
 [TestFixture]
-public class MatrixTest
+class MatrixTest
 {
 
     private static readonly int[][][] matrix =

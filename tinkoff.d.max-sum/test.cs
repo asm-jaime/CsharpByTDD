@@ -3,7 +3,7 @@
 namespace d
 {
     [TestFixture]
-    public class MaxSumDifferenceTests
+    class MaxSumDifferenceTests
     {
         [TestCase(5, 2, new[] { 1, 2, 1, 3, 5 }, 16)]
         [TestCase(3, 1, new[] { 99, 5, 85 }, 10)]

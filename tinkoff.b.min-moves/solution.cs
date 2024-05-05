@@ -2,7 +2,7 @@
 
 namespace b
 {
-    public class Solution
+    class Solution
     {
         public static int GetMinimalCrosses(int pieces)
         {

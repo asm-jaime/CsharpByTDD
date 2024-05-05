@@ -4,7 +4,7 @@ using System;
 namespace lngsimpleinteractiveinterpreter;
 
 [TestFixture]
-public class InterpreterTests
+class InterpreterTests
 {
     private static void Check(ref Interpreter interpret, string inp, double? res)
     {

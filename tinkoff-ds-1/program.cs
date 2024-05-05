@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace tinkoffds1;
 
-public class Solution
+class Solution
 {
     public static (string, int) Calculate(string[] words)
     {

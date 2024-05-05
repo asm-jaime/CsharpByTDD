@@ -5,7 +5,7 @@ namespace lngassemblerinterpreter;
 
 
 [TestFixture]
-public class AssemblerInterpreterTest
+class AssemblerInterpreterTest
 {
     private static readonly string[] expected = {"(5+1)/2 = 3",
                                         "5! = 120",

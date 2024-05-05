@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace finddigits;
 
-public class InfiniteDigitalString
+class InfiniteDigitalString
 {
     public static long ParseTry(string num, int start, int step)
     {

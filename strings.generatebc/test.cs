@@ -5,7 +5,7 @@ using System;
 namespace stringsgeneratebc;
 
 [TestFixture]
-public class GenerateBCTest
+class GenerateBCTest
 {
     private readonly string[] seps = new string[] { " : ", " / ", " * ", " > ", " + ", " * ", " * ", " # ", " >>> ", " % " };
 

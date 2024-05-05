@@ -4,7 +4,7 @@ using System.Linq;
 namespace f
 {
     [TestFixture]
-    public class SolutionTests
+    class SolutionTests
     {
         [Test]
         [TestCase(new int[] { 2, 1, 4, 6 }, new int[] { -1, -1 })]

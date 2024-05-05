@@ -4,7 +4,7 @@ namespace tinkoffds2;
 
 
 [TestFixture]
-public class SolutionTests
+class SolutionTests
 {
     [Test]
     [TestCase(1, 1, 2, 2, "NO")]

@@ -5,7 +5,7 @@ namespace fibbonaccirecursive;
 
 
 [TestFixture]
-public class FibonacciMillionthTest
+class FibonacciMillionthTest
 {
     [Test]
     public void TestFib0()

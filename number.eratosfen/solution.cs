@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace numbereratosfen;
 
-public class NumberEratosfen
+class NumberEratosfen
 {
     private readonly List<int> _primes;
 
@@ -150,7 +150,7 @@ public static class Divisors
     }
 }
 
-public class NumberTheory
+class NumberTheory
 {
     /*
     public List<BigInteger> GetCoprimeFactors(BigInteger n, int m)

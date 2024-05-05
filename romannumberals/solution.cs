@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace romannumberals;
 
-public class RomanTransformer
+class RomanTransformer
 {
     private static readonly string[] RomanDigits = new string[]
         { "I","V","X","L","C","D","M","N" };
@@ -66,7 +66,7 @@ public static class NumberTransformer
     }
 }
 
-public class RomanNumerals
+class RomanNumerals
 {
     public static string ToRoman(int number)
     {

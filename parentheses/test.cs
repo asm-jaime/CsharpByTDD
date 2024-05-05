@@ -3,7 +3,7 @@
 namespace parentheses;
 
 [TestFixture]
-public class ValidParenthesesTest
+class ValidParenthesesTest
 {
     [Test]
     public void SampleTest1()

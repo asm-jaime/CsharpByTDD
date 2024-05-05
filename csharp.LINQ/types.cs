@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace csharpLINQ;
 
-public class Types
+class Types
 {
     public static IEnumerable<string> GetOrderedStrings(object[] objects)
     {

@@ -1,6 +1,6 @@
 namespace template;
 
-public class Solution
+class Solution
 {
     public int Calculate(int a, int b)
     {

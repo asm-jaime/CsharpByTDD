@@ -5,7 +5,7 @@ namespace csharpbinarythree;
 
 
 [TestFixture]
-public class SolutionTests
+class SolutionTests
 {
         [Test]
         public void NullTest()

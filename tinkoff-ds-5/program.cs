@@ -2,7 +2,7 @@ using System;
 
 namespace tinkoffds5;
 
-public class Solution
+class Solution
 {
     public static int Calculate(int width, int height)
     {

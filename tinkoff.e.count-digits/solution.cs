@@ -2,7 +2,7 @@
 
 namespace e
 {
-    public class SolutionSlow
+    class SolutionSlow
     {
         public static long CountSameDigitsNumbers(long start, long end)
         {
@@ -26,7 +26,7 @@ namespace e
         }
     }
 
-    public class Solution
+    class Solution
     {
         private static long CountSameDigitsNumber(long number)
         {

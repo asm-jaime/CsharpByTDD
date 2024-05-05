@@ -6,7 +6,7 @@ namespace dptravellingsalesman;
 
 
 [TestFixture]
-public class TSPTest
+class TSPTest
 {
     [Test]
     public void T1_threePoints()

@@ -3,7 +3,7 @@ using System.Reflection.Emit;
 
 namespace csharpMSILMethod;
 
-public class DynamicMethodUsingMSIL
+class DynamicMethodUsingMSIL
 {
     public static DynamicMethod MulBy2AndAdd1()
     {

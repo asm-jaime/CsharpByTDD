@@ -5,7 +5,7 @@ namespace gamedoorstate;
 
 enum DoorState { Stay, Open, Close }
 
-public class OpenCloseDoor
+class OpenCloseDoor
 {
     public static bool CheckOneSeries(int[] oneSeries)
     {

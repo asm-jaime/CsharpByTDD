@@ -4,7 +4,7 @@ namespace dplongestcommonsubsequence;
 
 
 [TestFixture]
-public class TestLCS
+class TestLCS
 {
     [Test]
     public void FixedTests()

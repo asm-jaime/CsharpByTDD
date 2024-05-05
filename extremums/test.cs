@@ -6,7 +6,7 @@ namespace extremums;
 
 
 [TestFixture]
-public class SolutionTest
+class SolutionTest
 {
 
     private static readonly string[] msg =

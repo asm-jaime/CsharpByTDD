@@ -6,7 +6,7 @@ namespace dpheightandegg;
 
 
 [TestFixture]
-public class FabergeTest
+class FabergeTest
 {
     public static void ShouldReturnRightHeight()
     {

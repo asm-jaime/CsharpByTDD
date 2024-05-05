@@ -2,7 +2,7 @@
 
 namespace csharpavoidfinally;
 
-public class Solution
+class Solution
 {
     public static bool Calculate()
     {

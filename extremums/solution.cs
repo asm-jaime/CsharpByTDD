@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace extremums;
 
-public class PickPeaks
+class PickPeaks
 {
     public static Dictionary<string, List<int>> GetPeaks(int[] arr)
     {

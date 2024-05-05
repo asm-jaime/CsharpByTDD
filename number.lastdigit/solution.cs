@@ -6,7 +6,7 @@ namespace numberlastdigit;
 
 
 
-public class Calculator
+class Calculator
 {
     public static int GetLastDigit(int[] array, int m)
     {

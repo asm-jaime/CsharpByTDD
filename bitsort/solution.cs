@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace bitsort;
 
-public class Solution
+class Solution
 {
     const int DefaultBase = 2;
     const string SelectEightDigitsPattern = @"\d{8}";

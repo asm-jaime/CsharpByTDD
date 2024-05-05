@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace tinkoff3;
 
-public class Solution
+class Solution
 {
     public static double CalculateHighwayHeight(int[] heights)
     {

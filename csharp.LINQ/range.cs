@@ -3,7 +3,7 @@ using System.Linq;
 namespace csharpLINQ;
 
 
-public class Range
+class Range
 {
     int[] _numeric;
 

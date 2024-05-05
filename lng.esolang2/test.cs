@@ -4,7 +4,7 @@ namespace lngesolang2;
 
 
 [TestFixture, Description("Your interpreter")]
-public class EsolangMiddleTest
+class EsolangMiddleTest
 {
     [Test, Description("should work for some example test cases")]
     public void ExampleTest()

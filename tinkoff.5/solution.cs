@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace tinkoff5;
 
-public class Solution
+class Solution
 {
     public static int DeliverPackage(string[] inputData)
     {

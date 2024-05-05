@@ -3,7 +3,7 @@
 namespace artcritics;
 
 [TestFixture]
-public class SolutionTests
+class SolutionTests
 {
     [Test]
     [TestCase(10, new[] { 10, 0, 1, 0, 3 }, 117)]

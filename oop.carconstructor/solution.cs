@@ -179,7 +179,7 @@ public interface ISensoreable // car #3
 }
 
 
-public class Car : ICar
+class Car : ICar
 {
     private const double DefaultFuelLevel = 20;
 
@@ -409,7 +409,7 @@ public class Car : ICar
     }
 }
 
-public class OnBoardComputer : IOnBoardComputer // car #3
+class OnBoardComputer : IOnBoardComputer // car #3
 {
     private readonly IDrivingProcessor _processor;
     //private IFuelTank _fuelTank;
@@ -634,7 +634,7 @@ public class OnBoardComputer : IOnBoardComputer // car #3
     }
 }
 
-public class OnBoardComputerDisplay : IOnBoardComputerDisplay // car #3
+class OnBoardComputerDisplay : IOnBoardComputerDisplay // car #3
 {
     private readonly IOnBoardComputer _computer;
 
@@ -692,7 +692,7 @@ public class OnBoardComputerDisplay : IOnBoardComputerDisplay // car #3
     }
 }
 
-public class Engine : IEngine
+class Engine : IEngine
 {
     private readonly IFuelTank _fuelTank;
     private readonly IDrivingProcessor _processor;
@@ -730,7 +730,7 @@ public class Engine : IEngine
     }
 }
 
-public class FuelTank : IFuelTank, ISensoreable
+class FuelTank : IFuelTank, ISensoreable
 {
     private double _fillLevel;
 
@@ -782,7 +782,7 @@ public class FuelTank : IFuelTank, ISensoreable
     }
 }
 
-public class FuelTankDisplay : IFuelTankDisplay
+class FuelTankDisplay : IFuelTankDisplay
 {
     private readonly IFuelTank _fuelTank;
 
@@ -798,7 +798,7 @@ public class FuelTankDisplay : IFuelTankDisplay
     public bool IsComplete { get => _fuelTank.IsComplete; }
 }
 
-public class DrivingInformationDisplay : IDrivingInformationDisplay // car #2
+class DrivingInformationDisplay : IDrivingInformationDisplay // car #2
 {
     readonly IDrivingProcessor _processor;
     public int ActualSpeed { get => _processor.ActualSpeed; }
@@ -809,7 +809,7 @@ public class DrivingInformationDisplay : IDrivingInformationDisplay // car #2
     }
 }
 
-public class DrivingProcessor : IDrivingProcessor // car #2
+class DrivingProcessor : IDrivingProcessor // car #2
 {
     private int _actualSpeed;
     private readonly ISensor _sensor;
@@ -854,7 +854,7 @@ public class DrivingProcessor : IDrivingProcessor // car #2
     }
 }
 
-public class Sensor : ISensor
+class Sensor : ISensor
 {
     private bool _isVariableOnRecord = false;
 

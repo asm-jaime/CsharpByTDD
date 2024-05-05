@@ -6,7 +6,7 @@ namespace infectedbynarytree;
 
 
 [TestFixture]
-public class SolutionTests
+class SolutionTests
 {
     private static TreeNode CreateTree(int?[] arr)
     {

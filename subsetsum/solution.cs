@@ -1,6 +1,6 @@
 ﻿namespace subsum
 {
-    public class Solution
+    class Solution
     {
         public static bool IsSumPassable(int[] nums, int target)
         {

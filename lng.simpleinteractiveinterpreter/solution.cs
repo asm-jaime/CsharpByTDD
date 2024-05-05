@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace lngsimpleinteractiveinterpreter;
 
-public class Interpreter
+class Interpreter
 {
     private static readonly Dictionary<
         string,

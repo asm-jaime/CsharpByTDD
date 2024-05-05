@@ -2,7 +2,7 @@
 
 namespace csharpweakevent;
 
-public class EventSource
+class EventSource
 {
     public event EventHandler<EventArgs> Event = delegate { };
 
@@ -13,7 +13,7 @@ public class EventSource
 }
 
 
-public class EventListener
+class EventListener
 {
     public int Counter { get; set; }
     readonly EventSource eventSourceObject;

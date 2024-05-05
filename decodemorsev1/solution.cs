@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace decodemorsev1;
 
-public class MorseCodeDecoder
+class MorseCodeDecoder
 {
     public static string BitsTrim(string bits)
     {

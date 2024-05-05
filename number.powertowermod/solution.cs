@@ -2,7 +2,7 @@
 
 namespace numberpowertowermod;
 
-public class PowerTowerMod
+class PowerTowerMod
 {
     private static int Totient(int n)
     {

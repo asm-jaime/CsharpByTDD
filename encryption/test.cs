@@ -4,7 +4,7 @@ namespace encryption;
 
 
 [TestFixture]
-public class SolutionTest
+class SolutionTest
 {
     [Test]
     public void EncryptExampleTests()

@@ -6,7 +6,7 @@ namespace SolutionsByTDD
 {
 
     [TestFixture, Description("Fixed tests")]
-    public class SimpleAssemblerTest
+    class SimpleAssemblerTest
     {
         private static void Test(Dictionary<string, int> expected, Dictionary<string, int> actual)
         {

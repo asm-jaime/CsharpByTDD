@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace numberxoranvinverse;
 
-public class Solution
+class Solution
 {
     private static long GetLongFromBitArray(BitArray bitArray)
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace intervalsoverlaps;
 
-public class Solution
+class Solution
 {
     public int[][] Calculate(int[][] intervals)
     {

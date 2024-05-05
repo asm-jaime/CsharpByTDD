@@ -3,7 +3,7 @@
 namespace numberxoranvinverse;
 
 [TestFixture]
-public class SolutionTest
+class SolutionTest
 {
     [Test]
     public void XorInvTest()

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace csharpclosure;
 
-public class Solution
+class Solution
 {
     public static string Calculate()
     {

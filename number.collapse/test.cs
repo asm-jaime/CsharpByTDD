@@ -3,7 +3,7 @@
 namespace numbercollapse;
 
 [TestFixture]
-public class RangeCollapseTest
+class RangeCollapseTest
 {
 
     [Test]

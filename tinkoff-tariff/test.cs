@@ -4,7 +4,7 @@ namespace tinkofftariff;
 
 
 [TestFixture]
-public class SolutionTests
+class SolutionTests
 {
     [Test]
     [TestCase(100, 10, 12, 15, 160)]

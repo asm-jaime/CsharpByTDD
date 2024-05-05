@@ -2,7 +2,7 @@
 
 namespace tinkofftariff;
 
-public class Solution
+class Solution
 {
     public static int Calculate(int a, int b, int c, int d)
     {

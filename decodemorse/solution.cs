@@ -5,7 +5,7 @@ using System.Text;
 
 namespace decodemorse;
 
-public class MorseCodeDecoder
+class MorseCodeDecoder
 {
     private static readonly Dictionary<string, string> MorseCode = new ()
         {

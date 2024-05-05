@@ -34,7 +34,7 @@ interface IDeterminant
     int Solve();
 }
 
-public class QueueDeterminant : IDeterminant
+class QueueDeterminant : IDeterminant
 {
     private readonly int[][] _matrix;
 
@@ -81,7 +81,7 @@ public class QueueDeterminant : IDeterminant
     }
 }
 
-public class RecursiveDeterminant : IDeterminant
+class RecursiveDeterminant : IDeterminant
 {
     private int _det = 0;
     private readonly int[][] _matrix;
@@ -123,7 +123,7 @@ public class RecursiveDeterminant : IDeterminant
 }
 
 
-public class Matrix
+class Matrix
 {
     public static int Determinant(int[][] matrix)
     {

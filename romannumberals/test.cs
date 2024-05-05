@@ -3,7 +3,7 @@
 namespace romannumberals;
 
 [TestFixture]
-public class RomanNumeralsTests
+class RomanNumeralsTests
 {
     [Test]
     public void TestToRoman_001()

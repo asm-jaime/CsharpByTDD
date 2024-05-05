@@ -3,7 +3,7 @@ using System.Text;
 
 namespace lngassemblerinterpreter;
 
-public class Executor
+class Executor
 {
     private readonly Dictionary<string, int> _state = new();
     private readonly Dictionary<string, int> _labels = new();

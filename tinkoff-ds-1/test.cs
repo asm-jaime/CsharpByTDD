@@ -4,7 +4,7 @@ namespace tinkoffds1;
 
 
 [TestFixture]
-public class SolutionTests
+class SolutionTests
 {
     [Test]
     [TestCase("Everyone of us has all we need", "Everyone", 8)]

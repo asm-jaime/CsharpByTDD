@@ -5,7 +5,7 @@ namespace lngesolang3;
 
 
 [TestFixture]
-public class EsolangHardTest
+class EsolangHardTest
 {
     /*
     private static IEnumerable<TestCaseData> TestCases

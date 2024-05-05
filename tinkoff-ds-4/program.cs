@@ -3,7 +3,7 @@ using System;
 namespace tinkoffds4;
 
 
-public class Solution
+class Solution
 {
     public static int CalculateScans(int L, int[] particleCoords)
     {

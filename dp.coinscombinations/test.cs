@@ -4,7 +4,7 @@ namespace dpcoinscombinations;
 
 
 [TestFixture]
-public class SolutionTests
+class SolutionTests
 {
     /*
     private static Solution _solution;

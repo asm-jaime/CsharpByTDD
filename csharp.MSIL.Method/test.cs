@@ -5,7 +5,7 @@ namespace csharpMSILMethod;
 
 
 [TestFixture]
-public class DynamicMethodUsingMSILSampleTests
+class DynamicMethodUsingMSILSampleTests
 {
 
     [Test]

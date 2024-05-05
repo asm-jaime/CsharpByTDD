@@ -2,7 +2,7 @@
 
 namespace infectedbynarytree;
 
-public class TreeNode
+class TreeNode
 {
     public int val;
     public TreeNode left;
@@ -15,7 +15,7 @@ public class TreeNode
     }
 }
 
-public class Solution
+class Solution
 {
     public int AmountOfTime(TreeNode root, int start)
     {

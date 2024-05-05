@@ -5,7 +5,7 @@ namespace csharpsequenceofexecution;
 
 
 [TestFixture]
-public class SequenceOfExecutionTest
+class SequenceOfExecutionTest
 {
     [Test]
     public void ShouldExecuteSequence()

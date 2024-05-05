@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace dpsumofdivisors;
 
-public class ThirdPow
+class ThirdPow
 {
     private static readonly HashSet<long> _primeNumbers;
 

@@ -5,7 +5,7 @@ namespace numbereratosfen;
 
 
 [TestFixture]
-public class NumberTheoryTests
+class NumberTheoryTests
 {
     [Test]
     public void SampleTestDivisors()

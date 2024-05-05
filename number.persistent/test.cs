@@ -5,7 +5,7 @@ namespace numberpersistent;
 
 
 [TestFixture]
-public class PersistTests
+class PersistTests
 {
 
     [Test]

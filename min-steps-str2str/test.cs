@@ -4,7 +4,7 @@ namespace minstepsstr2str;
 
 
 [TestFixture]
-public class SolutionTests
+class SolutionTests
 {
     [Test]
     [TestCase("bab", "aba", 1)]

@@ -4,7 +4,7 @@ using System.Numerics;
 namespace numberpowertowermod;
 
 [TestFixture]
-public class BasicTests
+class BasicTests
 {
     [TestCase(729, 0, 1, 0)]
     [TestCase(729, 0, 2, 1)]

@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace numbercombinations;
 
-public class Combinator<T>
+class Combinator<T>
 {
     private readonly T[] _elements;
     private readonly List<T[]> _combinations;
@@ -41,7 +41,7 @@ public class Combinator<T>
 
 }
 
-public class ProofOfThreeAndFive
+class ProofOfThreeAndFive
 {
     public static bool IsAllRangeCanBeCombinedByNumbers(int first, int second, int[] numbers)
     {

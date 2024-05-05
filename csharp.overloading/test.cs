@@ -6,7 +6,7 @@ namespace csharpoverloading;
 
 
 [TestFixture]
-public class SolutionTests
+class SolutionTests
 {
     [Test]
     public void TestOverloading1()

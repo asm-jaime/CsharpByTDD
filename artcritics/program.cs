@@ -3,7 +3,7 @@ namespace artcritics;
 using System;
 using System.Linq;
 
-public class Program
+class Program
 {
     public static void Main()
     {

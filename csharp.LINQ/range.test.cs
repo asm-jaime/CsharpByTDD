@@ -3,7 +3,7 @@ using NUnit.Framework;
 
 namespace csharpLINQ;
 
-public class RangeTests
+class RangeTests
 {
     [Test]
     public void TestLINQGetSums()

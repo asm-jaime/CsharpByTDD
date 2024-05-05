@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace maxsubsetsq;
 
-public class Solution
+class Solution
 {
     public static int MaximumLength(int[] nums)
     {

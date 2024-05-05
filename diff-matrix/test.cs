@@ -5,7 +5,7 @@ namespace diffmatrix;
 
 
 [TestFixture]
-public class SolutionTests
+class SolutionTests
 {
     [Test]
     public void Test1()

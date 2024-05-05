@@ -2,7 +2,7 @@ using System;
 
 namespace tinkoffds2;
 
-public class Solution
+class Solution
 {
     public static string Calculate(int a, int b, int c, int d)
     {

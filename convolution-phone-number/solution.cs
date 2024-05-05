@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-public class Solution
+class Solution
 {
     public List<string> GetMinimalPrefixes(long from, long to)
     {

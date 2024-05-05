@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace minstepsstr2str;
 
-public class Solution
+class Solution
 {
     public static int MinSteps(string s, string t)
     {

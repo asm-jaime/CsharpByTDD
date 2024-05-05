@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace numberprimestreaming;
 
-public class Primes
+class Primes
 {
     public static List<int> GetPrimesByEratosfen(int maxNumber)
     {

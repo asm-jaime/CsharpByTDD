@@ -5,7 +5,7 @@ namespace csharpclosure;
 
 
 [TestFixture]
-public class SolutionTests
+class SolutionTests
 {
     [Test]
     public void TestCalculateClosure()

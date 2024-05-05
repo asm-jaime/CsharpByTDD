@@ -2,7 +2,7 @@
 
 namespace parentheses;
 
-public class Parentheses
+class Parentheses
 {
     private static readonly HashSet<char> OnPush = new() { '(' };
     private static readonly HashSet<char> OnPop = new() { ')' };

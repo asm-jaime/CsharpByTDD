@@ -2,7 +2,7 @@
 
 namespace diffmatrix;
 
-public class Solution
+class Solution
 {
     public static int[][] OnesMinusZeros(int[][] grid)
     {

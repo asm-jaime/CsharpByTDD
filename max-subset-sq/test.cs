@@ -3,7 +3,7 @@
 namespace maxsubsetsq;
 
 [TestFixture]
-public class SolutionTests
+class SolutionTests
 {
     [Test]
     [TestCase(new int[] { 5, 4, 1, 2, 2 }, 3)]
