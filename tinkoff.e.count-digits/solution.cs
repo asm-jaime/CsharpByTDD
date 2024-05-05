@@ -4,7 +4,7 @@ namespace e
 {
     class SolutionSlow
     {
-        public static long CountSameDigitsNumbers(long start, long end)
+        internal static long CountSameDigitsNumbers(long start, long end)
         {
             long maxTests = 0;
             for (long i = start; i <= end; i++)
@@ -40,7 +40,7 @@ namespace e
             return result;
 
         }
-        public static long CountSameDigitsNumbers(long a, long b)
+        internal static long CountSameDigitsNumbers(long a, long b)
         {
             var (strA, strB) = (a.ToString(), b.ToString());
 

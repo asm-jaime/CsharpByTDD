@@ -10,7 +10,7 @@ class Persist
       .Select(digit => digit - '0')
       .Aggregate((first, second) => first * second);
 
-    public static int Persistence(long n)
+    internal static int Persistence(long n)
     {
         int result = 0;
 

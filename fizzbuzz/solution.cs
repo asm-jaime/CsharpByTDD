@@ -4,7 +4,7 @@ namespace fizzbuzz;
 
 class Solution
 {
-    public void PrintFizzBuzz(int num)
+    internal void PrintFizzBuzz(int num)
     {
         for(var i = 1; i <= num; i++)
         {
@@ -27,7 +27,7 @@ class Solution
         }
     }
 
-    public void PrintFizzBuzzWithUseOneOutput(int num)
+    internal void PrintFizzBuzzWithUseOneOutput(int num)
     {
         for(var i = 1; i <= num; i++)
         {

@@ -61,7 +61,7 @@ class Solution
         return false;
     }
 
-    public static int[] SwapPositions(int[] heights)
+    internal static int[] SwapPositions(int[] heights)
     {
         var result = new int[] { -1, -1 };
         // Get pair index for swap

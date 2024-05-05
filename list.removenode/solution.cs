@@ -2,9 +2,9 @@
 
 class ListNode
 {
-    public int val;
-    public ListNode next;
-    public ListNode(int val = 0, ListNode next = null)
+    internal int val;
+    internal ListNode next;
+    internal ListNode(int val = 0, ListNode next = null)
     {
         this.val = val;
         this.next = next;
@@ -13,7 +13,7 @@ class ListNode
 
 class Solution
 {
-    public int ListLength(ListNode head)
+    internal int ListLength(ListNode head)
     {
         if(head is null) return 0;
 
@@ -42,7 +42,7 @@ class Solution
         return (current, previous);
     }
 
-    public ListNode RemoveNthFromEnd(ListNode head, int n)
+    internal ListNode RemoveNthFromEnd(ListNode head, int n)
     {
         if(head is null || head.next is null)
         {

@@ -4,7 +4,7 @@ namespace bignumbersum;
 
 class Solution
 {
-    public static string Add(string a, string b)
+    internal static string Add(string a, string b)
     {
         var charsA = a.ToCharArray().Reverse().ToArray();
         var charsB = b.ToCharArray().Reverse().ToArray();

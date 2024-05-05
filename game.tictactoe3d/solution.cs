@@ -45,7 +45,7 @@ class Dinglemouse
         return false;
     }
 
-    public static string PlayOX3D(List<(int, int, int)> moves)
+    internal static string PlayOX3D(List<(int, int, int)> moves)
     {
         var board = new int[4].Select(e => new int[4].Select(e => new int[4]).ToArray()).ToArray();
         for(var moveIndex = 0; moveIndex < moves.Count; ++moveIndex)

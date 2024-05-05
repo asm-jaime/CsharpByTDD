@@ -6,7 +6,7 @@ namespace csharpLINQ;
 class WhereWhere
 {
 
-    public (int, int) ExecuteExpression()
+    internal (int, int) ExecuteExpression()
     {
         var list = new List<int>();
 

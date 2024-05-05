@@ -3,12 +3,12 @@ using System.Diagnostics;
 
 namespace templatesbehavioralobserver;
 
-public interface IObserver
+interface IObserver
 {
     void Update();
 }
 
-public interface IObservable
+interface IObservable
 {
     void Attach(IObserver observer);
 
@@ -21,7 +21,7 @@ class Observable : IObservable
 {
     private readonly List<IObserver> _observers;
 
-    public Observable()
+    internal Observable()
     {
         _observers = new List<IObserver>();
     }
@@ -62,7 +62,7 @@ class Counter : IObserver
 
 class Solution
 {
-    public string Calculate()
+    internal string Calculate()
     {
         IObservable observable = new Observable();
         var counter1 = new Counter();

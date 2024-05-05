@@ -2,7 +2,7 @@
 {
     class Solution
     {
-        public static int CalculateTotalCost(int a, int b, int c, int d)
+        internal static int CalculateTotalCost(int a, int b, int c, int d)
         {
             int totalCost;
 

@@ -4,7 +4,7 @@ namespace c
 {
     class Solution
     {
-        public static int GetMinStairClimbed(int _, int timeTillLeave, int[] floors, int leavingEmployee)
+        internal static int GetMinStairClimbed(int _, int timeTillLeave, int[] floors, int leavingEmployee)
         {
             int timeDownToLeaveE = floors[leavingEmployee - 1] - floors[0];
             int timeUpToLeaveE = floors[^1] - floors[leavingEmployee - 1];

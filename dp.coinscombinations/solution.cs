@@ -4,7 +4,7 @@ namespace dpcoinscombinations;
 
 class Solution
 {
-    public static int CountCombinationsSlow(int moneys, int[] coins)
+    internal static int CountCombinationsSlow(int moneys, int[] coins)
     {
         static int countChange(int moneys, int[] coins, int index)
         {
@@ -34,7 +34,7 @@ class Solution
         return result;
     }
 
-    public static int CountCombinations(int moneys, int[] coins)
+    internal static int CountCombinations(int moneys, int[] coins)
     {
         var dpTable = Enumerable.Range(0, coins.Length + 1).Select(coin => (new int[moneys + 1])).ToArray();
 

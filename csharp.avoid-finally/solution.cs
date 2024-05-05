@@ -4,7 +4,7 @@ namespace csharpavoidfinally;
 
 class Solution
 {
-    public static bool Calculate()
+    internal static bool Calculate()
     {
         bool isFinallyHappened = false;
 

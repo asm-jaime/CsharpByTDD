@@ -1,8 +1,8 @@
 ﻿namespace dpfibbonacci;
 
-public static class FibonacciEvenSum
+internal static class FibonacciEvenSum
 {
-    public static long Fibonacci(int max)
+    internal static long Fibonacci(int max)
     {
         long second = 1;
         long result = 1;

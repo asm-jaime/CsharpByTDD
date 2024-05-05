@@ -10,7 +10,7 @@ class Combinator<T>
     private readonly List<T[]> _combinations;
     private readonly int _sizeOfCombo;
 
-    public Combinator(T[] elements, int sizeOfCombo)
+    internal Combinator(T[] elements, int sizeOfCombo)
     {
         _elements = elements;
         _sizeOfCombo = sizeOfCombo;
@@ -18,7 +18,7 @@ class Combinator<T>
         _combinations = new List<T[]>();
     }
 
-    public List<T[]> GetCombinations()
+    internal List<T[]> GetCombinations()
     {
         Combine(new T[_sizeOfCombo], 0);
         return _combinations;
@@ -43,7 +43,7 @@ class Combinator<T>
 
 class ProofOfThreeAndFive
 {
-    public static bool IsAllRangeCanBeCombinedByNumbers(int first, int second, int[] numbers)
+    internal static bool IsAllRangeCanBeCombinedByNumbers(int first, int second, int[] numbers)
     {
         int count = second - first;
 

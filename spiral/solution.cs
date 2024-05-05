@@ -1,6 +1,6 @@
 ﻿namespace spiral;
 
-public enum Direction { Right, Down, Left, Up };
+internal enum Direction { Right, Down, Left, Up };
 
 class Position
 {
@@ -15,7 +15,7 @@ class Position
 
     private Direction _direction = Direction.Right;
 
-    public Position(int[,] array)
+    internal Position(int[,] array)
     {
         _array = array;
         _len = array.GetLength(0);
@@ -70,7 +70,7 @@ class Position
 
     private bool IsCurrentXYLastXY() => _x == _last_x && _y == _last_y;
 
-    public bool Next()
+    internal bool Next()
     {
         if(_array.Length == 1)
         {
@@ -120,7 +120,7 @@ class Position
 
 class Solution
 {
-    public static int[,] Spiralize(int size)
+    internal static int[,] Spiralize(int size)
     {
         var array = new int[size, size];
         var pointer = new Position(array);

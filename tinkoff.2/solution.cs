@@ -4,7 +4,7 @@ namespace tinkoff2;
 
 class TextAnalyzer
 {
-    public static (int MinLength, int MaxLength) AnalyzeText(string text)
+    internal static (int MinLength, int MaxLength) AnalyzeText(string text)
     {
         var lines = text.Split('#');
         if (lines.Length == 0)

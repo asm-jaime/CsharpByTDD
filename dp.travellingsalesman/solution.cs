@@ -6,8 +6,8 @@ namespace dptravellingsalesman;
 
 class Vertex
 {
-    public int Id { private set; get; }
-    public Vertex(int id)
+    internal int Id { private set; get; }
+    internal Vertex(int id)
     {
         Id = id;
     }
@@ -37,7 +37,7 @@ class TSP
         return result;
     }
 
-    public static List<Int32> Approximate(int[][] matrix)
+    internal static List<Int32> Approximate(int[][] matrix)
     {
         var vertexes = Enumerable.Range(0, matrix.Length).Select(id => new Vertex(id)).ToArray();
 

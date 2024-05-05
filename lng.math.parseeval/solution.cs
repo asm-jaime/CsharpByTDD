@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace lngmathparseeval;
 
-public static class BracketChecker
+internal static class BracketChecker
 {
     private const int BracketHasNoPair = -1;
 
@@ -35,7 +35,7 @@ public static class BracketChecker
         }
         return result;
     }
-    public static bool IsBracketsBad(string code)
+    internal static bool IsBracketsBad(string code)
     {
         return GetBracketAdressMap(code).Values.Any(e => e.Equals(-1));
     }
@@ -174,7 +174,7 @@ class Evaluate
     private static readonly Regex NamesSplit;
     private static readonly Regex Terms;
 
-    public static Dictionary<string, Func<double, double, double>> OperationsD1 => OperationsD;
+    internal static Dictionary<string, Func<double, double, double>> OperationsD1 => OperationsD;
 
     private static List<string> RemoveMinusFromBynaryExpression(List<string> terms)
     {
@@ -218,7 +218,7 @@ class Evaluate
         return terms;
     }
 
-    public string Eval(string expression)
+    internal string Eval(string expression)
     {
         var stageString = expression.ToLower();
         if(NamesSplit.IsMatch(stageString)) return "error";

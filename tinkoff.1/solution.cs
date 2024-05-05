@@ -4,7 +4,7 @@ namespace tinkoff1;
 
 class Solution
 {
-    public static int ScoreDarts(double x1, double y1, double x2, double y2, double x3, double y3)
+    internal static int ScoreDarts(double x1, double y1, double x2, double y2, double x3, double y3)
     {
         return ScoreThrow(x1, y1) + ScoreThrow(x2, y2) + ScoreThrow(x3, y3);
     }

@@ -5,7 +5,7 @@ namespace c
 
     class Program
     {
-        public static void Main(string[] _)
+        internal static void Main(string[] _)
         {
             string[] firstLine = Console.ReadLine().Split();
             int n = int.Parse(firstLine[0]);

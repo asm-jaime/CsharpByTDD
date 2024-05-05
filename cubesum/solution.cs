@@ -14,7 +14,7 @@ class CubeSum
     }
     */
 
-    public static long FindNb(long m)
+    internal static long FindNb(long m)
     {
         // m = n^2*(n+1)^2/4
         // sqrt(m) = n*(n+1)/2

@@ -6,7 +6,7 @@ namespace tinkoff3;
 
 class Solution
 {
-    public static double CalculateHighwayHeight(int[] heights)
+    internal static double CalculateHighwayHeight(int[] heights)
     {
         var areas = new List<double>();
         for (int i = 1; i < heights.Length; ++i)

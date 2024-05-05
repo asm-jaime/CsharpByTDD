@@ -5,7 +5,7 @@ namespace csharpMSILMethod;
 
 class DynamicMethodUsingMSIL
 {
-    public static DynamicMethod MulBy2AndAdd1()
+    internal static DynamicMethod MulBy2AndAdd1()
     {
         DynamicMethod mulAndPlusIt = new(
           "mulAndPlusIt",

@@ -6,7 +6,7 @@ using System.Linq;
 
 class Solution
 {
-    public List<string> GetMinimalPrefixes(long from, long to)
+    internal List<string> GetMinimalPrefixes(long from, long to)
     {
         if(from == to) return new List<string> { from.ToString() };
         if(from > to) (from, to) = (to, from);

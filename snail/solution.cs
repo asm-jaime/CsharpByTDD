@@ -2,7 +2,7 @@
 
 namespace snail;
 
-public enum Direction { Right, Down, Left, Up };
+internal enum Direction { Right, Down, Left, Up };
 
 class Position
 {
@@ -11,14 +11,14 @@ class Position
 
     private readonly int[][] _array;
 
-    public Position(int[][] array)
+    internal Position(int[][] array)
     {
         _array = array;
     }
 
     private Direction _direction = Direction.Right;
 
-    public int Current => _array[_y][_x];
+    internal int Current => _array[_y][_x];
 
     private void NextDirection()
     {
@@ -46,7 +46,7 @@ class Position
         _array[_y][_x] = -1;
     }
 
-    public bool Next()
+    internal bool Next()
     {
         (int nextX, int nextY) = NextPosition();
         if(nextX > _array.Length - 1 || nextX < 0 || nextY > _array.Length - 1 || nextY < 0 || _array[nextY][nextX] == -1)
@@ -68,7 +68,7 @@ class Position
 
 class SnailSolution
 {
-    public static int[] Snail(int[][] array)
+    internal static int[] Snail(int[][] array)
     {
         if(array.Length == 0) return System.Array.Empty<int>();
         if(array.Length == 1) return new int[] { array[0][0] };

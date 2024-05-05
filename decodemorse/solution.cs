@@ -112,7 +112,7 @@ class MorseCodeDecoder
         return (nulls.ToArray(), units.ToArray());
     }
 
-    public static IEnumerable<string> DecodeBitsAdvanced(string bitStream)
+    internal static IEnumerable<string> DecodeBitsAdvanced(string bitStream)
     {
         StringBuilder morseCode = new();
 
@@ -190,7 +190,7 @@ class MorseCodeDecoder
         }
     }
 
-    public static string DecodeMorse(IEnumerable<string> morseCodes)
+    internal static string DecodeMorse(IEnumerable<string> morseCodes)
     {
 
         foreach(var morseCode in morseCodes)

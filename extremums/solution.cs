@@ -5,7 +5,7 @@ namespace extremums;
 
 class PickPeaks
 {
-    public static Dictionary<string, List<int>> GetPeaks(int[] arr)
+    internal static Dictionary<string, List<int>> GetPeaks(int[] arr)
     {
         var skipPlateau = arr
           .Select((element, index) => new { Element = element, Index = index })

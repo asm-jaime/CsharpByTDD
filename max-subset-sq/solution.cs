@@ -6,7 +6,7 @@ namespace maxsubsetsq;
 
 class Solution
 {
-    public static int MaximumLength(int[] nums)
+    internal static int MaximumLength(int[] nums)
     {
         var numTimesByNum = new Dictionary<int, int>();
         foreach (var num in nums)

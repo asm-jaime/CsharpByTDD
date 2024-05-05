@@ -13,7 +13,7 @@ class BCGenerator
             "the", "of", "in", "from", "by", "with", "and", "or", "for", "to", "at", "a"
     };
 
-    public static string GenerateBC(string url, string separator)
+    internal static string GenerateBC(string url, string separator)
     {
         string replacedString = GetReplacedSlashesOnWhitespace(url);
         string removedParameters = RemoveParameters(replacedString);
@@ -56,29 +56,29 @@ class BCGenerator
         }
     }
 
-    public static string GetSpanElement(string name) =>
+    internal static string GetSpanElement(string name) =>
         $"<span class=\"active\">{name.ToUpper()}</span>";
 
-    public static string GetAElement(string href, string name) =>
+    internal static string GetAElement(string href, string name) =>
         $"<a href=\"{href}\">{name.ToUpper()}</a>";
 
-    public static string GetReplacedSlashesOnWhitespace(string url) =>
+    internal static string GetReplacedSlashesOnWhitespace(string url) =>
         Regex.Replace(url, @"([^\/])\/([^\/])", "$1 $2");
     //Regex.Replace(url, @"\/", " ");
 
-    public static string RemoveParameters(string url) =>
+    internal static string RemoveParameters(string url) =>
         Regex.Replace(url, @"\?.+", "");
 
-    public static string RemoveAnchor(string url) =>
+    internal static string RemoveAnchor(string url) =>
         Regex.Replace(url, @"#.+", "");
 
-    public static string RemoveIndex(string url) =>
+    internal static string RemoveIndex(string url) =>
         Regex.Replace(url, @" index\.(html|asp|htm|php)", "");
 
-    public static string RemoveSuffix(string url) =>
+    internal static string RemoveSuffix(string url) =>
         Regex.Replace(url, @"\.(html|asp|htm|php)", "");
 
-    public static string Acronymize(string str) => new(
+    internal static string Acronymize(string str) => new(
         str
             .Split(new char[] { '-' })
             .Where(word => !IgnoreWords.Contains(Regex.Replace(word, @"/", "")))

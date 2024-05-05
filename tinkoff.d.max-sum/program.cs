@@ -4,7 +4,7 @@ namespace d;
 
 class Program
 {
-    public static void Main(string[] _)
+    internal static void Main(string[] _)
     {
         // Read input from standard input
         string[] input = Console.ReadLine().Split();

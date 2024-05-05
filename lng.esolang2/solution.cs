@@ -34,7 +34,7 @@ class Smallfuck
         return result;
     }
 
-    public static string Interpreter(string code, string tape)
+    internal static string Interpreter(string code, string tape)
     {
         var porgramIndex = 0;
         var instructionIndex = 0;

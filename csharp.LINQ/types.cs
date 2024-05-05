@@ -6,7 +6,7 @@ namespace csharpLINQ;
 
 class Types
 {
-    public static IEnumerable<string> GetOrderedStrings(object[] objects)
+    internal static IEnumerable<string> GetOrderedStrings(object[] objects)
     {
         // return objects.Where(str => str is string).OrderBy(str => str.Length).ThenBy(str => str);
         return objects.OfType<string>().OrderBy(str => str.Length).ThenBy(str => str);

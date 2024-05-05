@@ -6,7 +6,7 @@ class EsolangEasy
 {
     private static byte _cell = 0;
 
-    public static string MyFirstInterpreter(string code)
+    internal static string MyFirstInterpreter(string code)
     {
         _cell = 0;
         StringBuilder result = new();

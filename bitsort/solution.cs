@@ -9,7 +9,7 @@ class Solution
     const int DefaultBase = 2;
     const string SelectEightDigitsPattern = @"\d{8}";
 
-    public static string SortBits(string bits)
+    internal static string SortBits(string bits)
     {
         return Regex
             .Matches(bits, SelectEightDigitsPattern)

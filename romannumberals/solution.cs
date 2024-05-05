@@ -15,7 +15,7 @@ class RomanTransformer
     private string Next { get => RomanDigits[_currentIndex + 1]; }
     private void Proceed() => _currentIndex += 2;
 
-    public string GetRoman(char digit)
+    internal string GetRoman(char digit)
     {
         string result = digit switch
         {
@@ -37,9 +37,9 @@ class RomanTransformer
     }
 }
 
-public static class NumberTransformer
+internal static class NumberTransformer
 {
-    public static readonly Dictionary<string, int> RomanToNumber = new()
+    internal static readonly Dictionary<string, int> RomanToNumber = new()
         {
             { "I", 1}, { "O", 4}, { "V", 5},
             { "P", 9}, { "X", 10}, { "Q", 40},
@@ -53,9 +53,9 @@ public static class NumberTransformer
             { "XC",  "R"}, { "CD",  "S"}, { "CM" , "T"},
         };
 
-    public static int GetNumberFromRoman(string roman) => RomanToNumber[roman];
+    internal static int GetNumberFromRoman(string roman) => RomanToNumber[roman];
 
-    public static string GetSingleRomanFromDual(string roman)
+    internal static string GetSingleRomanFromDual(string roman)
     {
         foreach(var dual in DualRomanToSingleRoman)
         {
@@ -68,7 +68,7 @@ public static class NumberTransformer
 
 class RomanNumerals
 {
-    public static string ToRoman(int number)
+    internal static string ToRoman(int number)
     {
         var romaner = new RomanTransformer();
 
@@ -81,7 +81,7 @@ class RomanNumerals
             .Aggregate((first, next) => $"{first}{next}");
     }
 
-    public static int FromRoman(string roman)
+    internal static int FromRoman(string roman)
     {
         return NumberTransformer
             .GetSingleRomanFromDual(roman)

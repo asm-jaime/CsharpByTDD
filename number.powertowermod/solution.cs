@@ -19,7 +19,7 @@ class PowerTowerMod
         return result;
     }
 
-    public static int Tower(BigInteger b, BigInteger h, int m)
+    internal static int Tower(BigInteger b, BigInteger h, int m)
     {
         if(m == 1) return 0;
         if(b == 1 || h == 0) return 1;

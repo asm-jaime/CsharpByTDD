@@ -12,7 +12,7 @@ class Solution
         return (uint)array[0] + ((long)(uint)array[1] << 32);
     }
 
-    public static long Xor(long n)
+    internal static long Xor(long n)
     {
         var bytes = new BitArray(BitConverter.GetBytes(n));
         var bytesInv = new BitArray(BitConverter.GetBytes(n >> 1));
@@ -21,7 +21,7 @@ class Solution
         return GetLongFromBitArray(result);
     }
 
-    public static long XorInv(long number)
+    internal static long XorInv(long number)
     {
         var degree = (int)Math.Log2(number) + 1;
 
@@ -36,7 +36,7 @@ class Solution
         return GetLongFromBitArray(bytes);
     }
 
-    public static string NameOfXorInv()
+    internal static string NameOfXorInv()
     {
         return "";
     }

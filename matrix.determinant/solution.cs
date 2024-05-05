@@ -1,17 +1,17 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace matrixdeterminant;
 
-public struct Minor
+internal struct Minor
 {
-    public int Element { get; set; }
-    public int[][] Matrix { get; set; }
+    internal int Element { get; set; }
+    internal int[][] Matrix { get; set; }
 }
 
 interface IDeterminant
 {
-    public static int[][] GetMinorElement(int[][] matrix, int excludeRow, int excludeColumn)
+    internal static int[][] GetMinorElement(int[][] matrix, int excludeRow, int excludeColumn)
     {
         var result = new List<int[]>();
         for(int row = 0; row < matrix.Length; ++row)
@@ -38,7 +38,7 @@ class QueueDeterminant : IDeterminant
 {
     private readonly int[][] _matrix;
 
-    public QueueDeterminant(int[][] mainMatrix)
+    internal QueueDeterminant(int[][] mainMatrix)
     {
         _matrix = mainMatrix;
     }
@@ -86,7 +86,7 @@ class RecursiveDeterminant : IDeterminant
     private int _det = 0;
     private readonly int[][] _matrix;
 
-    public RecursiveDeterminant(int[][] mainMatrix)
+    internal RecursiveDeterminant(int[][] mainMatrix)
     {
         _matrix = mainMatrix;
     }
@@ -125,7 +125,7 @@ class RecursiveDeterminant : IDeterminant
 
 class Matrix
 {
-    public static int Determinant(int[][] matrix)
+    internal static int Determinant(int[][] matrix)
     {
         IDeterminant determinant = new RecursiveDeterminant(matrix);
         var result = determinant.Solve();

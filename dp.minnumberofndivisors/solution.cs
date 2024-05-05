@@ -5,7 +5,7 @@ namespace dpminnumberofndivisors;
 
 class MinNbDiv
 {
-    public static int[] GetAllDivisors(int n)
+    internal static int[] GetAllDivisors(int n)
     {
         List<int> result = new();
         for(int i = 1; i <= Math.Sqrt(n); i++)
@@ -25,7 +25,7 @@ class MinNbDiv
         }
         return result.ToArray();
     }
-    public static int FindMinNum(int num)
+    internal static int FindMinNum(int num)
     {
         for(int i = 1; i <= num * num * num; i++)
         {

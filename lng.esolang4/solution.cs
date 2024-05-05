@@ -5,9 +5,9 @@ using System.Linq;
 
 namespace lngesolang4;
 
-public static class ByteHelper
+internal static class ByteHelper
 {
-    public static byte Reverse(this byte bits)
+    internal static byte Reverse(this byte bits)
     {
         int result = 0;
         for(int bitIndex = 0; bitIndex < 8; bitIndex++)
@@ -20,7 +20,7 @@ public static class ByteHelper
         return (byte)result;
     }
 
-    public static byte[] BitArrayToByteArray(this BitArray bits)
+    internal static byte[] BitArrayToByteArray(this BitArray bits)
     {
         //var remain = bits.Length % 8 > 0 ? 1 : 0;
         var remain = 1;
@@ -80,7 +80,7 @@ class Boolfuck
             .Aggregate((acc, ch) => $"{acc}{ch}");
     }
 
-    public static string Interpret(string code, string input)
+    internal static string Interpret(string code, string input)
     {
         var programIndex = 0;
         var instructionIndex = 0;

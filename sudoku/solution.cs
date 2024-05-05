@@ -4,7 +4,7 @@ namespace sudoku;
 
 class Sudoku
 {
-    public static bool ValidateSudoku(int[][] board)
+    internal static bool ValidateSudoku(int[][] board)
     {
         static bool ValidateSubMatrix(int[][] matrix, int col, int row)
         {

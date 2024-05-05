@@ -60,7 +60,7 @@ class Cycle
 
     }
 
-    public static int GetModDivInNumberPowDegreeByEiler(int number, int degree, int divider)
+    internal static int GetModDivInNumberPowDegreeByEiler(int number, int degree, int divider)
     {
         int eilerPhi = Phi(divider);
         degree %= eilerPhi;
@@ -69,7 +69,7 @@ class Cycle
         return result;
     }
 
-    public static int GetModDivInNumberPowDegreeByPredefinedPhi(int number, int degree, int divider, int phi)
+    internal static int GetModDivInNumberPowDegreeByPredefinedPhi(int number, int degree, int divider, int phi)
     {
         degree %= phi;
         int result = (int)Math.Pow(number, degree) % divider;
@@ -77,7 +77,7 @@ class Cycle
         return result;
     }
 
-    public static int RunningOld(int n)
+    internal static int RunningOld(int n)
     {
         if(n == 3) return 1;
 
@@ -104,7 +104,7 @@ class Cycle
         return -1;
     }
 
-    public static int Running(int number)
+    internal static int Running(int number)
     {
         if(number % 2 == 0 || number % 5 == 0) return -1;
 

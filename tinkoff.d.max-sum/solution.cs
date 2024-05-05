@@ -5,7 +5,7 @@ namespace d;
 
 class Solution
 {
-    public static long MaximizeSum(int _, int k, int[] numbers)
+    internal static long MaximizeSum(int _, int k, int[] numbers)
     {
         var orderedNumbers = numbers
             .Select(number => number.ToString()).OrderByDescending(e => e.Length).ThenBy(e => e).ToArray();

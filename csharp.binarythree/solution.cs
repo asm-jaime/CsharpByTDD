@@ -4,11 +4,11 @@ namespace csharpbinarythree;
 
 class Node
 {
-    public Node Left;
-    public Node Right;
-    public int Value;
+    internal Node Left;
+    internal Node Right;
+    internal int Value;
 
-    public Node(Node l, Node r, int v)
+    internal Node(Node l, Node r, int v)
     {
         Left = l;
         Right = r;
@@ -18,7 +18,7 @@ class Node
 
 class TreeWalker
 {
-    public static List<int> TreeByLevelsDeep(Node mainNode)
+    internal static List<int> TreeByLevelsDeep(Node mainNode)
     {
         var result = new List<int>();
 
@@ -38,7 +38,7 @@ class TreeWalker
         return result;
     }
 
-    public static List<int> TreeByLevels(Node mainNode)
+    internal static List<int> TreeByLevels(Node mainNode)
     {
         var result = new List<int>();
 

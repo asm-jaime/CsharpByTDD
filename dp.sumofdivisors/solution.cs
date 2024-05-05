@@ -10,7 +10,7 @@ class ThirdPow
 
     private static readonly Dictionary<long, Dictionary<long, long>> _numberDivisors = new();
 
-    public static HashSet<long> GetPrimesByEratosfen(long maxNumber)
+    internal static HashSet<long> GetPrimesByEratosfen(long maxNumber)
     {
         var isPrimeArray = new bool[maxNumber + 1];
         for(var i = 0; i < maxNumber + 1; i++) isPrimeArray[i] = true;
@@ -40,7 +40,7 @@ class ThirdPow
         _primeNumbers = GetPrimesByEratosfen(100000);
     }
 
-    public static long GetSumOfPrimeFactors(Dictionary<long, long> primeFactors)
+    internal static long GetSumOfPrimeFactors(Dictionary<long, long> primeFactors)
     {
         long result = 1;
         foreach(var primeFactor in primeFactors)
@@ -51,7 +51,7 @@ class ThirdPow
         return result;
     }
 
-    public static Dictionary<long, long> GetAllPrimeFactors(long n)
+    internal static Dictionary<long, long> GetAllPrimeFactors(long n)
     {
         var result = new Dictionary<long, long>();
         if(n.Equals(0)) return result;
@@ -110,7 +110,7 @@ class ThirdPow
         return result;
     }
 
-    public static long GetAllDivisors(long n)
+    internal static long GetAllDivisors(long n)
     {
         var primeFactors = GetAllPrimeFactors(n);
         _numberDivisors[n] = primeFactors;
@@ -119,7 +119,7 @@ class ThirdPow
     }
 
 
-    public static long IntCubeSumDiv(long n)
+    internal static long IntCubeSumDiv(long n)
     {
 
         long numberCounter = 0;

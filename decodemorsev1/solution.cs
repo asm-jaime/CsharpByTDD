@@ -7,7 +7,7 @@ namespace decodemorsev1;
 
 class MorseCodeDecoder
 {
-    public static string BitsTrim(string bits)
+    internal static string BitsTrim(string bits)
     {
         var fromIndex = bits.IndexOf('1');
         var lastIndex = bits.LastIndexOf('1');
@@ -20,7 +20,7 @@ class MorseCodeDecoder
         return bits;
     }
 
-    public static int DecodeBitsLength(string bits)
+    internal static int DecodeBitsLength(string bits)
     {
         var _bits = BitsTrim(bits);
         var arrOf1 = Regex.Split(_bits, "0{1,99}");
@@ -42,7 +42,7 @@ class MorseCodeDecoder
         }
         return _result;
     }
-    public static string DecodeBitsAdvanced(string bits)
+    internal static string DecodeBitsAdvanced(string bits)
     {
         // ToDo: Accept 0's and 1's, return dots, dashes and spaces
 
@@ -63,7 +63,7 @@ class MorseCodeDecoder
         return output;
     }
 
-    public static string DecodeMorse(string morseCode)
+    internal static string DecodeMorse(string morseCode)
     {
         string[] morseCodeWords = morseCode.Split("   ");
         string output = "";

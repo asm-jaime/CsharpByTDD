@@ -4,7 +4,7 @@ namespace dpbackpack;
 
 class DPBackpackTask
 {
-    public static int PackBagpack(int[] scores, int[] weights, int capacity)
+    internal static int PackBagpack(int[] scores, int[] weights, int capacity)
     {
         var packs = new int[weights.Length, capacity + 1];
 

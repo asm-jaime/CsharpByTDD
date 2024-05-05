@@ -2,9 +2,9 @@
 
 namespace dpheightandegg;
 
-public static class Faberge
+internal static class Faberge
 {
-    public static BigInteger SimpleHeight(int eggs, int tries)
+    internal static BigInteger SimpleHeight(int eggs, int tries)
     {
         if(eggs == 0 || tries == 0) return 0;
 
@@ -35,7 +35,7 @@ public static class Faberge
         return heightsTable[eggs - 1, tries - 1];
     }
 
-    public static BigInteger OptimizedHeight(int eggs, int tries)
+    internal static BigInteger OptimizedHeight(int eggs, int tries)
     {
         if(eggs == 0 || tries == 0) return 0;
 
@@ -90,7 +90,7 @@ public static class Faberge
     }
 
 
-    public static BigInteger FastHeight(int eggs, int tries)
+    internal static BigInteger FastHeight(int eggs, int tries)
     {
         if(eggs == 0 || tries == 0) return 0;
 
@@ -109,7 +109,7 @@ public static class Faberge
     }
 
 
-    public static BigInteger Height1(BigInteger eggs, BigInteger tries)
+    internal static BigInteger Height1(BigInteger eggs, BigInteger tries)
     {
         if(eggs == 0 || tries == 0) return 0;
 
@@ -146,7 +146,7 @@ public static class Faberge
         }
     }
 
-    public static BigInteger Height(BigInteger eggs, BigInteger tries)
+    internal static BigInteger Height(BigInteger eggs, BigInteger tries)
     {
         if(eggs == 0 || tries == 0) return 0;
 

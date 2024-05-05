@@ -35,7 +35,7 @@ class PaintFuck
         return result;
     }
 
-    public static string Interpret(string code, int iterations, int width, int height)
+    internal static string Interpret(string code, int iterations, int width, int height)
     {
         var memoryXIndex = 0;
         var memoryYIndex = 0;

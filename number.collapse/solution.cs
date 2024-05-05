@@ -4,7 +4,7 @@ namespace numbercollapse;
 
 class RangeCollapse
 {
-    public static int Descriptions(int[] arr)
+    internal static int Descriptions(int[] arr)
     {
         int result = 1;
         int currentGroup = 0;

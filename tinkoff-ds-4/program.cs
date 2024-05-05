@@ -5,7 +5,7 @@ namespace tinkoffds4;
 
 class Solution
 {
-    public static int CalculateScans(int L, int[] particleCoords)
+    internal static int CalculateScans(int L, int[] particleCoords)
     {
         int scans = 0;
         int currentEnd = particleCoords[0] + L;

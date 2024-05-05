@@ -52,12 +52,12 @@ class Encryption
 
     }
 
-    public static string Encrypt(string text, int n)
+    internal static string Encrypt(string text, int n)
     {
         return RepeatFunction(Mix, text, n);
     }
 
-    public static string Decrypt(string text, int n)
+    internal static string Decrypt(string text, int n)
     {
         return RepeatFunction(Unmix, text, n);
     }

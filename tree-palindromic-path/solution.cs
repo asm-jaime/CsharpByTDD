@@ -5,10 +5,10 @@ namespace treepalindromicpath;
 
 class TreeNode
 {
-    public int val;
-    public TreeNode left;
-    public TreeNode right;
-    public TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
+    internal int val;
+    internal TreeNode left;
+    internal TreeNode right;
+    internal TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
     {
         this.val = val;
         this.left = left;
@@ -18,7 +18,7 @@ class TreeNode
 
 class Solution
 {
-    public static int PseudoPalindromicPaths(TreeNode root)
+    internal static int PseudoPalindromicPaths(TreeNode root)
     {
         var stack = new Stack<(TreeNode, List<TreeNode>)>();
         stack.Push((root, new List<TreeNode>() { root }));

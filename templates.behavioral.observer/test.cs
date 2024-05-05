@@ -3,7 +3,6 @@ using NUnit.Framework;
 
 namespace templatesbehavioralobserver;
 
-
 [TestFixture]
 class SolutionTests
 {

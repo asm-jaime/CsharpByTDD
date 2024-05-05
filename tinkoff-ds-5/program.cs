@@ -4,7 +4,7 @@ namespace tinkoffds5;
 
 class Solution
 {
-    public static int Calculate(int width, int height)
+    internal static int Calculate(int width, int height)
     {
         int lcm = Math.Abs(width / GreatestCommonDivisor(width, height) * height);
 

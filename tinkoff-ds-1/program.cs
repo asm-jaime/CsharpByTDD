@@ -5,7 +5,7 @@ namespace tinkoffds1;
 
 class Solution
 {
-    public static (string, int) Calculate(string[] words)
+    internal static (string, int) Calculate(string[] words)
     {
         var max = words.Max(word => word.Length);
         var word = words.Where(word => word.Length == max).First();

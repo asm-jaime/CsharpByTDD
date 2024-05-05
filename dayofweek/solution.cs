@@ -4,9 +4,9 @@ using System.Linq;
 
 namespace dayofweek;
 
-public static class ClosestDay
+internal static class ClosestDay
 {
-    public static DayOfWeek GetNextClosestDay(this DayOfWeek value, IList<DayOfWeek> listOfDaysOfWeek) =>
+    internal static DayOfWeek GetNextClosestDay(this DayOfWeek value, IList<DayOfWeek> listOfDaysOfWeek) =>
         listOfDaysOfWeek
             .Select(day => new
             {

@@ -5,7 +5,7 @@ namespace finddigits;
 
 class InfiniteDigitalString
 {
-    public static long ParseTry(string num, int start, int step)
+    internal static long ParseTry(string num, int start, int step)
     {
         //console.log(num, "step=", step, "start=", start)
         long n;
@@ -70,7 +70,7 @@ class InfiniteDigitalString
         }
     }
 
-    public static long GetTotalLength(long n)
+    internal static long GetTotalLength(long n)
     {
         long total = 0;
         long lena = 1;
@@ -87,7 +87,7 @@ class InfiniteDigitalString
         return total;
     }
 
-    public static long FindPosition(string num)
+    internal static long FindPosition(string num)
     {
         //num = num.toString();
         var indexes = new List<long>();

@@ -4,9 +4,9 @@ namespace csharpweakevent;
 
 class EventSource
 {
-    public event EventHandler<EventArgs> Event = delegate { };
+    internal event EventHandler<EventArgs> Event = delegate { };
 
-    public void Raise()
+    internal void Raise()
     {
         Event(this, EventArgs.Empty);
     }
@@ -15,10 +15,10 @@ class EventSource
 
 class EventListener
 {
-    public int Counter { get; set; }
+    internal int Counter { get; set; }
     readonly EventSource eventSourceObject;
 
-    public EventListener(EventSource source)
+    internal EventListener(EventSource source)
     {
         eventSourceObject = source;
         eventSourceObject.Event += MyHandler;
@@ -30,7 +30,7 @@ class EventListener
         Console.WriteLine("MyHandler received event " + Counter);
     }
 
-    public void UnRegisterEvent()
+    internal void UnRegisterEvent()
     {
         eventSourceObject.Event -= MyHandler;
     }
@@ -38,7 +38,7 @@ class EventListener
 
 static class Executor
 {
-    public static void ExecuteEventSequence()
+    internal static void ExecuteEventSequence()
     {
         EventSource source = new ();
         _ = new EventListener(source);

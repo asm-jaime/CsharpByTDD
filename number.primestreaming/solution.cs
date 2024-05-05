@@ -5,7 +5,7 @@ namespace numberprimestreaming;
 
 class Primes
 {
-    public static List<int> GetPrimesByEratosfen(int maxNumber)
+    internal static List<int> GetPrimesByEratosfen(int maxNumber)
     {
         var isPrimeArray = new bool[maxNumber + 1];
         for(var i = 0; i < maxNumber + 1; i++) isPrimeArray[i] = true;
@@ -30,7 +30,7 @@ class Primes
             .ToList();
     }
 
-    public static IEnumerable<int> Stream()
+    internal static IEnumerable<int> Stream()
     {
         return GetPrimesByEratosfen(100000);
     }

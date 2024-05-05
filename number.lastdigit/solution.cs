@@ -8,7 +8,7 @@ namespace numberlastdigit;
 
 class Calculator
 {
-    public static int GetLastDigit(int[] array, int m)
+    internal static int GetLastDigit(int[] array, int m)
     {
         BigInteger result = 1;
         foreach(var num in array.Reverse())
@@ -19,7 +19,7 @@ class Calculator
         return (int)(result % m);
     }
 
-    public static int LastDigit(int[] array)
+    internal static int LastDigit(int[] array)
     {
         return GetLastDigit(array, 10);
     }

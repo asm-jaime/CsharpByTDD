@@ -7,7 +7,7 @@ enum DoorState { Stay, Open, Close }
 
 class OpenCloseDoor
 {
-    public static bool CheckOneSeries(int[] oneSeries)
+    internal static bool CheckOneSeries(int[] oneSeries)
     {
         int acc = 0;
         foreach(int state in oneSeries)
@@ -20,14 +20,14 @@ class OpenCloseDoor
         return true;
     }
 
-    public static int GetSizeOfValidSeriesByCombinatoricFormula(int states)
+    internal static int GetSizeOfValidSeriesByCombinatoricFormula(int states)
     {
         //((states) => Math.pow(3, states) - 2*Math.pow(3, states - 2))(2)
         //
         return states;
     }
 
-    public static int GetSizeOfValidSeriesByFullCombo(int states)
+    internal static int GetSizeOfValidSeriesByFullCombo(int states)
     {
 
         var doorStates = new[] { (int)DoorState.Stay, (int)DoorState.Open, (int)DoorState.Close };

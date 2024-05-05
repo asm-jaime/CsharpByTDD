@@ -4,10 +4,10 @@ namespace infectedbynarytree;
 
 class TreeNode
 {
-    public int val;
-    public TreeNode left;
-    public TreeNode right;
-    public TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
+    internal int val;
+    internal TreeNode left;
+    internal TreeNode right;
+    internal TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
     {
         this.val = val;
         this.left = left;
@@ -17,7 +17,7 @@ class TreeNode
 
 class Solution
 {
-    public int AmountOfTime(TreeNode root, int start)
+    internal int AmountOfTime(TreeNode root, int start)
     {
         var graph = new Dictionary<int, List<int>>();
         BuildGraph(root, null, graph);

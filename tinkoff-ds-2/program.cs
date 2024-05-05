@@ -4,7 +4,7 @@ namespace tinkoffds2;
 
 class Solution
 {
-    public static string Calculate(int a, int b, int c, int d)
+    internal static string Calculate(int a, int b, int c, int d)
     {
         if (c == 0 && d != 0) return "NO";
 

@@ -5,7 +5,7 @@ namespace intervalsoverlaps;
 
 class Solution
 {
-    public int[][] Calculate(int[][] intervals)
+    internal int[][] Calculate(int[][] intervals)
     {
         var result = new List<int[]>();
 

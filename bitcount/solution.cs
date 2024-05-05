@@ -4,7 +4,7 @@ namespace bitcount;
 
 class Solution
 {
-    public static int CountBits(int number)
+    internal static int CountBits(int number)
     {
         int result = 0;
         int bits = (int)Math.Ceiling(Math.Log2(number));

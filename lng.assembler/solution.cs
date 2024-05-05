@@ -2,7 +2,7 @@
 
 class Solution
 {
-    public static int Calculate(int a, int b)
+    internal static int Calculate(int a, int b)
     {
         return a + b;
     }

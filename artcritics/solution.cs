@@ -2,7 +2,7 @@
 
 class Solution
 {
-    public static int CalculateBonus(int _, int[] scores)
+    internal static int CalculateBonus(int _, int[] scores)
     {
         int totalBonus = 0;
         for (int i = 0; i < scores.Length; i++)

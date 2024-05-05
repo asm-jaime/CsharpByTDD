@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace oopcarconstructor;
 
-public interface ICar
+interface ICar
 {
     bool EngineIsRunning { get; }
 
@@ -23,7 +23,7 @@ public interface ICar
     void RunningIdle();
 }
 
-public interface IEngine
+interface IEngine
 {
     bool IsRunning { get; }
 
@@ -34,7 +34,7 @@ public interface IEngine
     void Stop();
 }
 
-public interface IFuelTank
+interface IFuelTank
 {
     double FillLevel { get; }
 
@@ -47,7 +47,7 @@ public interface IFuelTank
     void Refuel(double liters);
 }
 
-public interface IFuelTankDisplay
+interface IFuelTankDisplay
 {
     double FillLevel { get; }
 
@@ -56,12 +56,12 @@ public interface IFuelTankDisplay
     bool IsComplete { get; }
 }
 
-public interface IDrivingInformationDisplay // car #2
+interface IDrivingInformationDisplay // car #2
 {
     int ActualSpeed { get; }
 }
 
-public interface IDrivingProcessor // car #2
+interface IDrivingProcessor // car #2
 {
     int ActualSpeed { get; }
     double ActualConsumption { get; } // car #3
@@ -74,7 +74,7 @@ public interface IDrivingProcessor // car #2
 
     void ReduceSpeed(int speed);
 }
-public interface IOnBoardComputer // car #3
+interface IOnBoardComputer // car #3
 {
     int TripRealTime { get; }
 
@@ -114,7 +114,7 @@ public interface IOnBoardComputer // car #3
 
     void TotalReset();
 }
-public interface IOnBoardComputerDisplay // car #3
+interface IOnBoardComputerDisplay // car #3
 {
     int TripRealTime { get; }
 
@@ -153,7 +153,7 @@ public interface IOnBoardComputerDisplay // car #3
     void TotalReset();
 }
 
-public interface ISensor // car #3
+interface ISensor // car #3
 {
     double ActualConsumption { get; }
     double SumOfHistoryVariation { get; }
@@ -173,7 +173,7 @@ public interface ISensor // car #3
     void RecordDistance(double actualDistance);
 }
 
-public interface ISensoreable // car #3
+interface ISensoreable // car #3
 {
     double GetToSensor();
 }
@@ -198,18 +198,18 @@ class Car : ICar
 
     private const double IdleFuelConsumption = 0.0003;
 
-    public IFuelTankDisplay fuelTankDisplay;
+    internal IFuelTankDisplay fuelTankDisplay;
     private readonly IEngine engine;
     private readonly IFuelTank fuelTank;
-    public IDrivingInformationDisplay drivingInformationDisplay; // car #2
+    internal IDrivingInformationDisplay drivingInformationDisplay; // car #2
     private readonly IDrivingProcessor drivingProcessor; // car #2
 
-    public ISensor sensor;
+    internal ISensor sensor;
 
-    public IOnBoardComputerDisplay onBoardComputerDisplay; // car #3
+    internal IOnBoardComputerDisplay onBoardComputerDisplay; // car #3
     private readonly IOnBoardComputer onBoardComputer; // car #3
 
-    public Car()
+    internal Car()
     {
         Console.WriteLine($"Car() created");
         sensor = new Sensor();
@@ -227,7 +227,7 @@ class Car : ICar
         onBoardComputerDisplay = new OnBoardComputerDisplay(onBoardComputer);
     }
 
-    public Car(double fuelLevel)
+    internal Car(double fuelLevel)
     {
         sensor = new Sensor();
         fuelTank = new FuelTank(fuelLevel, sensor);
@@ -244,7 +244,7 @@ class Car : ICar
         onBoardComputerDisplay = new OnBoardComputerDisplay(onBoardComputer);
     }
 
-    public Car(double fuelLevel, int maxAcceleration) // car #2
+    internal Car(double fuelLevel, int maxAcceleration) // car #2
     {
         Console.WriteLine($"fuel: {fuelLevel}, acc: {maxAcceleration}");
         sensor = new Sensor();
@@ -305,7 +305,7 @@ class Car : ICar
         onBoardComputer.ElapseSecond();
     }
 
-    public static double GetActualFuelConsume(int speed)
+    internal static double GetActualFuelConsume(int speed)
     {
         if(speed <= 60) return 0.0020;
         if(speed <= 100) return 0.0014;
@@ -317,7 +317,7 @@ class Car : ICar
         return 0;
     }
 
-    public void BrakeByOld(int speed)
+    internal void BrakeByOld(int speed)
     {
 
         if(engine.IsRunning.Equals(false)) return;
@@ -416,7 +416,7 @@ class OnBoardComputer : IOnBoardComputer // car #3
     private readonly ISensor _sensor;
 
 
-    public OnBoardComputer(IDrivingProcessor drivingProcessor, ISensor sensor)
+    internal OnBoardComputer(IDrivingProcessor drivingProcessor, ISensor sensor)
     {
         _processor = drivingProcessor;
         //_fuelTank = fuelTank;
@@ -642,7 +642,7 @@ class OnBoardComputerDisplay : IOnBoardComputerDisplay // car #3
 
     private static double MetersToKilometers(int meters) => meters / 3600.0;
 
-    public OnBoardComputerDisplay(IOnBoardComputer computer)
+    internal OnBoardComputerDisplay(IOnBoardComputer computer)
     {
         _computer = computer;
     }
@@ -697,7 +697,7 @@ class Engine : IEngine
     private readonly IFuelTank _fuelTank;
     private readonly IDrivingProcessor _processor;
 
-    public Engine(IFuelTank fuelTank, IDrivingProcessor processor)
+    internal Engine(IFuelTank fuelTank, IDrivingProcessor processor)
     {
         _fuelTank = fuelTank;
         _processor = processor;
@@ -759,7 +759,7 @@ class FuelTank : IFuelTank, ISensoreable
     public bool IsComplete => _fillLevel.Equals(MaximumTankSize);
 
 
-    public FuelTank(double fillLevel, ISensor sensor)
+    internal FuelTank(double fillLevel, ISensor sensor)
     {
         _sensor = sensor;
         FillLevel = fillLevel;
@@ -786,7 +786,7 @@ class FuelTankDisplay : IFuelTankDisplay
 {
     private readonly IFuelTank _fuelTank;
 
-    public FuelTankDisplay(IFuelTank fuelTank)
+    internal FuelTankDisplay(IFuelTank fuelTank)
     {
         _fuelTank = fuelTank;
     }
@@ -803,7 +803,7 @@ class DrivingInformationDisplay : IDrivingInformationDisplay // car #2
     readonly IDrivingProcessor _processor;
     public int ActualSpeed { get => _processor.ActualSpeed; }
 
-    public DrivingInformationDisplay(IDrivingProcessor processor)
+    internal DrivingInformationDisplay(IDrivingProcessor processor)
     {
         _processor = processor;
     }
@@ -827,7 +827,7 @@ class DrivingProcessor : IDrivingProcessor // car #2
 
     public double ActualConsumption { get => _sensor.ActualConsumption; }
 
-    public DrivingProcessor(int actualSpeed, ISensor sensor)
+    internal DrivingProcessor(int actualSpeed, ISensor sensor)
     {
         _actualSpeed = actualSpeed;
         _sensor = sensor;
@@ -884,7 +884,7 @@ class Sensor : ISensor
     public List<double> BuiltInConsumptionHistory => Enumerable.Range(0, 100).Select(element => 0.0030).ToList();
     public List<double> BuiltInDistanceHistory => Enumerable.Range(0, 100).Select(element => 250.0).ToList();
 
-    public Sensor()
+    internal Sensor()
     {
         //_consumptionHistory.AddRange(BuiltInConsumptionHistory);
         //_distanceHistory.AddRange(BuiltInDistanceHistory);

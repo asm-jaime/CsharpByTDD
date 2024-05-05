@@ -5,7 +5,7 @@ namespace tinkoff5;
 
 class Solution
 {
-    public static int DeliverPackage(string[] inputData)
+    internal static int DeliverPackage(string[] inputData)
     {
         var header = inputData[0].Split();
         int n = int.Parse(header[0]), m = int.Parse(header[1]), k = int.Parse(header[2]);

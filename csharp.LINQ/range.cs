@@ -7,12 +7,12 @@ class Range
 {
     int[] _numeric;
 
-    public Range()
+    internal Range()
     {
         _numeric = Enumerable.Range(1, 5).ToArray();
     }
 
-    public (int, string) GetSums()
+    internal (int, string) GetSums()
     {
         var resSum = _numeric.Sum();
         var resNum2 = _numeric.Where(n => n < 4);
@@ -20,7 +20,7 @@ class Range
         return (resSum, string.Join(",", resNum2));
     }
 
-    public (int, string) ModifyNumericAndGetSums()
+    internal (int, string) ModifyNumericAndGetSums()
     {
         var resSum = _numeric.Sum();
         var resNum2 = _numeric.Where(n => n < 4);

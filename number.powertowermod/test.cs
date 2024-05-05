@@ -84,7 +84,7 @@ class BasicTests
 
 static class Tester
 {
-    internal static void Act(BigInteger b, BigInteger h, int m, int expected)
+    public static void Act(BigInteger b, BigInteger h, int m, int expected)
     {
         var msg = $"Invalid answer for base: {b} height: {h} modulus: {m}";
         var actual = PowerTowerMod.Tower(b, h, m);

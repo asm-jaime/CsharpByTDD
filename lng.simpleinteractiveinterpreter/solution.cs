@@ -182,7 +182,7 @@ class Interpreter
     }
 
 
-    public double? Input(string input)
+    internal double? Input(string input)
     {
         List<string> tokens = Tokenize(input);
         tokens.RemoveAt(tokens.Count - 1);

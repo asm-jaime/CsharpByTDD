@@ -53,7 +53,7 @@ class Executor
         return (program.ToArray(), labels);
     }
 
-    public Executor(string programText)
+    internal Executor(string programText)
     {
         (_program, _labels) = ParseText(programText);
     }
@@ -236,7 +236,7 @@ class Executor
         }
     }
 
-    public string Interprete()
+    internal string Interprete()
     {
         while(_processing)
         {
@@ -252,9 +252,9 @@ class Executor
 
 }
 
-public static class AssemblerInterpreter
+internal static class AssemblerInterpreter
 {
-    public static string Interpret(string programText)
+    internal static string Interpret(string programText)
     {
         var executor = new Executor(programText);
         return executor.Interprete();

@@ -8,7 +8,7 @@ class NumberEratosfen
 {
     private readonly List<int> _primes;
 
-    public NumberEratosfen(int MaxNumber)
+    internal NumberEratosfen(int MaxNumber)
     {
         _primes = new List<int>();
         for(int i = 1; i < MaxNumber; i++)
@@ -41,7 +41,7 @@ class NumberEratosfen
         }
     }
 
-    public int[] Primes
+    internal int[] Primes
     {
         get
         {
@@ -51,7 +51,7 @@ class NumberEratosfen
 
 }
 
-public static class Divisors
+internal static class Divisors
 {
 
     private static readonly HashSet<int> _primeNumbers = GetPrimesByEratosfen(100000);
@@ -84,7 +84,7 @@ public static class Divisors
             .ToHashSet();
     }
 
-    public static List<int> GetAllPrimeFactors(int n)
+    internal static List<int> GetAllPrimeFactors(int n)
     {
         var map = new Dictionary<int, int>();
         var result = new List<int>();
@@ -128,7 +128,7 @@ public static class Divisors
         return result;
     }
 
-    public static int[] GetAllDivisors(int n)
+    internal static int[] GetAllDivisors(int n)
     {
         List<int> result = new();
         for(int i = 1; i <= Math.Sqrt(n); i++)
@@ -153,7 +153,7 @@ public static class Divisors
 class NumberTheory
 {
     /*
-    public List<BigInteger> GetCoprimeFactors(BigInteger n, int m)
+    internal List<BigInteger> GetCoprimeFactors(BigInteger n, int m)
     {
         var result = new List<BigInteger>() { n };
         if (result.Last().Equals(0)) return result;
@@ -231,9 +231,9 @@ class NumberTheory
     */
 }
 
-public static class ChineseRemainderTheorem
+internal static class ChineseRemainderTheorem
 {
-    public static int Solve(int[] a, int[] n)
+    internal static int Solve(int[] a, int[] n)
     {
         int prod = n.Aggregate(1, (i, j) => i * j);
         int p;
@@ -260,9 +260,9 @@ public static class ChineseRemainderTheorem
     }
 }
 
-public static class EulerTheorem
+internal static class EulerTheorem
 {
-    public static int Gcd(int num1, int num2)
+    internal static int Gcd(int num1, int num2)
     {
         int Remainder;
 
@@ -275,7 +275,7 @@ public static class EulerTheorem
 
         return num1;
     }
-    public static int Totient(int n)
+    internal static int Totient(int n)
     {
         int result = n;
         for(int p = 2; p * p <= n; ++p)

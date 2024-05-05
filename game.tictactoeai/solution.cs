@@ -95,7 +95,7 @@ namespace gametictactoeai;
             return bestScore;
         }
 
-        public static int[] TurnMethod(int[][] board, int player)
+        internal static int[] TurnMethod(int[][] board, int player)
         {
             int bestScore = GetMaxScoreByPlayer(player);
             var bestMove = new int[] { -1, -1 };

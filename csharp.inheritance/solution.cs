@@ -2,7 +2,7 @@
 
 class Person
 {
-    public string Name { get; set; }
+    internal string Name { get; set; }
 }
 
 class Employee : Person

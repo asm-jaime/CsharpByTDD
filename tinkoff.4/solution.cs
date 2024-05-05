@@ -5,7 +5,7 @@ namespace tinkoff4;
 
 class Solution
 {
-    public static string GetMinimizedBookList(int[] bookList)
+    internal static string GetMinimizedBookList(int[] bookList)
     {
         if(bookList == null || bookList.Length < 3)
         {

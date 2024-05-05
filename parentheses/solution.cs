@@ -7,7 +7,7 @@ class Parentheses
     private static readonly HashSet<char> OnPush = new() { '(' };
     private static readonly HashSet<char> OnPop = new() { ')' };
 
-    public static bool ValidParentheses(string input)
+    internal static bool ValidParentheses(string input)
     {
         var allParentheses = input.ToCharArray();
 

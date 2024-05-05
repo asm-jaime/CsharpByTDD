@@ -5,7 +5,7 @@ namespace minstepsstr2str;
 
 class Solution
 {
-    public static int MinSteps(string s, string t)
+    internal static int MinSteps(string s, string t)
     {
         var countChByChS = s.GroupBy(ch => ch).ToDictionary(g => g.Key, g => g.Count());
         var countChByChT = t.GroupBy(ch => ch).ToDictionary(g => g.Key, g => g.Count());

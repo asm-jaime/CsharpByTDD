@@ -6,7 +6,7 @@ namespace tinkoffds3;
 
 class Solution
 {
-    public static string AreArraysSimilar(int[] array1, int[] array2)
+    internal static string AreArraysSimilar(int[] array1, int[] array2)
     {
         int[] unique1 = RemoveDuplicates(array1);
         int[] unique2 = RemoveDuplicates(array2);

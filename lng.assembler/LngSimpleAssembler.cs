@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SolutionsByTDD
 {
-    public static class SimpleAssembler
+    internal static class SimpleAssembler
     {
         private static Dictionary<string, int> _state = new();
         private static int _executionIndex = 0;
@@ -49,7 +49,7 @@ namespace SolutionsByTDD
             }
         }
 
-        public static Dictionary<string, int> Interpret(string[] program)
+        internal static Dictionary<string, int> Interpret(string[] program)
         {
             _state = new Dictionary<string, int>();
             _executionIndex = 0;

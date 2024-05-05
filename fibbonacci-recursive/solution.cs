@@ -4,7 +4,7 @@ namespace fibbonaccirecursive;
 
 class Fibonacci
 {
-    public static (BigInteger, BigInteger) GetFibRecursive(int num)
+    internal static (BigInteger, BigInteger) GetFibRecursive(int num)
     {
         if(num.Equals(0)) return (BigInteger.Zero, BigInteger.One);
         if(num.Equals(1)) return (BigInteger.One, BigInteger.One);
@@ -18,7 +18,7 @@ class Fibonacci
         return (q, p + q);
     }
 
-    public static BigInteger Fib(int n)
+    internal static BigInteger Fib(int n)
     {
         int sign = n < 0 && n % 2 == 0 ? -1 : 1;
         n = n < 0 ? -n : n;

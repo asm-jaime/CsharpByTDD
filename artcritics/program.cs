@@ -5,7 +5,7 @@ using System.Linq;
 
 class Program
 {
-    public static void Main()
+    internal static void Main()
     {
         // Reading input
         var nm = Console.ReadLine().Split().Select(int.Parse).ToArray();

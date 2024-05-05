@@ -1,8 +1,8 @@
 namespace csharpvirtualoverride;
 
-public abstract class Building
+internal abstract class Building
 {
-    public virtual int GetFloors()
+    internal virtual int GetFloors()
     {
         return 0;
     }
@@ -10,7 +10,7 @@ public abstract class Building
 
 class House : Building
 {
-    public override int GetFloors()
+    internal override int GetFloors()
     {
         return 1;
     }
@@ -18,7 +18,7 @@ class House : Building
 
 class SkyScraper : House
 {
-    public override int GetFloors()
+    internal override int GetFloors()
     {
         return 30;
     }
@@ -26,7 +26,7 @@ class SkyScraper : House
 
 class OrdinaryHouse : House
 {
-    public new int GetFloors()
+    internal new int GetFloors()
     {
         return 5;
     }

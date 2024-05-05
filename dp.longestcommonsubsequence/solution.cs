@@ -37,7 +37,7 @@ class LcsClass
         result.Reverse();
         return result.Aggregate((a, b) => $"{a}{b}");
     }
-    public static string Lcs(string x, string y)
+    internal static string Lcs(string x, string y)
     {
         if(string.IsNullOrEmpty(x) || string.IsNullOrEmpty(y)) return "";
 
