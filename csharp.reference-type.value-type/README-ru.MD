@@ -1,16 +1,10 @@
 <!-- RUSSIAN -->
-# Задача шаблон
-
-
-### Замечание
+# Задача Показать на примерах как работает ref
 
 Пример 1
 
-in:
-```
-
-```
-out:
-```
-
+```cs
+var i = 10;
+nullificator.NullifyValue(i); // ?
+nullificator.NullifyValue(ref i); // ?
 ```
