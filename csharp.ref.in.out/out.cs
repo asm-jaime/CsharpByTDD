@@ -1,4 +1,4 @@
-namespace csharpreferencetypevaluetype;
+namespace csharprefinout;
 
 class Out
 {

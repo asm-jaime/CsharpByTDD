@@ -198,6 +198,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "fizzbuzz", "fizzbuzz\fizzbu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp.reference-type.value-type", "csharp.reference-type.value-type\csharp.reference-type.value-type.csproj", "{672947E9-4ABD-4210-BD80-C4732B277BEB}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp.ref.in.out", "csharp.ref.in.out\csharp.ref.in.out.csproj", "{0F9F032F-FF2A-4156-A73D-FE5D83FE26B8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -580,6 +582,10 @@ Global
 		{672947E9-4ABD-4210-BD80-C4732B277BEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{672947E9-4ABD-4210-BD80-C4732B277BEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{672947E9-4ABD-4210-BD80-C4732B277BEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F9F032F-FF2A-4156-A73D-FE5D83FE26B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F9F032F-FF2A-4156-A73D-FE5D83FE26B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F9F032F-FF2A-4156-A73D-FE5D83FE26B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F9F032F-FF2A-4156-A73D-FE5D83FE26B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

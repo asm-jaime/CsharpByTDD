@@ -1,7 +1,7 @@
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace csharpreferencetypevaluetype;
+namespace csharprefinout;
 
 [TestFixture]
 class RefTests
