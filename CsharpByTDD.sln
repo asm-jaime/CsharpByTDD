@@ -196,6 +196,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp.LINQ", "csharp.LINQ\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "fizzbuzz", "fizzbuzz\fizzbuzz.csproj", "{C4DED7DF-E107-424D-B51F-C8AD7F32770C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp.reference-type.value-type", "csharp.reference-type.value-type\csharp.reference-type.value-type.csproj", "{672947E9-4ABD-4210-BD80-C4732B277BEB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -574,6 +576,10 @@ Global
 		{C4DED7DF-E107-424D-B51F-C8AD7F32770C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4DED7DF-E107-424D-B51F-C8AD7F32770C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4DED7DF-E107-424D-B51F-C8AD7F32770C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{672947E9-4ABD-4210-BD80-C4732B277BEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{672947E9-4ABD-4210-BD80-C4732B277BEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{672947E9-4ABD-4210-BD80-C4732B277BEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{672947E9-4ABD-4210-BD80-C4732B277BEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
