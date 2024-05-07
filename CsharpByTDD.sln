@@ -202,6 +202,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp.ref.in.out", "csharp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp.list", "csharp.list\csharp.list.csproj", "{CEDFB1C2-CC41-4CFD-AA8C-447B92569A77}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp.covariance.contravariance", "csharp.covariance.contravariance\csharp.covariance.contravariance.csproj", "{CAAB9106-7B58-45AA-9349-DE0C89EF6F4D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -592,6 +594,10 @@ Global
 		{CEDFB1C2-CC41-4CFD-AA8C-447B92569A77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEDFB1C2-CC41-4CFD-AA8C-447B92569A77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEDFB1C2-CC41-4CFD-AA8C-447B92569A77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAAB9106-7B58-45AA-9349-DE0C89EF6F4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAAB9106-7B58-45AA-9349-DE0C89EF6F4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAAB9106-7B58-45AA-9349-DE0C89EF6F4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAAB9106-7B58-45AA-9349-DE0C89EF6F4D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
