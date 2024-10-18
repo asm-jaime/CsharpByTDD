@@ -208,6 +208,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp.exception.sequence",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp.loop.remove-element", "csharp.loop.remove-element\csharp.loop.remove-element.csproj", "{90E9C278-DBC0-45FF-94CB-0B289C36DCB6}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp.async.finite-machine", "csharp.async.finite-machine\csharp.async.finite-machine.csproj", "{2F93D194-C6DB-4DC6-BBB9-099CBA734983}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -610,6 +612,10 @@ Global
 		{90E9C278-DBC0-45FF-94CB-0B289C36DCB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90E9C278-DBC0-45FF-94CB-0B289C36DCB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90E9C278-DBC0-45FF-94CB-0B289C36DCB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F93D194-C6DB-4DC6-BBB9-099CBA734983}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F93D194-C6DB-4DC6-BBB9-099CBA734983}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F93D194-C6DB-4DC6-BBB9-099CBA734983}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F93D194-C6DB-4DC6-BBB9-099CBA734983}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

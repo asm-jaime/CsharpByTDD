@@ -1,0 +1,8 @@
+// csharp.async.finite-machine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// csharpasyncfinitemachine.Program.<Main>d__1
+using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+[StructLayout(LayoutKind.Auto)]

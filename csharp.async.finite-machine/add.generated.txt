@@ -1,0 +1,69 @@
+[StructLayout(LayoutKind.Auto)]
+[CompilerGenerated]
+private struct <Add>d__0 : IAsyncStateMachine
+{
+	public int <>1__state;
+
+	public AsyncTaskMethodBuilder<int> <>t__builder;
+
+	public int a;
+
+	public int b;
+
+	private TaskAwaiter <>u__1;
+
+	private void MoveNext()
+	{
+		int num = <>1__state;
+		int result;
+		try
+		{
+			TaskAwaiter awaiter;
+			if (num != 0)
+			{
+				awaiter = Task.Delay(1000).GetAwaiter();
+				if (!awaiter.IsCompleted)
+				{
+					num = (<>1__state = 0);
+					<>u__1 = awaiter;
+					<>t__builder.AwaitUnsafeOnCompleted(ref awaiter, ref this);
+					return;
+				}
+			}
+			else
+			{
+				awaiter = <>u__1;
+				<>u__1 = default(TaskAwaiter);
+				num = (<>1__state = -1);
+			}
+			awaiter.GetResult();
+			result = a + b;
+		}
+		catch (Exception exception)
+		{
+			<>1__state = -2;
+			<>t__builder.SetException(exception);
+			return;
+		}
+		<>1__state = -2;
+		<>t__builder.SetResult(result);
+	}
+
+	void IAsyncStateMachine.MoveNext()
+	{
+		//ILSpy generated this explicit interface implementation from .override directive in MoveNext
+		this.MoveNext();
+	}
+
+	[DebuggerHidden]
+	private void SetStateMachine(IAsyncStateMachine stateMachine)
+	{
+		<>t__builder.SetStateMachine(stateMachine);
+	}
+
+	void IAsyncStateMachine.SetStateMachine(IAsyncStateMachine stateMachine)
+	{
+		//ILSpy generated this explicit interface implementation from .override directive in SetStateMachine
+		this.SetStateMachine(stateMachine);
+	}
+}
