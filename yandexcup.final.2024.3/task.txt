@@ -1,0 +1,86 @@
+C. Участники курултаев (100 баллов)
+
+Курултай — это племенное собрание, созываемое для определения, разработки стратегии и анализа военных кампаний, назначения на руководящие должности и присвоения титулов. Обычно в курултаях участвует много людей, поэтому организаторы всегда ведут таблицы со списком участников, чтобы можно было посчитать их точное число.
+
+Даны список курултаев, его участники (вместе с ролью), а также данные о том, какие курултаи они посещали. Участники имеют глобальный уникальный person_name на всю систему.
+
+Как только участник заходит в курултай, создаётся запись в kurultai_visitors и назначается роль участнику в person_roles, если записей с такой ролью ещё не было. Посещение начинается со входа участника в курултай kurultai_visitor_sessions.enter_time и заканчивается его выходом в kurultai_visitor_sessions.exit_time. Не всегда посетители курултаев представляются и посещают их как анонимные посетители, в таком случае в kurultai_visitors.person_name будет NULL.
+
+Иногда людям необходимо несколько раз заходить в курултай и выходить из него. Каждый такой вход-выход порождает отдельную запись в kurultai_visitor_sessions.
+
+У курултая может быть только один организатор. Он помечается в поле person_roles.is_owner.
+
+Требуется посчитать топ-10 участников, организовавших больше всего курултаев, в которых было одновременно не менее 10 уникальных участников, включая организатора. Посещения участников должны быть дольше 30 секунд. Если участник зашёл в курултай несколько раз, то считается только одно участие.
+
+Результат: таблица с колонками person_name (участник c флагом is_owner) и count (число организованных курултаев), отсортированная по count в порядке убывания. При одинаковом count, person_name сортируется в лексикографическом порядке.
+
+CREATE TABLE "kurultais"
+(
+    "id"       uuid PRIMARY KEY,
+    "name"     text      NOT NULL
+);
+
+CREATE TABLE "kurultai_visitors"
+(
+    "id"          uuid PRIMARY KEY,
+    "kurultai_id" uuid NOT NULL,
+    "person_name" text
+);
+
+CREATE TABLE "kurultai_visitor_sessions"
+(
+    "id"                  uuid PRIMARY KEY,
+    "kurultai_visitor_id" uuid      NOT NULL,
+    "enter_time"          timestamp NOT NULL,
+    "exit_time"           timestamp NOT NULL
+);
+
+CREATE TABLE "person_roles"
+(
+    "kurultai_id" uuid    NOT NULL,
+    "person_name" text    NOT NULL,
+    "is_owner"    boolean NOT NULL DEFAULT FALSE,
+    PRIMARY KEY (kurultai_id, person_name)
+);
+
+ALTER TABLE "kurultai_visitors"
+    ADD FOREIGN KEY ("kurultai_id") REFERENCES "kurultais" ("id");
+
+ALTER TABLE "kurultai_visitor_sessions"
+    ADD FOREIGN KEY ("kurultai_visitor_id") REFERENCES "kurultai_visitors" (id);
+
+ALTER TABLE "kurultai_visitors"
+    ADD FOREIGN KEY ("kurultai_id", "person_name") REFERENCES "person_roles" ("kurultai_id", "person_name");
+
+ALTER TABLE "person_roles"
+    ADD FOREIGN KEY ("kurultai_id") REFERENCES "kurultais" ("id");
+
+
+CREATE UNIQUE INDEX kurultai_visitors_unique_idx ON kurultai_visitors (kurultai_id, person_name) WHERE person_name is not null;
+CREATE UNIQUE INDEX person_roles_unique_idx ON person_roles (kurultai_id, person_name);
+CREATE UNIQUE INDEX owner_person_roles_unique_idx ON person_roles (kurultai_id) WHERE is_owner;
+
+CREATE INDEX ON kurultai_visitors (kurultai_id);
+CREATE INDEX ON kurultai_visitors (kurultai_id, person_name);
+CREATE INDEX ON kurultai_visitor_sessions (kurultai_visitor_id);
+CREATE INDEX ON person_roles (kurultai_id, person_name);
+Формат ввода
+В качестве ввода ожидается SQL-запрос, который возвращает данные в формате: person_name, count, где person_name — это участник который является владельцем is_owner, а count — количество встреч.
+
+Пример:
+
+SELECT
+  person_name, count(1) as count
+FROM person_roles
+GROUP BY person_name
+Дополнительные замечания:
+
+Символ «;» в конце запроса не обязателен и не влияет на решение.
+Для исполнения запроса используется PostgreSQL версии 16.4.
+Формат вывода
+На выходе должен быть результат SQL-запроса, в котором:
+
+есть 2 колонки c названиями person_name и count;
+записи отсортированы в порядке убывания count;
+если у person_name одинаковый count, то они сортируются в лексикографическом порядке.
+На каждый тест установлено ограничение 5 секунд.

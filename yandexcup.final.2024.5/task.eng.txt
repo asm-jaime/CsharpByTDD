@@ -1,0 +1,77 @@
+E. Cluedo (100 points)
+
+Have you ever wondered that the problem of data retrieval in a decentralized system has deep roots in human history?
+
+In the Bible, the Pharaoh sought the interpretation of his dream and through a chain of inquiries found the answer with Joseph.
+In the Talmud, King Nebuchadnezzar approached his wise men with a question, and after many attempts, the answer was found by Daniel.
+In Greek mythology, the riddle of the Sphinx was passed through a network of people until it reached Oedipus, who was finally able to solve it.
+
+Each of these examples shows how the ancients solved problems of searching and distributing information.
+Today, when data is stored on various remote servers, we face a similar task – to find ways in which this data can be distributed.
+
+In our system, there is an important file stored on 7 cluster servers. One of the servers is the master server.
+The remaining 6 are client servers connected in a ring network. All servers are currently unavailable.
+
+The file consists of 3 sections. The first two sections consist of 6 parts each, and the last section consists of 9 parts.
+On the master server, the 3 most important parts of the file from each section are stored.
+The remaining 18 parts are distributed equally among the client servers.
+Since the servers are unavailable, it is unknown which part of the file is on which server.
+However, client servers sometimes query each other.
+A client server can ask the next client server in the ring if it has any of the 3 file parts from 3 different sections.
+If it does, the server returns one of the parts it has.
+If not, the same request is sent to the next server in the ring, and so on, until a server is found that has one of the 3 requested parts, or until all other client servers have been queried.
+A server can also be asked about parts that are stored on itself.
+
+There is a log of these requests, but it does not include responses.
+Additionally, through additional logs, the location of a small number of file parts has been determined.
+Determine how many possible combinations of distributing parts across servers correspond to this log.
+
+Input Format
+The first line contains the number of 1<=N<=6 client servers for which the location of some file parts is known.
+
+In the next N lines, the number of the client server 1<=si<=6 and the number of 1<=ki<=3 known file parts on this server are written, followed by ki different pairs of numbers 1<=sij<=3, 1<=pij<=Pij, the section number and the part number in this section.
+The number Pij indicates the size of the section with number sij.
+
+There are at least 2 servers for which all stored parts are known.
+The next line contains the number of 0<=M<=20 log entries.
+
+In the next M lines, the log entries are written.
+The first number 1<=s<=6 contains the number of the server that made the request. Then there are 3 numbers 1<=r1<=6, 1<=r2<=6, 1<=r3<=9 indicating the part numbers in each of the 3 file sections.
+The last number 1<=t<=6 contains the number of the nearest server in the ring that contains one of the requested parts, or the number s if all other client servers responded negatively.
+
+Output Format
+Print the number of possible ways to distribute file parts across 7 servers.
+
+Example 1
+Input
+2
+1 3 1 4 1 6 3 7
+3 3 2 2 2 5 3 8
+5
+5 2 1 9 6
+6 5 2 3 2
+1 6 1 4 4
+2 1 3 5 4
+4 4 4 2 1
+Output
+331194
+
+Example 2
+Input
+2
+1 3 1 5 2 4 3 3
+2 3 1 1 2 1 3 1
+1
+2 1 1 2 2
+Output
+5913600
+
+Example 3
+Input
+3
+1 2 3 9 2 5
+5 3 3 1 3 3 3 2
+3 3 3 4 3 5 3 6
+0
+Output
+1008000

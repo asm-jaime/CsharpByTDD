@@ -1,0 +1,53 @@
+Artifact Assembly System
+
+Assembling parts of artifacts is a complex and meticulous task. Your mission is to develop a system to track artifacts and their constituent parts.
+
+Your system must support the following operations:
+
+    CREATE <part_id>: Register a new artifact consisting of the part with identifier <part_id>, if this part is not already associated with an existing artifact. If the part is already part of an artifact, output ERROR: EXISTING PART.
+
+    MERGE <artifact_id1> <artifact_id2>: Merge the artifacts with identifiers <artifact_id1> and <artifact_id2> into a new artifact. Collect all parts from both artifacts into the new one. The artifacts <artifact_id1> and <artifact_id2> become obsolete and will not be used in further operations. Output the artifact_id of the new merged artifact.
+
+    GET_PARTS <artifact_id>: Output all part_ids that comprise the artifact with identifier <artifact_id>, separated by spaces. If the artifact does not exist, output ERROR: NO SUCH ARTEFACT.
+
+    EXIT: Terminate the program.
+
+Input Format:
+
+    Each line contains one of the commands described above.
+    <part_id> is a string of up to 20 lowercase English letters and digits (0–9).
+    The total number of commands (excluding EXIT) does not exceed 105105.
+    The number of GET_PARTS commands does not exceed 100.
+
+Output Format:
+
+    For CREATE <part_id>: Output a new unique artifact_id (a string of up to 20 lowercase letters and digits) if the part is not already associated with an artifact. Otherwise, output ERROR: EXISTING PART.
+
+    For MERGE <artifact_id1> <artifact_id2>: Output a new unique artifact_id of the merged artifact.
+
+    For GET_PARTS <artifact_id>: Output all part_ids of the artifact, separated by spaces. If the artifact does not exist, output ERROR: NO SUCH ARTEFACT.
+
+Constraints:
+
+    All artifact_ids are unique strings of up to 20 lowercase letters and digits.
+    It is guaranteed that the total number of part_ids output does not exceed 2*10^5.
+
+Sample Interaction:
+
+Server:
+CREATE p1
+CREATE p2
+MERGE paws tail
+CREATE p3
+MERGE whiskers body
+GET_PARTS cat001
+EXIT
+
+Client:
+paws	
+tail
+body
+whiskers
+cat001
+p1 p2 p3
+

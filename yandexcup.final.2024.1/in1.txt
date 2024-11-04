@@ -1,0 +1,7 @@
+CREATE p1
+CREATE p2
+MERGE paws tail
+CREATE p3
+MERGE whiskers body
+GET_PARTS cat001
+EXIT
