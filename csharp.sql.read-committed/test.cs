@@ -8,8 +8,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Transactions;
 using Testcontainers.PostgreSql;
+using IsolationLevel = System.Transactions.IsolationLevel;
 
-namespace CSharpDapperBasic.Tests;
+namespace ReadCommitted.Tests;
 
 [TestFixture]
 public class DatabaseTests
@@ -81,14 +82,14 @@ values
     record class Account(int Id, string Client, decimal Amount);
 
     [Test]
-    public void Test_DirtyRead()
+    public void Test_DirtyRead1()
     {
         var alice800 = new List<Account>() { new(1, "alice", 800) };
         var alice1000 = new List<Account>() { new(1, "alice", 1000) };
 
         var task1 = Task.Run(async () =>
         {
-            using var transaction = new TransactionScope();
+            using var transaction = new TransactionScope(scopeOption: TransactionScopeOption.Required, transactionOptions: new TransactionOptions { IsolationLevel = IsolationLevel.ReadCommitted, Timeout =  TransactionManager.DefaultTimeout});
             await Task.Delay(10);
             var retrievedData = await _dbconnection.QueryAsync<Account>(@"select * from accounts where client = 'alice';");
             retrievedData.Should().BeEquivalentTo(alice1000, options => options.WithStrictOrdering());
@@ -97,7 +98,7 @@ values
 
         var task2 = Task.Run(async () =>
         {
-            using var transaction = new TransactionScope();
+            using var transaction = new TransactionScope(scopeOption: TransactionScopeOption.Required, transactionOptions: new TransactionOptions { IsolationLevel = IsolationLevel.ReadCommitted, Timeout =  TransactionManager.DefaultTimeout});
             var retrievedData = await _dbconnection.QueryAsync<Account>(@"
 update accounts set amount = amount - 200 where id = 1;
 select * from accounts where client = 'alice';");
@@ -110,13 +111,13 @@ select * from accounts where client = 'alice';");
     }
 
     [Test]
-    public void Test_DirtyReadInAnotherTransaction()
+    public void Test_DirtyRead2()
     {
         var alice1000 = new List<Account>() { new(1, "alice", 1000) };
 
         var t1 = new Thread(() =>
         {
-            using var transaction = new TransactionScope();
+            using var transaction = new TransactionScope(scopeOption: TransactionScopeOption.Required, transactionOptions: new TransactionOptions { IsolationLevel = IsolationLevel.ReadCommitted, Timeout =  TransactionManager.DefaultTimeout});
             _dbconnection.Query<Account>(@"update accounts set amount = amount - 200 where id = 1;");
             Thread.Sleep(100);
             transaction.Complete();
@@ -128,7 +129,7 @@ select * from accounts where client = 'alice';");
 
         var t2 = new Thread(() =>
         {
-            using var transaction = new TransactionScope();
+            using var transaction = new TransactionScope(scopeOption: TransactionScopeOption.Required, transactionOptions: new TransactionOptions { IsolationLevel = IsolationLevel.ReadCommitted, Timeout =  TransactionManager.DefaultTimeout});
             var retrievedData = _dbconnection.Query<Account>(@"select * from accounts where client = 'alice';");
             retrievedData.Should().BeEquivalentTo(alice1000, options => options.WithStrictOrdering());
             transaction.Complete();

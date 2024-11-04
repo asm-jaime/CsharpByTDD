@@ -212,7 +212,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp.async.finite-machine
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp.sql.dapper.basic", "csharp.sql.dapper.basic\csharp.sql.dapper.basic.csproj", "{D93057DE-58A3-4C11-B896-CC2346AE0BE7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp.sql.dirty-read", "csharp.sql.dirty-read\csharp.sql.dirty-read.csproj", "{5ED74DF5-3812-4D93-885D-93B6152F4082}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp.sql.read-committed", "csharp.sql.read-committed\csharp.sql.read-committed.csproj", "{29774428-12DE-4D9A-A793-C684FCE10414}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -624,10 +624,10 @@ Global
 		{D93057DE-58A3-4C11-B896-CC2346AE0BE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D93057DE-58A3-4C11-B896-CC2346AE0BE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D93057DE-58A3-4C11-B896-CC2346AE0BE7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5ED74DF5-3812-4D93-885D-93B6152F4082}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5ED74DF5-3812-4D93-885D-93B6152F4082}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5ED74DF5-3812-4D93-885D-93B6152F4082}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5ED74DF5-3812-4D93-885D-93B6152F4082}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29774428-12DE-4D9A-A793-C684FCE10414}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29774428-12DE-4D9A-A793-C684FCE10414}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29774428-12DE-4D9A-A793-C684FCE10414}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29774428-12DE-4D9A-A793-C684FCE10414}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
