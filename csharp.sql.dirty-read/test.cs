@@ -4,6 +4,7 @@ using Npgsql;
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Data;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Transactions;
 using Testcontainers.PostgreSql;
@@ -80,7 +81,7 @@ values
     record class Account(int Id, string Client, decimal Amount);
 
     [Test]
-    public async Task Test_DirtyRead()
+    public void Test_DirtyRead()
     {
         var alice800 = new List<Account>() { new(1, "alice", 800) };
         var alice1000 = new List<Account>() { new(1, "alice", 1000) };
@@ -88,7 +89,7 @@ values
         var task1 = Task.Run(async () =>
         {
             using var transaction = new TransactionScope();
-            await Task.Delay(20);
+            await Task.Delay(10);
             var retrievedData = await _dbconnection.QueryAsync<Account>(@"select * from accounts where client = 'alice';");
             retrievedData.Should().BeEquivalentTo(alice1000, options => options.WithStrictOrdering());
             transaction.Complete();
@@ -105,32 +106,40 @@ select * from accounts where client = 'alice';");
             transaction.Complete();
         });
 
-        await Task.Delay(200);
+        Task.WhenAll(task1, task2);
     }
 
     [Test]
-    public async Task Test_DirtyReadInAnotherTransaction()
+    public void Test_DirtyReadInAnotherTransaction()
     {
         var alice1000 = new List<Account>() { new(1, "alice", 1000) };
 
-        var task1 = Task.Run(async () =>
+        var t1 = new Thread(() =>
         {
             using var transaction = new TransactionScope();
-            await _dbconnection.QueryAsync<Account>(@"update accounts set amount = amount - 200 where id = 1;");
-            await Task.Delay(40);
+            _dbconnection.Query<Account>(@"update accounts set amount = amount - 200 where id = 1;");
+            Thread.Sleep(100);
             transaction.Complete();
-        });
+        })
+        {
+            IsBackground = false
+        };
+        t1.Start();
 
-        var task2 = Task.Run(async () =>
+        var t2 = new Thread(() =>
         {
             using var transaction = new TransactionScope();
-            await Task.Delay(20);
-            var retrievedData = await _dbconnection.QueryAsync<Account>(@"select * from accounts where client = 'alice';");
+            var retrievedData = _dbconnection.Query<Account>(@"select * from accounts where client = 'alice';");
             retrievedData.Should().BeEquivalentTo(alice1000, options => options.WithStrictOrdering());
             transaction.Complete();
-        });
+        })
+        {
+            IsBackground = false
+        };
+        t2.Start();
 
-        await Task.Delay(200);
+        t1.Join();
+        t2.Join();
     }
 }
 
