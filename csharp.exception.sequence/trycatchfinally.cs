@@ -2,7 +2,7 @@ using System;
 
 namespace csharpexceptionsequence;
 
-class Solution
+class TryCatchFinally
 {
     internal string GetExceptionSequenceString(bool isThrow)
     {

@@ -13,7 +13,7 @@ class SolutionTests
     public void TestCalculate(bool isThrow, string expected)
     {
         // Arrange
-        var solution = new Solution();
+        var solution = new TryCatchFinally();
         // Act
         var result = solution.GetExceptionSequenceString(isThrow);
         // Assert
