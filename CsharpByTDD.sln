@@ -208,7 +208,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp.exception.sequence",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp.loop.remove-element", "csharp.loop.remove-element\csharp.loop.remove-element.csproj", "{90E9C278-DBC0-45FF-94CB-0B289C36DCB6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp.async.finite-machine", "csharp.async.finite-machine\csharp.async.finite-machine.csproj", "{2F93D194-C6DB-4DC6-BBB9-099CBA734983}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp.TPL.async.finite-machine", "csharp.async.finite-machine\csharp.TPL.async.finite-machine.csproj", "{2F93D194-C6DB-4DC6-BBB9-099CBA734983}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp.sql.dapper.basic", "csharp.sql.dapper.basic\csharp.sql.dapper.basic.csproj", "{D93057DE-58A3-4C11-B896-CC2346AE0BE7}"
 EndProject

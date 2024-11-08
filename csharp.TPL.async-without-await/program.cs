@@ -1,25 +1,27 @@
-using NUnit.Framework.Constraints;
 using System;
 using System.Threading.Tasks;
 
 namespace csharpTPLasyncwithoutawait;
 
-class Solution
-{
-}
 class Program
 {
-    private static string _str;
+    private static string _message;
 
-    static async void Calculate()
-    {
-        await Task.Delay(5);
-        _str = "Hello world";
-    }
     static void Main(string[] args)
     {
-        Calculate();
+        //var result = SaySomething();
+        SaySomething();
 
-        Console.WriteLine(_str);
+        //Console.WriteLine(result.Result);
+        Console.WriteLine(_message);
+    }
+
+    static async Task<string> SaySomething()
+    {
+        await Task.Delay(5);
+
+        _message = "Hello world";
+
+        return "Something";
     }
 }
