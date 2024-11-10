@@ -222,6 +222,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp.coredump", "csharp.c
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp.TPL.async-without-await", "csharp.TPL.async-without-await\csharp.TPL.async-without-await.csproj", "{D5BA1174-7746-47D5-9D32-D7AE10CF29B5}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp.TPL.lock", "csharp.TPL.lock\csharp.TPL.lock.csproj", "{807A6EFC-2311-4963-8D50-83F6C487A8FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -652,6 +654,10 @@ Global
 		{D5BA1174-7746-47D5-9D32-D7AE10CF29B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5BA1174-7746-47D5-9D32-D7AE10CF29B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5BA1174-7746-47D5-9D32-D7AE10CF29B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{807A6EFC-2311-4963-8D50-83F6C487A8FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{807A6EFC-2311-4963-8D50-83F6C487A8FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{807A6EFC-2311-4963-8D50-83F6C487A8FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{807A6EFC-2311-4963-8D50-83F6C487A8FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
