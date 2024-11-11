@@ -89,7 +89,7 @@ values
 
         var task1 = Task.Run(async () =>
         {
-            using var transaction = new TransactionScope(scopeOption: TransactionScopeOption.Required, transactionOptions: new TransactionOptions { IsolationLevel = IsolationLevel.ReadCommitted, Timeout =  TransactionManager.DefaultTimeout});
+            using var transaction = new TransactionScope(scopeOption: TransactionScopeOption.Required, transactionOptions: new TransactionOptions { IsolationLevel = IsolationLevel.ReadCommitted, Timeout = TransactionManager.DefaultTimeout });
             await Task.Delay(10);
             var retrievedData = await _dbconnection.QueryAsync<Account>(@"select * from accounts where client = 'alice';");
             retrievedData.Should().BeEquivalentTo(alice1000, options => options.WithStrictOrdering());
@@ -98,7 +98,7 @@ values
 
         var task2 = Task.Run(async () =>
         {
-            using var transaction = new TransactionScope(scopeOption: TransactionScopeOption.Required, transactionOptions: new TransactionOptions { IsolationLevel = IsolationLevel.ReadCommitted, Timeout =  TransactionManager.DefaultTimeout});
+            using var transaction = new TransactionScope(scopeOption: TransactionScopeOption.Required, transactionOptions: new TransactionOptions { IsolationLevel = IsolationLevel.ReadCommitted, Timeout = TransactionManager.DefaultTimeout });
             var retrievedData = await _dbconnection.QueryAsync<Account>(@"
 update accounts set amount = amount - 200 where id = 1;
 select * from accounts where client = 'alice';");
@@ -110,14 +110,14 @@ select * from accounts where client = 'alice';");
         Task.WhenAll(task1, task2);
     }
 
-    [Test]
+    //[Test]
     public void Test_DirtyRead2()
     {
         var alice1000 = new List<Account>() { new(1, "alice", 1000) };
 
         var t1 = new Thread(() =>
         {
-            using var transaction = new TransactionScope(scopeOption: TransactionScopeOption.Required, transactionOptions: new TransactionOptions { IsolationLevel = IsolationLevel.ReadCommitted, Timeout =  TransactionManager.DefaultTimeout});
+            using var transaction = new TransactionScope(scopeOption: TransactionScopeOption.Required, transactionOptions: new TransactionOptions { IsolationLevel = IsolationLevel.ReadCommitted, Timeout = TransactionManager.DefaultTimeout });
             _dbconnection.Query<Account>(@"update accounts set amount = amount - 200 where id = 1;");
             Thread.Sleep(100);
             transaction.Complete();
@@ -129,7 +129,7 @@ select * from accounts where client = 'alice';");
 
         var t2 = new Thread(() =>
         {
-            using var transaction = new TransactionScope(scopeOption: TransactionScopeOption.Required, transactionOptions: new TransactionOptions { IsolationLevel = IsolationLevel.ReadCommitted, Timeout =  TransactionManager.DefaultTimeout});
+            using var transaction = new TransactionScope(scopeOption: TransactionScopeOption.Required, transactionOptions: new TransactionOptions { IsolationLevel = IsolationLevel.ReadCommitted, Timeout = TransactionManager.DefaultTimeout });
             var retrievedData = _dbconnection.Query<Account>(@"select * from accounts where client = 'alice';");
             retrievedData.Should().BeEquivalentTo(alice1000, options => options.WithStrictOrdering());
             transaction.Complete();
@@ -142,6 +142,92 @@ select * from accounts where client = 'alice';");
         t1.Join();
         t2.Join();
     }
+
+    //[Test]
+    public async Task Test_LostUpdate()
+    {
+        var alice900 = new List<Account>() { new(1, "alice", 900) };
+
+        var task1 = Task.Run(async Task () =>
+        {
+            using var transaction = new TransactionScope(scopeOption: TransactionScopeOption.Required, transactionOptions: new TransactionOptions { IsolationLevel = IsolationLevel.ReadCommitted, Timeout = TransactionManager.DefaultTimeout }, asyncFlowOption: TransactionScopeAsyncFlowOption.Enabled);
+            await Task.Delay(10);
+            var retrievedData = await _dbconnection.QueryAsync<Account>(@"
+update accounts set amount = amount - 100 where id = 1;
+select * from accounts where client = 'alice';
+");
+            retrievedData.Should().BeEquivalentTo(alice900, options => options.WithStrictOrdering());
+            await Task.Delay(20);
+            transaction.Complete();
+        });
+
+        var task2 = Task.Run(async Task () =>
+        {
+            var dbconnection = new NpgsqlConnection(_connectionString);
+            dbconnection.Open();
+
+            using var transaction = new TransactionScope(scopeOption: TransactionScopeOption.Required, transactionOptions: new TransactionOptions { IsolationLevel = IsolationLevel.ReadCommitted, Timeout = TransactionManager.DefaultTimeout }, asyncFlowOption: TransactionScopeAsyncFlowOption.Enabled);
+            await Task.Delay(10);
+            var retrievedData = await dbconnection.QueryAsync<Account>(@"
+update accounts set amount = amount - 100 where id = 1;
+select * from accounts where client = 'alice';
+");
+            retrievedData.Should().BeEquivalentTo(alice900, options => options.WithStrictOrdering());
+            await Task.Delay(20);
+            transaction.Complete();
+        });
+
+        //await task1;
+        //await task2;
+
+        await Task.WhenAll(task2, task1);
+    }
+
+    [Test]
+    public async Task Test_LostUpdate2()
+    {
+        var alice900 = new List<Account>() { new(1, "alice", 900) };
+
+        await Task.Delay(100);
+
+        Thread thread1 = new Thread(async () =>
+        {
+            var dbconnection = new NpgsqlConnection(_connectionString);
+            dbconnection.Open();
+            using var transaction = new TransactionScope(TransactionScopeOption.Required, new TransactionOptions { IsolationLevel = IsolationLevel.ReadCommitted, Timeout = TransactionManager.DefaultTimeout });
+
+            await Task.Delay(10);
+
+            var retrievedData = await dbconnection.QueryAsync<Account>(@"
+update accounts set amount = amount - 100 where id = 1;
+select * from accounts where client = 'alice';
+");
+            transaction.Complete();
+            retrievedData.Should().BeEquivalentTo(alice900, options => options.WithStrictOrdering());
+        });
+
+        Thread thread2 = new Thread(async () =>
+        {
+
+            var dbconnection = new NpgsqlConnection(_connectionString);
+            dbconnection.Open();
+            using var transaction = new TransactionScope(TransactionScopeOption.Required, new TransactionOptions { IsolationLevel = IsolationLevel.ReadCommitted, Timeout = TransactionManager.DefaultTimeout });
+            await Task.Delay(10);
+            var retrievedData = await dbconnection.QueryAsync<Account>(@"
+update accounts set amount = amount - 100 where id = 1;
+select * from accounts where client = 'alice';
+");
+            transaction.Complete();
+            retrievedData.Should().BeEquivalentTo(alice900, options => options.WithStrictOrdering());
+        });
+
+        thread1.Start();
+        thread2.Start();
+
+        thread1.Join();
+        thread2.Join();
+    }
+
 }
 
 
