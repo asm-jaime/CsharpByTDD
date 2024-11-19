@@ -224,6 +224,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp.TPL.async-without-aw
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp.TPL.lock", "csharp.TPL.lock\csharp.TPL.lock.csproj", "{807A6EFC-2311-4963-8D50-83F6C487A8FC}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp.TPL.max-parallel", "csharp.tpl.max-parallel\csharp.TPL.max-parallel.csproj", "{C302D868-32C1-4B96-A453-459CDA902FB6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -658,6 +660,10 @@ Global
 		{807A6EFC-2311-4963-8D50-83F6C487A8FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{807A6EFC-2311-4963-8D50-83F6C487A8FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{807A6EFC-2311-4963-8D50-83F6C487A8FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C302D868-32C1-4B96-A453-459CDA902FB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C302D868-32C1-4B96-A453-459CDA902FB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C302D868-32C1-4B96-A453-459CDA902FB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C302D868-32C1-4B96-A453-459CDA902FB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
