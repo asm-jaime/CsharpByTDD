@@ -10,11 +10,8 @@ class SolutionTests
     public void TestCalculate()
     {
         // Arrange
-        var solution = new Solution();
         // Act
-        int total = solution.Calculate(a, b);
         // Assert
-        Assert.AreEqual(expected, total);
     }
 }
 

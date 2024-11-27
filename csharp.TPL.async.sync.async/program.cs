@@ -1,7 +1,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace csharptplasyncfinitemachine;
+namespace csharptplasyncsyncasync;
 
 class Program
 {
@@ -83,6 +83,18 @@ class Program
     }
 
     /*
+    private static Task<int> Middleware(int a, int b)
+    {
+        return Add(a, b);
+    }
+     */
+
+    private static Task<int> Middleware(int a, int b)
+    {
+        return Add(a, b);
+    }
+
+    /*
     [CompilerGenerated]
     private struct <Main>d__1 : IAsyncStateMachine
     {
@@ -154,8 +166,9 @@ class Program
         var a = 1;
         var b = 2;
 
-        await Add(a, b);
+        var result = await Middleware(a, b);
 
+        Console.WriteLine(result);
         Console.ReadLine();
     }
 }
