@@ -10,7 +10,7 @@ using System.Transactions;
 using Testcontainers.PostgreSql;
 using IsolationLevel = System.Transactions.IsolationLevel;
 
-namespace ReadCommitted.Tests;
+namespace sqlisolationreadcommittedrepeatablereadserializable;
 
 [TestFixture]
 public class DatabaseTests

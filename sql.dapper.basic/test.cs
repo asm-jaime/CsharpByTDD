@@ -7,7 +7,7 @@ using System.Data;
 using System.Threading.Tasks;
 using Testcontainers.PostgreSql;
 
-namespace CSharpDapperBasic.Tests;
+namespace DapperBasic.Tests;
 
 [TestFixture]
 public class DatabaseTests
